@@ -53,7 +53,7 @@ public class Estadisticas extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        registrados = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         list4 = new java.awt.List();
@@ -249,8 +249,8 @@ public class Estadisticas extends javax.swing.JFrame {
         jLabel2.setText("Usuarios Registrados: ");
         jPanel2.add(jLabel2);
 
-        jLabel11.setText(Integer.toString(control.contarUsuarios()));
-        jPanel2.add(jLabel11);
+        registrados.setText(Integer.toString(control.contarUsuarios()));
+        jPanel2.add(registrados);
 
         jLabel5.setText("Localidades con mayor crecimiento: ");
 
@@ -409,7 +409,6 @@ public class Estadisticas extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -433,6 +432,7 @@ public class Estadisticas extends javax.swing.JFrame {
     private java.awt.List list8;
     private javax.swing.JPanel mas_busca;
     private javax.swing.JPanel principal;
+    private javax.swing.JLabel registrados;
     private javax.swing.JPanel superior;
     // End of variables declaration//GEN-END:variables
 }
