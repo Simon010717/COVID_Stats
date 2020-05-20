@@ -5,7 +5,9 @@
  */
 package Control;
 
+import DAO.SubdivisionDAO;
 import DAO.UsuarioDAO;
+import java.util.Arrays;
 
 /**
  *
@@ -13,14 +15,19 @@ import DAO.UsuarioDAO;
  */
 public class Control_Estadisticas {
     private UsuarioDAO usuariosdao;
+    private SubdivisionDAO subdivisiondao;
 
     public Control_Estadisticas() {
         usuariosdao = new UsuarioDAO();
+        subdivisiondao = new SubdivisionDAO();
     }
     
     public int contarUsuarios(){
         return usuariosdao.contarUsuarios();
     }
     
-    
+    public String[] crecimiento(){
+        return subdivisiondao.crecimiento();
+    }
+   
 }
