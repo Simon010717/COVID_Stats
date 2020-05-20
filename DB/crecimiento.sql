@@ -1,4 +1,5 @@
 drop procedure if exists mayorCrecimiento;
+
 delimiter #
 create procedure mayorCrecimiento( 
     in fechaIN date
@@ -34,14 +35,25 @@ begin
 		
         -- select avg(dif) from iDiferencias;
 		 insert into promedios values(@iDepart, (select avg(dif) from iDiferencias));
-        select i;
+        -- select i;
 		set i = i +1;
     end while;
-   
-
-	
+	drop table if exists resultados;
+    
+    create temporary table resultados(
+		subs varchar(60)
+													);
+    
     -- select * from iDiferencias;
-	select * from promedios;
+	insert into resultados values((select subdivision from promedios order by prom desc limit 0,1)) ;
+    insert into resultados values((select subdivision from promedios order by prom desc limit 1,1)) ;
+    insert into resultados values((select subdivision from promedios order by prom desc limit 2,1)) ;
+    insert into resultados values((select subdivision from promedios order by prom asc limit 0,1)) ;
+    insert into resultados values((select subdivision from promedios order by prom asc limit 1,1)) ;
+    insert into resultados values((select subdivision from promedios order by prom asc limit 2,1)) ;
+    -- insert into resultados(mins) values((select subdivision from promedios order by prom asc limit 0,1));
+	select * from resultados;
+   
 end #
 
 call mayorCrecimiento (date('2020-04-01'));
