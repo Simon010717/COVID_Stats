@@ -1,3 +1,5 @@
+use EstadisticasCOVID;
+
 drop procedure if exists mayorCrecimiento;
 
 delimiter #
@@ -14,7 +16,7 @@ begin
         prom float 
     );
     
-    set @deps = (select count(*) from estadisticascovid.Subdivision);
+    set @deps = (select count(*) from EstadisticasCOVID.Subdivision);
     
     while i < @deps do
 		set @iDepart = (select idSubdivision from Subdivision limit i,1); 
@@ -28,7 +30,7 @@ begin
 		
 		while @iFecha <= fechaIN do
 			
-			insert into iDiferencias (dif) values((select sum((select sum(masculinos + femeninos) from estadisticascovid.registro where fecha = @iFecha and idSubdivision = @iDepart)-(select sum(masculinos + femeninos) from estadisticascovid.registro where fecha = date_add(@iFecha, interval -1 day) and idSubdivision = @iDepart))));
+			insert into iDiferencias (dif) values((select sum((select sum(masculinos + femeninos) from EstadisticasCOVID.Registro where fecha = @iFecha and idSubdivision = @iDepart)-(select sum(masculinos + femeninos) from EstadisticasCOVID.Registro where fecha = date_add(@iFecha, interval -1 day) and idSubdivision = @iDepart))));
 			
 			set @iFecha = date_add(@iFecha, interval 1 day);
 		end while;
@@ -56,7 +58,7 @@ begin
    
 end #
 
-call mayorCrecimiento (date('2020-04-01'));
+-- call mayorCrecimiento (date('2020-04-01'));
 
 
 
