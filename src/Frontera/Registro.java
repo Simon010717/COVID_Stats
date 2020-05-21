@@ -11,6 +11,7 @@ package Frontera;
 
 import Control.Control_Registro;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -56,7 +57,7 @@ int mousePressY;
         jLabel5 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
         contraseniaTextField = new javax.swing.JPasswordField();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        terminosRadioButton = new javax.swing.JRadioButton();
         registrarButton = new javax.swing.JButton();
         confirmarContraseniaTextField = new javax.swing.JPasswordField();
         jLabel7 = new javax.swing.JLabel();
@@ -149,11 +150,11 @@ int mousePressY;
         contraseniaTextField.setBorder(null);
         contraseniaTextField.setCaretColor(new java.awt.Color(255, 255, 255));
 
-        jRadioButton1.setBackground(new java.awt.Color(40, 101, 114));
-        jRadioButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton1.setText("Acepto términos y condiciones");
-        jRadioButton1.setBorder(null);
+        terminosRadioButton.setBackground(new java.awt.Color(40, 101, 114));
+        terminosRadioButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        terminosRadioButton.setForeground(new java.awt.Color(255, 255, 255));
+        terminosRadioButton.setText("Acepto términos y condiciones");
+        terminosRadioButton.setBorder(null);
 
         registrarButton.setBackground(new java.awt.Color(140, 202, 100));
         registrarButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -205,7 +206,7 @@ int mousePressY;
                                 .addComponent(jLabel7)
                                 .addComponent(confirmarContraseniaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(registrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jRadioButton1)
+                            .addComponent(terminosRadioButton)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jSeparator3)
                                 .addComponent(correoTextField)
@@ -254,7 +255,7 @@ int mousePressY;
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(errorLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addComponent(jRadioButton1)
+                .addComponent(terminosRadioButton)
                 .addGap(18, 18, 18)
                 .addComponent(registrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40))
@@ -359,9 +360,20 @@ int mousePressY;
     }//GEN-LAST:event_usuarioTextFieldActionPerformed
 
     private void registrarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarButtonMouseClicked
-        if(control.registrarUsuario(usuarioTextField.getText(), correoTextField.getText(), contraseniaTextField.getText(),confirmarContraseniaTextField.getText()) == -1){
-            errorLabel.setText("La contraseña no coincide");
-        }//errorLabel.setText("Usuario registrado");
+        if(control.checkRegistro(usuarioTextField.getText(), correoTextField.getText(), contraseniaTextField.getText(), confirmarContraseniaTextField.getText())==-1){
+            JOptionPane.showMessageDialog(this, "El usuario ingresado ya existe", "Usuario ya existente",0);
+        }else if(control.checkRegistro(usuarioTextField.getText(), correoTextField.getText(), contraseniaTextField.getText(), confirmarContraseniaTextField.getText())==-2){
+            JOptionPane.showMessageDialog(this, "Las contraseñas deben coincidir");
+        }else if(control.checkRegistro(usuarioTextField.getText(), correoTextField.getText(), contraseniaTextField.getText(), confirmarContraseniaTextField.getText())==-3){
+            JOptionPane.showMessageDialog(this, "Debe llenar todos los campos", "Campos vacíos",2);
+        }else if(!terminosRadioButton.isSelected()){
+            JOptionPane.showMessageDialog(this, "Debe aceptar los términos y condiciones","Terminos y condiciones",2);
+        }else if(control.checkRegistro(usuarioTextField.getText(), correoTextField.getText(), contraseniaTextField.getText(), confirmarContraseniaTextField.getText())==0){
+            JOptionPane.showMessageDialog(this, "USUARIO REGISTRADO","Registro exitoso",1);
+            control.registrarUsuario(usuarioTextField.getText(), correoTextField.getText(), contraseniaTextField.getText(), confirmarContraseniaTextField.getText());
+            new Login().setVisible(true); 
+            this.dispose();
+        }
     }//GEN-LAST:event_registrarButtonMouseClicked
 
     /**
@@ -420,13 +432,13 @@ int mousePressY;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JLabel prev;
     private javax.swing.JButton registrarButton;
+    private javax.swing.JRadioButton terminosRadioButton;
     private javax.swing.JTextField usuarioTextField;
     // End of variables declaration//GEN-END:variables
 }

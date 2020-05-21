@@ -61,6 +61,24 @@ public class UsuarioDAO {
         }
         return nUsuarios;
     }
+    
+    public int checkRegistro(String user, String correo, String contrasenia, String confirmar){
+        try {        
+            Statement statement = db.getConexion().createStatement();
+            ResultSet resultado = statement.executeQuery("select * FROM EstadisticasCOVID.Usuario where usuario='"+user+"'");
+            if(resultado.next()){
+                return -1;                                                  // retorna -1 si el usuario ingresado existe en la base de datos
+            }else if(!contrasenia.equals(confirmar)){
+                return -2;                                                  // retorna -2 si las contraseñas no coinciden
+            }else if(user.equals("")||correo.equals("")|| contrasenia.equals("")||confirmar.equals("")){
+                return -3;                                                  // retorna -3 si algún campo está vacío
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;                                                           // retorna 0 si todo está bien
+    }
 
     public void registrarUsuario(String user, String correo, String contrasenia, String confirmar){
         try {        

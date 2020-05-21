@@ -108,7 +108,7 @@
                                       <Component id="confirmarContraseniaTextField" alignment="0" min="-2" pref="276" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="registrarButton" alignment="0" min="-2" pref="276" max="-2" attributes="0"/>
-                                  <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="terminosRadioButton" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="jSeparator3" alignment="0" max="32767" attributes="0"/>
                                       <Component id="correoTextField" alignment="0" max="32767" attributes="0"/>
@@ -163,7 +163,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="errorLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="32" max="32767" attributes="0"/>
-                      <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
+                      <Component id="terminosRadioButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="registrarButton" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
@@ -306,7 +306,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+            <Component class="javax.swing.JRadioButton" name="terminosRadioButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="72" green="65" red="28" type="rgb"/>
