@@ -58,7 +58,18 @@ begin
    
 end #
 
--- call mayorCrecimiento (date('2020-04-01'));
+drop procedure if exists verificarUsuario;
+
+delimiter #
+create procedure verificarUsuario(
+	in nombre varchar(60),
+    in pass varchar(60)
+)
+begin
+select exists (select * from EstadisticasCOVID.Usuario where usuario=nombre and password = pass);
+end #
+
+drop procedure if exists registroUsuario;
 
 
 
