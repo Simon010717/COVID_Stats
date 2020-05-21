@@ -36,7 +36,7 @@ public class UsuarioDAO {
         ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
         try {        
             Statement statement = db.getConexion().createStatement();
-            ResultSet resultado = statement.executeQuery("select * from EstadisticasCOVID.usuario");
+            ResultSet resultado = statement.executeQuery("select * from estadusticascovid.usuario");
             while(resultado.next()){
                 usuarios.add(new Usuario( resultado.getString(1),
                         resultado.getString(2), resultado.getString(3), resultado.getBoolean(4)));
@@ -51,7 +51,7 @@ public class UsuarioDAO {
         int nUsuarios = 0;
         try {        
             Statement statement = db.getConexion().createStatement();
-            ResultSet resultado = statement.executeQuery("select count(*) FROM EstadisticasCOVID.Usuario where administrador = false");
+            ResultSet resultado = statement.executeQuery("select count(*) FROM estadisticascovid.usuario where administrador = false");
             if(resultado.next()){
                 nUsuarios = resultado.getInt(1);
             }
@@ -62,6 +62,17 @@ public class UsuarioDAO {
         return nUsuarios;
     }
 
-    
+    public void registrarUsuario(String user, String correo, String contrasenia, String confirmar){
+        try {        
+            Statement statement = db.getConexion().createStatement();
+            if(contrasenia.equals(confirmar)){
+                statement.executeUpdate("insert into EstadisticasCOVID.Usuario values('"+user+"','"+correo+"','"+contrasenia+"',false)");
+            }
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
 }
