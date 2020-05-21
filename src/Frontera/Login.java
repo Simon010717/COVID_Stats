@@ -9,13 +9,16 @@
 //+------------------------------------------------------------------+
 package Frontera;
 
+import Control.Control_Login;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author dell
  */
 public class Login extends javax.swing.JFrame {
+    private Control_Login control = new Control_Login();
 //+------------------------------------------------------------------+
 //| Constructor                                                      |
 //+------------------------------------------------------------------+
@@ -44,7 +47,7 @@ int mousePressY;
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        usuarioTextField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -52,10 +55,11 @@ int mousePressY;
         jSeparator2 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        contraseniaTextField = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        ingresarButton = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        errorLabel = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         exit = new javax.swing.JLabel();
@@ -97,11 +101,11 @@ int mousePressY;
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Ingresa tus datos");
 
-        jTextField1.setBackground(new java.awt.Color(40, 101, 114));
-        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setBorder(null);
-        jTextField1.setCaretColor(new java.awt.Color(255, 255, 255));
+        usuarioTextField.setBackground(new java.awt.Color(40, 101, 114));
+        usuarioTextField.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        usuarioTextField.setForeground(new java.awt.Color(255, 255, 255));
+        usuarioTextField.setBorder(null);
+        usuarioTextField.setCaretColor(new java.awt.Color(255, 255, 255));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -124,11 +128,17 @@ int mousePressY;
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Contraseña");
 
-        jPasswordField1.setBackground(new java.awt.Color(40, 101, 114));
-        jPasswordField1.setForeground(new java.awt.Color(255, 255, 255));
-        jPasswordField1.setText("jPasswordField1");
-        jPasswordField1.setBorder(null);
-        jPasswordField1.setCaretColor(new java.awt.Color(255, 255, 255));
+        contraseniaTextField.setBackground(new java.awt.Color(40, 101, 114));
+        contraseniaTextField.setForeground(new java.awt.Color(255, 255, 255));
+        contraseniaTextField.setText("jPasswordField1");
+        contraseniaTextField.setToolTipText("");
+        contraseniaTextField.setBorder(null);
+        contraseniaTextField.setCaretColor(new java.awt.Color(255, 255, 255));
+        contraseniaTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contraseniaTextFieldActionPerformed(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(140, 202, 100));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -148,16 +158,21 @@ int mousePressY;
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(140, 202, 100));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Ingresar");
-        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jButton2.setContentAreaFilled(false);
-        jButton2.setFocusPainted(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        ingresarButton.setBackground(new java.awt.Color(140, 202, 100));
+        ingresarButton.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ingresarButton.setForeground(new java.awt.Color(255, 255, 255));
+        ingresarButton.setText("Ingresar");
+        ingresarButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        ingresarButton.setContentAreaFilled(false);
+        ingresarButton.setFocusPainted(false);
+        ingresarButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ingresarButtonMouseClicked(evt);
+            }
+        });
+        ingresarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                ingresarButtonActionPerformed(evt);
             }
         });
 
@@ -166,6 +181,10 @@ int mousePressY;
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("¿Aún no te has registrado?");
 
+        errorLabel.setBackground(new java.awt.Color(255, 255, 255));
+        errorLabel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        errorLabel.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -173,8 +192,9 @@ int mousePressY;
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(65, 65, 65)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(errorLabel)
                     .addComponent(jLabel7)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ingresarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
                         .addComponent(jLabel5)
@@ -184,9 +204,9 @@ int mousePressY;
                         .addComponent(jLabel3)
                         .addComponent(jLabel2)
                         .addComponent(jLabel1)
-                        .addComponent(jTextField1)
+                        .addComponent(usuarioTextField)
                         .addComponent(jSeparator1)
-                        .addComponent(jPasswordField1)
+                        .addComponent(contraseniaTextField)
                         .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(69, Short.MAX_VALUE))
         );
@@ -200,7 +220,7 @@ int mousePressY;
                 .addGap(26, 26, 26)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(usuarioTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -212,12 +232,14 @@ int mousePressY;
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
                 .addGap(5, 5, 5)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(contraseniaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addComponent(ingresarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(errorLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -300,9 +322,9 @@ int mousePressY;
         mousePressY = evt.getY();
     }//GEN-LAST:event_barra_superiorMousePressed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void ingresarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_ingresarButtonActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         new Registro().setVisible(true); 
@@ -320,6 +342,24 @@ int mousePressY;
             }
         }
     }//GEN-LAST:event_formWindowOpened
+
+    private void contraseniaTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contraseniaTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_contraseniaTextFieldActionPerformed
+
+    private void ingresarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingresarButtonMouseClicked
+        if(control.verificarUsuario(usuarioTextField.getText(), contraseniaTextField.getText())==0){
+            errorLabel.setText("Usuario y contraseña correctos");
+            errorLabel.setForeground(Color.green);
+            JOptionPane.showMessageDialog(this, "Bienvenido","Ingreso exitoso",1);
+            new Estadisticas().setVisible(true); 
+            this.dispose();
+        }else if(control.verificarUsuario(usuarioTextField.getText(), contraseniaTextField.getText())==-3){
+            errorLabel.setText("Debe llenar todos los campos");
+        }else{
+            errorLabel.setText("Usuario y/o contraseña incorrecto(s)");  
+        }
+    }//GEN-LAST:event_ingresarButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -360,9 +400,11 @@ int mousePressY;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel barra_superior;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JPasswordField contraseniaTextField;
+    private javax.swing.JLabel errorLabel;
     private javax.swing.JLabel exit;
+    private javax.swing.JButton ingresarButton;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -373,11 +415,10 @@ int mousePressY;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField usuarioTextField;
     // End of variables declaration//GEN-END:variables
 }

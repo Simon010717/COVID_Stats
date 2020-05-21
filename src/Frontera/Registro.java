@@ -23,8 +23,8 @@ public class Registro extends javax.swing.JFrame {
 //| Constructor                                                      |
 //+------------------------------------------------------------------+
 // Para mover ventana
-int mousePressX;
-int mousePressY;
+    int mousePressX;
+    int mousePressY;
 
     public Registro() {
         initComponents();
@@ -69,6 +69,7 @@ int mousePressY;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLocation(new java.awt.Point(0, 0));
         setLocationByPlatform(true);
         setUndecorated(true);
@@ -194,7 +195,7 @@ int mousePressY;
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(65, 65, 65)
+                .addGap(40, 40, 40)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(errorLabel)
@@ -219,7 +220,7 @@ int mousePressY;
                                 .addComponent(jSeparator1)
                                 .addComponent(contraseniaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel5))
-                        .addContainerGap(69, Short.MAX_VALUE))))
+                        .addContainerGap(94, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -361,13 +362,17 @@ int mousePressY;
 
     private void registrarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarButtonMouseClicked
         if(control.checkRegistro(usuarioTextField.getText(), correoTextField.getText(), contraseniaTextField.getText(), confirmarContraseniaTextField.getText())==-1){
-            JOptionPane.showMessageDialog(this, "El usuario ingresado ya existe", "Usuario ya existente",0);
+            errorLabel.setText("El usuario ingresado ya existe");
+            //JOptionPane.showMessageDialog(this, "El usuario ingresado ya existe", "Usuario ya existente",0);
         }else if(control.checkRegistro(usuarioTextField.getText(), correoTextField.getText(), contraseniaTextField.getText(), confirmarContraseniaTextField.getText())==-2){
-            JOptionPane.showMessageDialog(this, "Las contraseñas deben coincidir");
+            errorLabel.setText("Las contraseñas deben coincidir");
+            //JOptionPane.showMessageDialog(this, "Las contraseñas deben coincidir");
         }else if(control.checkRegistro(usuarioTextField.getText(), correoTextField.getText(), contraseniaTextField.getText(), confirmarContraseniaTextField.getText())==-3){
-            JOptionPane.showMessageDialog(this, "Debe llenar todos los campos", "Campos vacíos",2);
+            errorLabel.setText("Debe llenar todos los campos");
+            //JOptionPane.showMessageDialog(this, "Debe llenar todos los campos", "Campos vacíos",2);
         }else if(!terminosRadioButton.isSelected()){
-            JOptionPane.showMessageDialog(this, "Debe aceptar los términos y condiciones","Terminos y condiciones",2);
+            errorLabel.setText("Debe aceptar los términos y condiciones");
+            //JOptionPane.showMessageDialog(this, "Debe aceptar los términos y condiciones","Terminos y condiciones",2);
         }else if(control.checkRegistro(usuarioTextField.getText(), correoTextField.getText(), contraseniaTextField.getText(), confirmarContraseniaTextField.getText())==0){
             JOptionPane.showMessageDialog(this, "USUARIO REGISTRADO","Registro exitoso",1);
             control.registrarUsuario(usuarioTextField.getText(), correoTextField.getText(), contraseniaTextField.getText(), confirmarContraseniaTextField.getText());

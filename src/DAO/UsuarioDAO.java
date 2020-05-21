@@ -86,11 +86,25 @@ public class UsuarioDAO {
             if(contrasenia.equals(confirmar)){
                 statement.executeUpdate("insert into EstadisticasCOVID.Usuario values('"+user+"','"+correo+"','"+contrasenia+"',false)");
             }
-            
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public boolean verificarUsuario(String user, String contrasenia){
+        try {        
+            Statement statement = db.getConexion().createStatement();
+            ResultSet resultado = statement.executeQuery("call verificarUsuario('"+user+"','"+contrasenia+"')");
+            while(resultado.next()){
+                if(resultado.getBoolean(1)==false){
+                    return false;                          // retorna false si no hay un usuario registrado con ese nombre y esa contraseña
+                }
+            }
             
         } catch (SQLException ex) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return true;
     }
     
 }
