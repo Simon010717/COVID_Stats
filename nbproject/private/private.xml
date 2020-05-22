@@ -5,13 +5,11 @@
         <group>
             <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/Frontera/Login.java</file>
             <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/Control/Control_Estadisticas.java</file>
-            <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/Control/ValidarLogin.java</file>
-            <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/DAO/DBConexion.java</file>
             <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/DAO/UsuarioDAO.java</file>
             <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/Control/Control_Registro.java</file>
             <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/Frontera/Estadisticas.java</file>
+            <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/Control/Control_Login.java</file>
             <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/Frontera/Registro.java</file>
-            <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/DAO/SubdivisionDAO.java</file>
         </group>
     </open-files>
 </project-private>

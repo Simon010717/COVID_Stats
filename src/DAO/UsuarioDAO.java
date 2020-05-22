@@ -36,7 +36,7 @@ public class UsuarioDAO {
         ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
         try {        
             Statement statement = db.getConexion().createStatement();
-            ResultSet resultado = statement.executeQuery("select * from estadusticascovid.usuario");
+            ResultSet resultado = statement.executeQuery("select * from estadisticascovid.usuario");
             while(resultado.next()){
                 usuarios.add(new Usuario( resultado.getString(1),
                         resultado.getString(2), resultado.getString(3), resultado.getBoolean(4)));

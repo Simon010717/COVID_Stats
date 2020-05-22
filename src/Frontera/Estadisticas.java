@@ -95,7 +95,7 @@ public class Estadisticas extends javax.swing.JFrame {
                 barra_superiorMousePressed(evt);
             }
         });
-        principal.add(barra_superior, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 40));
+        principal.add(barra_superior, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 910, 40));
 
         prev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/prev.png"))); // NOI18N
         prev.addMouseListener(new java.awt.event.MouseAdapter() {
