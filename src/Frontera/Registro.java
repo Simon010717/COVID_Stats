@@ -361,23 +361,37 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_usuarioTextFieldActionPerformed
 
     private void registrarButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarButtonMouseClicked
-        if(control.checkRegistro(usuarioTextField.getText(), correoTextField.getText(), contraseniaTextField.getText(), confirmarContraseniaTextField.getText())==-1){
-            errorLabel.setText("El usuario ingresado ya existe");
-            //JOptionPane.showMessageDialog(this, "El usuario ingresado ya existe", "Usuario ya existente",0);
-        }else if(control.checkRegistro(usuarioTextField.getText(), correoTextField.getText(), contraseniaTextField.getText(), confirmarContraseniaTextField.getText())==-2){
-            errorLabel.setText("Las contraseñas deben coincidir");
-            //JOptionPane.showMessageDialog(this, "Las contraseñas deben coincidir");
-        }else if(control.checkRegistro(usuarioTextField.getText(), correoTextField.getText(), contraseniaTextField.getText(), confirmarContraseniaTextField.getText())==-3){
-            errorLabel.setText("Debe llenar todos los campos");
-            //JOptionPane.showMessageDialog(this, "Debe llenar todos los campos", "Campos vacíos",2);
-        }else if(!terminosRadioButton.isSelected()){
+       if(!terminosRadioButton.isSelected()){
             errorLabel.setText("Debe aceptar los términos y condiciones");
             //JOptionPane.showMessageDialog(this, "Debe aceptar los términos y condiciones","Terminos y condiciones",2);
-        }else if(control.checkRegistro(usuarioTextField.getText(), correoTextField.getText(), contraseniaTextField.getText(), confirmarContraseniaTextField.getText())==0){
-            JOptionPane.showMessageDialog(this, "USUARIO REGISTRADO","Registro exitoso",1);
-            control.registrarUsuario(usuarioTextField.getText(), correoTextField.getText(), contraseniaTextField.getText(), confirmarContraseniaTextField.getText());
-            new Login().setVisible(true); 
-            this.dispose();
+        }else{
+            int registrar = control.registrarUsuario(usuarioTextField.getText(), correoTextField.getText(), contraseniaTextField.getText(), confirmarContraseniaTextField.getText());
+            switch (registrar){
+                case 0:
+                    errorLabel.setText("Registro exitoso");
+                    errorLabel.setForeground(Color.green);
+                    new Login().setVisible(true); 
+                    this.dispose();
+                    break;
+                case -1:
+                    errorLabel.setText("El usuario ingresado ya existe");
+                    break;
+                case -2:
+                    errorLabel.setText("La longitud de usuario debe estar entre 7 y 15 caracteres");
+                    break;
+                case -3:
+                    errorLabel.setText("Formato invalido de correo y/0 no está entre 8 y 30 caracteres");
+                    break;
+                case -4:
+                    errorLabel.setText("La longitud de contraseña debe estar entre 8 y 20 caracteres");
+                    break;
+                case -5:
+                    errorLabel.setText("Las contraseñas no coinciden");
+                    break;
+                case -6:
+                    errorLabel.setText("Debe llenar todos los campos");
+                    break;
+            }
         }
     }//GEN-LAST:event_registrarButtonMouseClicked
 

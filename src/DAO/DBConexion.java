@@ -18,8 +18,8 @@ import java.util.logging.Logger;
 public class DBConexion {
     static String bd = "estadisticascovid";
     static String login = "root";
-    static String password = "Password1234!";
-    static String url = "jdbc:mysql://localhost:3310/"+bd;
+    static String password = "JAga1210";
+    static String url = "jdbc:mysql://localhost/"+bd;
     
     Connection conexion = null;
     
