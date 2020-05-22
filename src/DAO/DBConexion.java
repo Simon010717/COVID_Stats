@@ -16,10 +16,10 @@ import java.util.logging.Logger;
  * @author sebasdeloco
  */
 public class DBConexion {
-    static String bd = "EstadisticasCOVID";
+    static String bd = "estadisticascovid";
     static String login = "root";
-    static String password = "JAga1210";
-    static String url = "jdbc:mysql://localhost/"+bd;
+    static String password = "Password1234!";
+    static String url = "jdbc:mysql://localhost:3310/"+bd;
     
     Connection conexion = null;
     
