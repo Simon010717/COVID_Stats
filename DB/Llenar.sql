@@ -42,24 +42,47 @@ insert into EstadisticasCOVID.Subdivision values ('Tolima','Colombia');
 insert into EstadisticasCOVID.Subdivision values ('Valle del Cauca','Colombia');
 insert into EstadisticasCOVID.Subdivision values ('Vaupés','Colombia');
 insert into EstadisticasCOVID.Subdivision values ('Vichada','Colombia');
+
+insert into EstadisticasCOVID.Subdivision values ('Antonio Nariño','Bogotá');
+insert into EstadisticasCOVID.Subdivision values ('Barrios Unidos','Bogotá');
+insert into EstadisticasCOVID.Subdivision values ('Bosa','Bogotá');
+insert into EstadisticasCOVID.Subdivision values ('Ciudad Bolivar','Bogotá');
+insert into EstadisticasCOVID.Subdivision values ('Engativá','Bogotá');
+insert into EstadisticasCOVID.Subdivision values ('Fontibón','Bogotá');
+insert into EstadisticasCOVID.Subdivision values ('Fuera','Bogotá');
+insert into EstadisticasCOVID.Subdivision values ('Kennedy','Bogotá');
+insert into EstadisticasCOVID.Subdivision values ('La Candelaria','Bogotá');
+insert into EstadisticasCOVID.Subdivision values ('Los Mártires','Bogotá');
+insert into EstadisticasCOVID.Subdivision values ('Puente Aranda','Bogotá');
+insert into EstadisticasCOVID.Subdivision values ('Rafael Uribe Uribe','Bogotá');
+insert into EstadisticasCOVID.Subdivision values ('San Cristobál','Bogotá');
+insert into EstadisticasCOVID.Subdivision values ('Santa Fe','Bogotá');
+insert into EstadisticasCOVID.Subdivision values ('Suba','Bogotá');
+insert into EstadisticasCOVID.Subdivision values ('Teusaquillo','Bogotá');
+insert into EstadisticasCOVID.Subdivision values ('Tunjuelito','Bogotá');
+insert into EstadisticasCOVID.Subdivision values ('Usaquén','Bogotá');
+insert into EstadisticasCOVID.Subdivision values ('Usme','Bogotá');
+
 */
+
 -- Tablas registro
-drop procedure if exists llenadoRegistros;
+drop procedure if exists llenadoRegistrosCol;
+drop procedure if exists llenadoRegistrosBog;
 
 delimiter #
-create procedure llenadoRegistros()
+create procedure llenadoRegistrosCol()
 
 begin
 declare i int;
 set i = 0;
-set @n = (select count(*) from EstadisticasCOVID.Subdivision);
+set @n = (select count(*) from EstadisticasCOVID.Subdivision where idMapa='Colombia');
 set @maxFecha = (select max(fecha_diagnostico) from EstadisticasCOVID.INS);
 set @minFecha = (select min(fecha_diagnostico) from EstadisticasCOVID.INS);
 select @maxFecha, @minFecha;
 while i < @n do
 	set @iFecha = @minFecha;
     while @iFecha <= @maxFecha do
-		call RegistroHistorico((select idSubdivision from Subdivision limit i,1),@iFecha);
+		call RegistroHistorico((select idSubdivision from Subdivision where idMapa='Colombia' limit i,1),@iFecha);
 		set @iFecha = date_add(@iFecha, interval 1 day);
     end while;
     select i;
@@ -68,4 +91,27 @@ end while;
 commit;
 end #
 
-call llenadoRegistros();
+
+delimiter #
+create procedure llenadoRegistrosBog()
+
+begin
+declare i int;
+set i = 0;
+set @n = (select count(*) from EstadisticasCOVID.Subdivision where idMapa='Bogotá');
+set @maxFecha = (select max(fecha_diagnostico) from EstadisticasCOVID.Bogota);
+set @minFecha = (select min(fecha_diagnostico) from EstadisticasCOVID.Bogota);
+select @maxFecha, @minFecha;
+while i < @n do
+	set @iFecha = @minFecha;
+    while @iFecha <= @maxFecha do
+		call RegistroHistorico((select idSubdivision from Subdivision where idMapa='Bogotá' limit i,1),@iFecha);
+		set @iFecha = date_add(@iFecha, interval 1 day);
+    end while;
+    select i;
+    set i = i +1;
+end while;
+commit;
+end #
+
+call llenadoRegistrosBog();

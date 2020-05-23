@@ -18,16 +18,16 @@
 
 use EstadisticasCOVID;
 
-drop procedure if exists RegistroHoy;
+drop procedure if exists RegistroHoyCol;
 
-drop procedure if exists RegistroEdadHoy;
+drop procedure if exists RegistroEdadHoyCol;
 
-drop procedure if exists RegistroHistorico;
+drop procedure if exists RegistroHistoricoCol;
 
-drop procedure if exists RegistroEdadHistorico;
+drop procedure if exists RegistroEdadHistoricoCol;
 
 delimiter #
-create procedure RegistroHoy(
+create procedure RegistroHoyCol(
 	in depart varchar(60)
 )
 begin
@@ -43,11 +43,11 @@ begin
 		(select count(sexo) from EstadisticasCOVID.INS where sexo='M' and departamento=depart),
 		0
 	);
-	call RegistroEdadHoy(depart,num);
+	call RegistroEdadHoyCol(depart,num);
 end #
 
 delimiter #
-create procedure RegistroEdadHoy( 
+create procedure RegistroEdadHoyCol( 
 	in depart varchar(60)
 )
 begin
@@ -96,7 +96,7 @@ begin
 end #
 
 delimiter #
-create procedure RegistroHistorico(
+create procedure RegistroHistoricoCol(
 	in depart varchar(60),
     in fecha DATE
 )
@@ -113,11 +113,11 @@ begin
 		(select count(sexo) from EstadisticasCOVID.INS where sexo='M' and departamento=depart and fecha_diagnostico <= fecha),
 		0
 	);
-	call RegistroEdadHistorico(depart,fecha);
+	call RegistroEdadHistoricoCol(depart,fecha);
 end #
 
 delimiter #
-create procedure RegistroEdadHistorico( 
+create procedure RegistroEdadHistoricoCol( 
 	in depart varchar(60),
     in fecha date
 )
@@ -163,6 +163,77 @@ begin
 		(select count(*) from EstadisticasCOVID.INS where atencionn='Recuperado' and departamento=depart and fecha_recuperado <= fecha and edad between 70 and 79),
 		(select count(*) from EstadisticasCOVID.INS where atencionn='Recuperado' and departamento=depart and fecha_recuperado <= fecha and edad between 80 and 89),
 		(select count(*) from EstadisticasCOVID.INS where atencionn='Recuperado' and departamento=depart and fecha_recuperado <= fecha and edad > 90)
+	);
+end #
+
+delimiter #
+create procedure RegistroHistoricoBog(
+	in depart varchar(60),
+    in fecha DATE
+)
+begin
+	insert into EstadisticasCOVID.Registro values (
+		fecha,
+		depart,
+		0,
+		0,
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and fecha_diagnostico <= fecha),
+		0,
+        0,
+		(select count(sexo) from EstadisticasCOVID.INS where sexo='F' and localidad=depart and fecha_diagnostico <= fecha),
+		(select count(sexo) from EstadisticasCOVID.INS where sexo='M' and localidad=depart and fecha_diagnostico <= fecha),
+		0
+	);
+	call RegistroEdadHistoricoBog(depart,fecha);
+end #
+
+delimiter #
+create procedure RegistroEdadHistoricoBog( 
+	in depart varchar(60),
+    in fecha date
+)
+begin
+	insert into EstadisticasCOVID.confirmadosEdad values (
+		fecha,
+		depart,
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and fecha_diagnostico <= fecha and edad between 0 and 9),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and fecha_diagnostico <= fecha and edad between 10 and 19),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and fecha_diagnostico <= fecha and edad between 20 and 29),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and fecha_diagnostico <= fecha and edad between 30 and 39),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and fecha_diagnostico <= fecha and edad between 40 and 49),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and fecha_diagnostico <= fecha and edad between 50 and 59),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and fecha_diagnostico <= fecha and edad between 60 and 69),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and fecha_diagnostico <= fecha and edad between 70 and 79),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and fecha_diagnostico <= fecha and edad between 80 and 89),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and fecha_diagnostico <= fecha and edad > 90)
+	);
+	insert into EstadisticasCOVID.fallecidosEdad values (
+		fecha,
+		depart,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	);
+	insert into EstadisticasCOVID.recuperadosEdad values (
+		fecha,
+		depart,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
 	);
 end #
 
