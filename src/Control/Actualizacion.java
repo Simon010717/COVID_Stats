@@ -12,6 +12,7 @@ import Entidad.CasoColombia;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
@@ -24,16 +25,22 @@ import java.util.logging.Logger;
  */
 public class Actualizacion {
     private String dir;
+    private SimpleDateFormat formato1;
+    private SimpleDateFormat formato2;
     
     public Actualizacion(){
-        this.dir = System.getProperty("user.dir")+"\\DB"; 
+        this.dir = System.getProperty("user.dir")+"/DB";
+        this.formato1 = new SimpleDateFormat("dd/MM/yyyy");
+        this.formato2 = new SimpleDateFormat("yyyy-MM-dd");
     }
     
     public static void main(String[] args) {
         Actualizacion act = new Actualizacion();
         //act.descargarDatos();
         act.cargarBogota();
-        act.cargarColombia();
+        //act.cargarColombia();
+        //System.out.println(act.arreglarFecha("13/03/2020"));
+        
     }
     
     /**
@@ -59,7 +66,7 @@ public class Actualizacion {
     public void cargarBogota(){
         BogotaDAO bogota = new BogotaDAO();
         try {
-            Scanner scan = new Scanner(new File(this.dir+"\\datosBogota.csv"));
+            Scanner scan = new Scanner(new File(this.dir+"/datosBogota.csv"));
             scan.useDelimiter(",|\n");
             //Saltamos la primera linea del archivo que contiene los encabezados de las columnas.
             for (int i = 0; i < 8; i++) {
@@ -91,7 +98,7 @@ public class Actualizacion {
     public void  cargarColombia(){
         ColombiaDAO colombia = new ColombiaDAO();
         try {
-            Scanner scan = new Scanner(new File(this.dir + "\\datoscolombia.csv"));
+            Scanner scan = new Scanner(new File(this.dir + "/datoscolombia.csv"));
             scan.useDelimiter(",|\n");
             //Saltamos la primera linea del archivo que contiene los encabezados de las columnas.
             for (int i = 0; i < 16; i++) {
@@ -152,8 +159,12 @@ public class Actualizacion {
      * @return 
      */
     public String arreglarFecha(String fecha){
-        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
-        return formato.format(Date.parse(fecha));
+        try {
+            return formato2.format(formato1.parse(fecha));
+        } catch (ParseException ex) {
+            Logger.getLogger(Actualizacion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
     }
     
 }
