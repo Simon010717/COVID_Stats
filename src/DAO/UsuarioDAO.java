@@ -36,7 +36,7 @@ public class UsuarioDAO {
         ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
         try {        
             Statement statement = db.getConexion().createStatement();
-            ResultSet resultado = statement.executeQuery("select * from estadisticascovid.usuario");
+            ResultSet resultado = statement.executeQuery("select * from EstadisticaCOVID.usuario");
             while(resultado.next()){
                 usuarios.add(new Usuario( resultado.getString(1),
                         resultado.getString(2), resultado.getString(3), resultado.getBoolean(4)));
@@ -51,7 +51,7 @@ public class UsuarioDAO {
         int nUsuarios = 0;
         try {        
             Statement statement = db.getConexion().createStatement();
-            ResultSet resultado = statement.executeQuery("select count(*) FROM estadisticascovid.usuario where administrador = false");
+            ResultSet resultado = statement.executeQuery("select count(*) FROM EstadisticasCOVID.Usuario where administrador = false");
             if(resultado.next()){
                 nUsuarios = resultado.getInt(1);
             }

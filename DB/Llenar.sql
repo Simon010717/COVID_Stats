@@ -3,7 +3,7 @@ use EstadisticasCOVID;
 /*
 -- Tabla mapa
 insert into EstadisticasCOVID.Mapa values ('Colombia'), ('Bogotá');
-/*
+
 -- Tabla subdivision
 insert into EstadisticasCOVID.Subdivision values ('Amazonas','Colombia');
 insert into EstadisticasCOVID.Subdivision values ('Antioquía','Colombia');
@@ -62,8 +62,8 @@ insert into EstadisticasCOVID.Subdivision values ('Teusaquillo','Bogotá');
 insert into EstadisticasCOVID.Subdivision values ('Tunjuelito','Bogotá');
 insert into EstadisticasCOVID.Subdivision values ('Usaquén','Bogotá');
 insert into EstadisticasCOVID.Subdivision values ('Usme','Bogotá');
-
 */
+
 
 -- Tablas registro
 drop procedure if exists llenadoRegistrosCol;
@@ -82,7 +82,7 @@ select @maxFecha, @minFecha;
 while i < @n do
 	set @iFecha = @minFecha;
     while @iFecha <= @maxFecha do
-		call RegistroHistorico((select idSubdivision from Subdivision where idMapa='Colombia' limit i,1),@iFecha);
+		call RegistroHistoricoCol((select idSubdivision from Subdivision where idMapa='Colombia' limit i,1),@iFecha);
 		set @iFecha = date_add(@iFecha, interval 1 day);
     end while;
     select i;
@@ -105,7 +105,7 @@ select @maxFecha, @minFecha;
 while i < @n do
 	set @iFecha = @minFecha;
     while @iFecha <= @maxFecha do
-		call RegistroHistorico((select idSubdivision from Subdivision where idMapa='Bogotá' limit i,1),@iFecha);
+		call RegistroHistoricoBog((select idSubdivision from Subdivision where idMapa='Bogotá' limit i,1),@iFecha);
 		set @iFecha = date_add(@iFecha, interval 1 day);
     end while;
     select i;
@@ -114,4 +114,4 @@ end while;
 commit;
 end #
 
-call llenadoRegistrosBog();
+call llenadoRegistrosCol();

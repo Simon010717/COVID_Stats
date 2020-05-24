@@ -31,7 +31,8 @@ public class Actualizacion {
     
     public static void main(String[] args) {
         Actualizacion act = new Actualizacion();
-        act.cargarBogota();
+        act.descargarDatos();
+        //act.cargarBogota();
         act.cargarColombia();
     }
     
@@ -73,7 +74,7 @@ public class Actualizacion {
                     localidad, edad, sexo
                     , tipo, (ubicacion.equals("Fallecido (No aplica") ? "Fallecido": ubicacion ),// bug en los datos >:(
                     (estado.equals(" No causa Directa)") ? "Fallecido": estado ));
-                bogota.ingresarCaso(aux);
+                if(fecha!=null) bogota.ingresarCaso(aux);
                 if(ubicacion.equals("Fallecido (No aplica")){ scan.next(); scan.next();}
             }
             System.out.println("Datos de Bogota cargados exitosamente!");
@@ -114,6 +115,7 @@ public class Actualizacion {
                 String fis = scan.next(); //fis
                 String fecha_de_muerte = scan.next();//fecha de muerte
                 String fecha_diagnostico = scan.next(); //fecha de diagnostico
+                if(fecha_diagnostico==null) fecha_diagnostico = fecha_de_notificacion;
                 String fecha_recuperado = scan.next(); //fecha de recuperado
                 String fecha_reporte_web = scan.next(); //fecha de reporte web
 
@@ -136,7 +138,7 @@ public class Actualizacion {
                     (fecha_reporte_web.length() < 9 ? null : fecha_reporte_web.substring(0, 10))
                 );
                 //Ingresamos el registro por medio de la clase DAO
-                colombia.ingresarCaso(caso);
+                if (fecha_de_notificacion != null) colombia.ingresarCaso(caso);
             }
             System.out.println("Datos de Colombia cargados exitosamente!");
         } catch (FileNotFoundException ex) {

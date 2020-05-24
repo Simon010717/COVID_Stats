@@ -26,6 +26,10 @@ drop procedure if exists RegistroHistoricoCol;
 
 drop procedure if exists RegistroEdadHistoricoCol;
 
+drop procedure if exists RegistroHistoricoBog;
+
+drop procedure if exists RegistroEdadHistoricoBog;
+
 delimiter #
 create procedure RegistroHoyCol(
 	in depart varchar(60)
