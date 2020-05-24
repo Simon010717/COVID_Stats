@@ -210,7 +210,7 @@ begin
 		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and fecha_diagnostico <= fecha and edad between 70 and 79),
 		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and fecha_diagnostico <= fecha and edad between 80 and 89),
 		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and fecha_diagnostico <= fecha and edad > 90)
-	);
+	);/*
 	insert into EstadisticasCOVID.fallecidosEdad values (
 		fecha,
 		depart,
@@ -238,6 +238,6 @@ begin
 		0,
 		0,
 		0
-	);
+	);*/
 end #
 

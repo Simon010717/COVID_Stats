@@ -36,7 +36,7 @@ public class Actualizacion {
     
     public static void main(String[] args) {
         Actualizacion act = new Actualizacion();
-        //act.descargarDatos();
+        act.descargarDatos();
         act.cargarBogota();
         //act.cargarColombia();
         //System.out.println(act.arreglarFecha("13/03/2020"));
