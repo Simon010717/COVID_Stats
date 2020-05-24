@@ -29,5 +29,9 @@ public class Control_Estadisticas {
     public String[] crecimiento(){
         return subdivisiondao.crecimiento();
     }
+    
+    public String[] masBuscados(){
+        return subdivisiondao.masBuscados();
+    }
    
 }

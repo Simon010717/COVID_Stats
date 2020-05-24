@@ -52,5 +52,31 @@ public class SubdivisionDAO {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return subs;
+    }
+    
+    public String[] masBuscados(){
+        String [] subs = new String[6];
+        int i = 0;
+         try {        
+            Statement statementCol = db.getConexion().createStatement();
+            ResultSet resultadoCol = statementCol.executeQuery("call masBuscados ('Colombia')");
+            while(resultadoCol.next()){
+                subs[i] = resultadoCol.getString(1);
+                //System.out.println(subs[i]);
+                i++;
+                
+            }
+            Statement statementBog = db.getConexion().createStatement();
+            ResultSet resultadoBog = statementBog.executeQuery("call masBuscados ('Bogotá')");
+            while(resultadoBog.next()){
+                subs[i] = resultadoBog.getString(1);
+                //System.out.println(subs[i]);
+                i++;
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return subs;
     } 
 }

@@ -134,7 +134,7 @@ public class Estadisticas extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Logo_25x25.png"))); // NOI18N
         principal.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 550, -1, 43));
 
-        jPanel8.setLayout(new java.awt.GridLayout());
+        jPanel8.setLayout(new java.awt.GridLayout(1, 0));
 
         mas_visitas.setBackground(new java.awt.Color(40, 101, 114));
         mas_visitas.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -153,6 +153,7 @@ public class Estadisticas extends javax.swing.JFrame {
         mas_visitas.add(jLabel16, gridBagConstraints);
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator1.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -162,7 +163,7 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Departamentos más buscados: ");
+        jLabel6.setText(control.masBuscados()[0]);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -172,7 +173,7 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Departamentos más buscados: ");
+        jLabel11.setText(control.masBuscados()[1]);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
@@ -182,7 +183,7 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Departamentos más buscados: ");
+        jLabel12.setText(control.masBuscados()[2]);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
@@ -191,6 +192,7 @@ public class Estadisticas extends javax.swing.JFrame {
         mas_visitas.add(jLabel12, gridBagConstraints);
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator2.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
@@ -208,6 +210,7 @@ public class Estadisticas extends javax.swing.JFrame {
         mas_visitas.add(jLabel9, gridBagConstraints);
 
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator3.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 7;
@@ -217,7 +220,7 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("Departamentos más buscados: ");
+        jLabel13.setText(control.masBuscados()[3]);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 8;
@@ -227,7 +230,7 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("Departamentos más buscados: ");
+        jLabel14.setText(control.masBuscados()[4]);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
@@ -236,7 +239,7 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("Departamentos más buscados: ");
+        jLabel15.setText(control.masBuscados()[5]);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 10;
@@ -245,6 +248,7 @@ public class Estadisticas extends javax.swing.JFrame {
         mas_visitas.add(jLabel15, gridBagConstraints);
 
         jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator4.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 11;
@@ -272,6 +276,7 @@ public class Estadisticas extends javax.swing.JFrame {
         mas_crec.add(jLabel17, gridBagConstraints);
 
         jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator5.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -281,7 +286,7 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("Departamentos más buscados: ");
+        jLabel18.setText(control.crecimiento()[0]);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -291,7 +296,7 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel19.setText("Departamentos más buscados: ");
+        jLabel19.setText(control.crecimiento()[1]);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
@@ -301,7 +306,7 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setText("Departamentos más buscados: ");
+        jLabel20.setText(control.crecimiento()[2]);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
@@ -310,6 +315,7 @@ public class Estadisticas extends javax.swing.JFrame {
         mas_crec.add(jLabel20, gridBagConstraints);
 
         jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator6.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
@@ -328,6 +334,7 @@ public class Estadisticas extends javax.swing.JFrame {
         mas_crec.add(jLabel21, gridBagConstraints);
 
         jSeparator7.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator7.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 7;
@@ -337,7 +344,7 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel22.setText("Departamentos más buscados: ");
+        jLabel22.setText(control.crecimiento()[6]);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 8;
@@ -347,7 +354,7 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel23.setText("Departamentos más buscados: ");
+        jLabel23.setText(control.crecimiento()[7]);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
@@ -356,7 +363,7 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel24.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel24.setText("Departamentos más buscados: ");
+        jLabel24.setText(control.crecimiento()[8]);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 10;
@@ -365,6 +372,7 @@ public class Estadisticas extends javax.swing.JFrame {
         mas_crec.add(jLabel24, gridBagConstraints);
 
         jSeparator8.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator8.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 11;
@@ -388,9 +396,11 @@ public class Estadisticas extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         menos_crec.add(jLabel25, gridBagConstraints);
 
         jSeparator9.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator9.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -400,7 +410,7 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel26.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel26.setText("Departamentos más buscados: ");
+        jLabel26.setText(control.crecimiento()[3]);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -410,7 +420,7 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel27.setText("Departamentos más buscados: ");
+        jLabel27.setText(control.crecimiento()[4]);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
@@ -420,7 +430,7 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel28.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel28.setText("Departamentos más buscados: ");
+        jLabel28.setText(control.crecimiento()[5]);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
@@ -429,6 +439,7 @@ public class Estadisticas extends javax.swing.JFrame {
         menos_crec.add(jLabel28, gridBagConstraints);
 
         jSeparator10.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator10.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
@@ -438,7 +449,7 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel29.setText("<html>Localidades con mayor crecimiento</html>");
+        jLabel29.setText("<html>Localidades con menor crecimiento</html>");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
@@ -446,6 +457,7 @@ public class Estadisticas extends javax.swing.JFrame {
         menos_crec.add(jLabel29, gridBagConstraints);
 
         jSeparator11.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator11.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 7;
@@ -455,7 +467,7 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel30.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel30.setText("Departamentos más buscados: ");
+        jLabel30.setText(control.crecimiento()[9]);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 8;
@@ -465,7 +477,7 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel31.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel31.setText("Departamentos más buscados: ");
+        jLabel31.setText(control.crecimiento()[10]);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
@@ -474,7 +486,7 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel32.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel32.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel32.setText("Departamentos más buscados: ");
+        jLabel32.setText(control.crecimiento()[11]);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 10;
@@ -483,6 +495,7 @@ public class Estadisticas extends javax.swing.JFrame {
         menos_crec.add(jLabel32, gridBagConstraints);
 
         jSeparator12.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator12.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 11;
@@ -492,7 +505,7 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jPanel8.add(menos_crec);
 
-        principal.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 149, 920, 440));
+        principal.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 129, 840, 460));
 
         centro.setBackground(new java.awt.Color(40, 101, 114));
         centro.setForeground(new java.awt.Color(40, 101, 114));
