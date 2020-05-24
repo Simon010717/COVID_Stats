@@ -32,8 +32,8 @@ public class Actualizacion {
     public static void main(String[] args) {
         Actualizacion act = new Actualizacion();
         act.descargarDatos();
-        //act.cargarBogota();
-        act.cargarColombia();
+        act.cargarBogota();
+        //act.cargarColombia();
     }
     
     /**
