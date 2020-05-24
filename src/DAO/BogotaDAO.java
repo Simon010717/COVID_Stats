@@ -26,7 +26,7 @@ public class BogotaDAO {
     
     public void ingresarCaso(CasoBogota caso){
         try {
-            PreparedStatement statement = db.getConexion().prepareStatement("insert into Bogota values("
+            PreparedStatement statement = db.getConexion().prepareStatement("insert into Bogota values(NULL,"
                     +"'"+caso.fecha_diagnostico
                     +"','"+caso.ciudad
                     +"','"+caso.localidad
