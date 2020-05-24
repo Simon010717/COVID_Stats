@@ -184,8 +184,8 @@ begin
 		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and fecha_diagnostico <= fecha),
 		0,
         0,
-		(select count(sexo) from EstadisticasCOVID.INS where sexo='F' and localidad=depart and fecha_diagnostico <= fecha),
-		(select count(sexo) from EstadisticasCOVID.INS where sexo='M' and localidad=depart and fecha_diagnostico <= fecha),
+		(select count(sexo) from EstadisticasCOVID.Bogota where sexo='F' and localidad=depart and fecha_diagnostico <= fecha),
+		(select count(sexo) from EstadisticasCOVID.Bogota where sexo='M' and localidad=depart and fecha_diagnostico <= fecha),
 		0
 	);
 	call RegistroEdadHistoricoBog(depart,fecha);

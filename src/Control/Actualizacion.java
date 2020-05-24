@@ -26,14 +26,14 @@ public class Actualizacion {
     private String dir;
     
     public Actualizacion(){
-        this.dir = System.getProperty("user.dir")+"/DB"; 
+        this.dir = System.getProperty("user.dir")+"\\DB"; 
     }
     
     public static void main(String[] args) {
         Actualizacion act = new Actualizacion();
-        act.descargarDatos();
+        //act.descargarDatos();
         act.cargarBogota();
-        //act.cargarColombia();
+        act.cargarColombia();
     }
     
     /**
@@ -59,7 +59,7 @@ public class Actualizacion {
     public void cargarBogota(){
         BogotaDAO bogota = new BogotaDAO();
         try {
-            Scanner scan = new Scanner(new File(this.dir+"/datosBogota.csv"));
+            Scanner scan = new Scanner(new File(this.dir+"\\datosBogota.csv"));
             scan.useDelimiter(",|\n");
             //Saltamos la primera linea del archivo que contiene los encabezados de las columnas.
             for (int i = 0; i < 8; i++) {
@@ -91,7 +91,7 @@ public class Actualizacion {
     public void  cargarColombia(){
         ColombiaDAO colombia = new ColombiaDAO();
         try {
-            Scanner scan = new Scanner(new File(this.dir+"/datosColombia.csv"));
+            Scanner scan = new Scanner(new File(this.dir + "\\datoscolombia.csv"));
             scan.useDelimiter(",|\n");
             //Saltamos la primera linea del archivo que contiene los encabezados de las columnas.
             for (int i = 0; i < 16; i++) {

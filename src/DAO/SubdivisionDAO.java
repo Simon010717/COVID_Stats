@@ -29,15 +29,24 @@ public class SubdivisionDAO {
     }
     
     public String[] crecimiento(){
-        String [] subs = new String[6];
+        String [] subs = new String[12];
         int i = 0;
          try {        
-            Statement statement = db.getConexion().createStatement();
-            ResultSet resultado = statement.executeQuery("call mayorCrecimiento (date('2020-04-01'))");
-            while(resultado.next()){
-                subs[i] = resultado.getString(1);
+            Statement statementCol = db.getConexion().createStatement();
+            ResultSet resultadoCol = statementCol.executeQuery("call mayorCrecimiento ('Colombia')");
+            while(resultadoCol.next()){
+                subs[i] = resultadoCol.getString(1);
                 //System.out.println(subs[i]);
                 i++;
+                
+            }
+            Statement statementBog = db.getConexion().createStatement();
+            ResultSet resultadoBog = statementBog.executeQuery("call mayorCrecimiento ('Bogotá')");
+            while(resultadoBog.next()){
+                subs[i] = resultadoBog.getString(1);
+                //System.out.println(subs[i]);
+                i++;
+                
             }
         } catch (SQLException ex) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);

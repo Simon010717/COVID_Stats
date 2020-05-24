@@ -1,13 +1,20 @@
 use EstadisticasCOVID;
 
+drop procedure if exists verificarUsuario;
+
 drop procedure if exists mayorCrecimiento;
+
+drop procedure if exists masBuscados;
 
 delimiter #
 create procedure mayorCrecimiento( 
-    in fechaIN date
+    in idM varchar(50)
 )
 begin
 	declare i int;
+    declare fechaIN date;
+	set fechaIN = (select if(idM='Colombia',(select max(fecha_diagnostico) from EstadisticasCOVID.INS),(select max(fecha_diagnostico) from EstadisticasCOVID.Bogota)));
+	
 	set i = 0;
 	drop table if exists promedios;
     
@@ -16,10 +23,10 @@ begin
         prom float 
     );
     
-    set @deps = (select count(*) from EstadisticasCOVID.Subdivision);
+    set @subs = (select count(*) from EstadisticasCOVID.Subdivision where idMapa = idM);
     
-    while i < @deps do
-		set @iDepart = (select idSubdivision from Subdivision limit i,1); 
+    while i < @subs do
+		set @iSubs = (select idSubdivision from Subdivision where idMapa = idM limit i,1); 
 		set @iFecha = date_add(fechaIN, interval -4 day);
 		
 		drop table if exists iDiferencias;  
@@ -30,13 +37,13 @@ begin
 		
 		while @iFecha <= fechaIN do
 			
-			insert into iDiferencias (dif) values((select sum((select sum(masculinos + femeninos) from EstadisticasCOVID.Registro where fecha = @iFecha and idSubdivision = @iDepart)-(select sum(masculinos + femeninos) from EstadisticasCOVID.Registro where fecha = date_add(@iFecha, interval -1 day) and idSubdivision = @iDepart))));
+			insert into iDiferencias (dif) values((select sum((select sum(masculinos + femeninos) from EstadisticasCOVID.Registro where fecha = @iFecha and idSubdivision = @iSubs)-(select sum(masculinos + femeninos) from EstadisticasCOVID.Registro where fecha = date_add(@iFecha, interval -1 day) and idSubdivision = @iSubs))));
 			
 			set @iFecha = date_add(@iFecha, interval 1 day);
 		end while;
 		
         -- select avg(dif) from iDiferencias;
-		 insert into promedios values(@iDepart, (select avg(dif) from iDiferencias));
+		 insert into promedios values(@iSubs, (select avg(dif) from iDiferencias));
         -- select i;
 		set i = i +1;
     end while;
@@ -44,9 +51,9 @@ begin
     
     create temporary table resultados(
 		subs varchar(60)
-													);
+	);
     
-    -- select * from iDiferencias;
+    
 	insert into resultados values((select subdivision from promedios order by prom desc limit 0,1)) ;
     insert into resultados values((select subdivision from promedios order by prom desc limit 1,1)) ;
     insert into resultados values((select subdivision from promedios order by prom desc limit 2,1)) ;
@@ -58,7 +65,6 @@ begin
    
 end #
 
-drop procedure if exists verificarUsuario;
 
 delimiter #
 create procedure verificarUsuario(
@@ -69,7 +75,19 @@ begin
 select exists (select * from EstadisticasCOVID.Usuario where usuario=nombre and password = pass);
 end #
 
-drop procedure if exists registroUsuario;
+
+delimiter #
+create procedure masBuscados(
+	in idM varchar(50)
+)
+begin
+	-- declare n int;
+	-- set n = (select count(*) from Subdivision where idMapa = idM);
+	select idSubdivision, visitas 
+	from Registro 
+	where idSubdivision in (select idSubdivision from Subdivision where idMapa = idM) 
+	order by fecha,visitas desc limit 3;
+end
 
 
 

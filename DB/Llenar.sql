@@ -1,6 +1,6 @@
 use EstadisticasCOVID;
 
-/*
+/
 -- Tabla mapa
 insert into EstadisticasCOVID.Mapa values ('Colombia'), ('Bogotá');
 
@@ -62,7 +62,7 @@ insert into EstadisticasCOVID.Subdivision values ('Teusaquillo','Bogotá');
 insert into EstadisticasCOVID.Subdivision values ('Tunjuelito','Bogotá');
 insert into EstadisticasCOVID.Subdivision values ('Usaquén','Bogotá');
 insert into EstadisticasCOVID.Subdivision values ('Usme','Bogotá');
-*/
+
 
 
 -- Tablas registro
@@ -114,4 +114,5 @@ end while;
 commit;
 end #
 
-call llenadoRegistrosCol();
+-- call llenadoRegistrosCol();
+call llenadoRegistrosBog();
