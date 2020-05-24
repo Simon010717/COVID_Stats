@@ -114,5 +114,9 @@ end while;
 commit;
 end #
 
+<<<<<<< Updated upstream
 -- call llenadoRegistrosCol();
+=======
+call llenadoRegistrosCol();
+>>>>>>> Stashed changes
 call llenadoRegistrosBog();
