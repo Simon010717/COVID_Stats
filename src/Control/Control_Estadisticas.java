@@ -34,5 +34,12 @@ public class Control_Estadisticas {
     public void ayerHoy(){
         dao.ayerHoy();
     }
+    
+    public void actualizarBD(){
+        Actualizacion act = new Actualizacion();
+        //act.descargarDatos();
+        act.cargarBogota();
+        act.cargarColombia();
+    }
    
 }

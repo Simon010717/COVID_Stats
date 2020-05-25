@@ -147,7 +147,6 @@ public class Registro extends javax.swing.JFrame {
 
         contraseniaTextField.setBackground(new java.awt.Color(40, 101, 114));
         contraseniaTextField.setForeground(new java.awt.Color(255, 255, 255));
-        contraseniaTextField.setText("jPasswordField1");
         contraseniaTextField.setBorder(null);
         contraseniaTextField.setCaretColor(new java.awt.Color(255, 255, 255));
 
@@ -177,7 +176,6 @@ public class Registro extends javax.swing.JFrame {
 
         confirmarContraseniaTextField.setBackground(new java.awt.Color(40, 101, 114));
         confirmarContraseniaTextField.setForeground(new java.awt.Color(255, 255, 255));
-        confirmarContraseniaTextField.setText("jPasswordField1");
         confirmarContraseniaTextField.setBorder(null);
         confirmarContraseniaTextField.setCaretColor(new java.awt.Color(255, 255, 255));
 
@@ -380,59 +378,28 @@ public class Registro extends javax.swing.JFrame {
                     errorLabel.setText("La longitud de usuario debe estar entre 7 y 15 caracteres");
                     break;
                 case -3:
-                    errorLabel.setText("Formato invalido de correo y/0 no está entre 8 y 30 caracteres");
+                    errorLabel.setText("La longitud del correo debe estar entre 8 y 30 caracteres");
                     break;
                 case -4:
-                    errorLabel.setText("La longitud de contraseña debe estar entre 8 y 20 caracteres");
+                    errorLabel.setText("El correo ingresado no cumple con el formato");
                     break;
                 case -5:
-                    errorLabel.setText("Las contraseñas no coinciden");
+                    errorLabel.setText("La longitud de contraseña debe estar entre 8 y 20 caracteres");
                     break;
                 case -6:
+                    errorLabel.setText("La contraseña ingresada no cumple con el formato");
+                    break;
+                case -7:
+                    errorLabel.setText("Las contraseñas deben coincidir");
+                    break;
+                case -8:
                     errorLabel.setText("Debe llenar todos los campos");
                     break;
             }
         }
     }//GEN-LAST:event_registrarButtonMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Registro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Registro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Registro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Registro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Registro().setVisible(true);
-            }
-        });
-    }
-
+   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel barra_superior;
     private javax.swing.ButtonGroup buttonGroup1;

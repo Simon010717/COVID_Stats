@@ -90,6 +90,7 @@ public class Estadisticas extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         actualizarHoy = new javax.swing.JButton();
+        ActualizandoLabel = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -136,7 +137,6 @@ public class Estadisticas extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Logo_25x25.png"))); // NOI18N
         principal.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 550, -1, 43));
 
-        jPanel8.setBorder(null);
         jPanel8.setLayout(new java.awt.GridLayout(1, 0));
 
         mas_visitas.setBackground(new java.awt.Color(40, 101, 114));
@@ -537,6 +537,12 @@ public class Estadisticas extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 actualizarDBMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                actualizarDBMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                actualizarDBMouseExited(evt);
+            }
         });
         actualizarDB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -588,6 +594,10 @@ public class Estadisticas extends javax.swing.JFrame {
             }
         });
 
+        ActualizandoLabel.setBackground(new java.awt.Color(255, 255, 255));
+        ActualizandoLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ActualizandoLabel.setForeground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout centroLayout = new javax.swing.GroupLayout(centro);
         centro.setLayout(centroLayout);
         centroLayout.setHorizontalGroup(
@@ -597,7 +607,9 @@ public class Estadisticas extends javax.swing.JFrame {
                 .addComponent(actualizarDB, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(actualizarHoy, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ActualizandoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
@@ -619,7 +631,8 @@ public class Estadisticas extends javax.swing.JFrame {
                     .addComponent(actualizarDB, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel8)
-                    .addComponent(actualizarHoy, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(actualizarHoy, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ActualizandoLabel))
                 .addContainerGap(495, Short.MAX_VALUE))
         );
 
@@ -666,19 +679,28 @@ public class Estadisticas extends javax.swing.JFrame {
     }//GEN-LAST:event_exitMouseClicked
 
     private void actualizarDBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actualizarDBMouseClicked
-        Actualizacion act = new Actualizacion();
-        act.descargarDatos();
-        act.cargarBogota();
-        act.cargarColombia();
+        control.actualizarBD();
+        ActualizandoLabel.setForeground(Color.green);
+        ActualizandoLabel.setText("Actualizado con exito");
     }//GEN-LAST:event_actualizarDBMouseClicked
 
     private void actualizarHoyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actualizarHoyMouseClicked
         control.ayerHoy();
+        ActualizandoLabel.setForeground(Color.green);
+        ActualizandoLabel.setText("Actualizado con exito");
     }//GEN-LAST:event_actualizarHoyMouseClicked
 
     private void actualizarHoyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarHoyActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_actualizarHoyActionPerformed
+
+    private void actualizarDBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actualizarDBMouseEntered
+        actualizarDB.setBackground(new java.awt.Color(15,50,70));
+    }//GEN-LAST:event_actualizarDBMouseEntered
+
+    private void actualizarDBMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actualizarDBMouseExited
+        actualizarDB.setBackground(new java.awt.Color(140,202,100));
+    }//GEN-LAST:event_actualizarDBMouseExited
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {                                  
         for (double i = 0.0; i <= 1.0; i = i + 0.1) {
@@ -691,42 +713,11 @@ public class Estadisticas extends javax.swing.JFrame {
             }
         }
     }  
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Estadisticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Estadisticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Estadisticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Estadisticas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Estadisticas().setVisible(true);
-            }
-        });
-    }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ActualizandoLabel;
     private javax.swing.JButton actualizarDB;
     private javax.swing.JButton actualizarHoy;
     private javax.swing.JLabel barra_superior;
