@@ -42,15 +42,7 @@ public class Control_Registro {
         return 0;                                                   // retorna 0 si todo esta bien
     }
     
-    /*public boolean verificarCorreo(String correo){
-        if((correo.length() > 7 && correo.length() <= 30)){
-            if(validarFormatoCorreo(correo)==-1){
-                return false;
-            }
-            return true;
-        }
-        return false;
-    }*/
+   
     public boolean validarFormatoCorreo(String correo){
         Pattern pattern = Pattern.compile("^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@" + "[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,4})$");
         Matcher matcher = pattern.matcher(correo);
