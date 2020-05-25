@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/simon/Documents/COVID_Stats/src/DAO/SubdivisionDAO.java</file>
-            <file>file:/home/simon/Documents/COVID_Stats/src/DAO/UsuarioDAO.java</file>
+            <file>file:/home/simon/Documents/COVID_Stats/test/Control/TestLogin.java</file>
             <file>file:/home/simon/Documents/COVID_Stats/src/Frontera/Estadisticas.java</file>
-            <file>file:/home/simon/Documents/COVID_Stats/src/DAO/BogotaDAO.java</file>
-            <file>file:/home/simon/Documents/COVID_Stats/src/DAO/ColombiaDAO.java</file>
+            <file>file:/home/simon/Documents/COVID_Stats/src/Control/Control_Login.java</file>
+            <file>file:/home/simon/Documents/COVID_Stats/src/Control/Control_Estadisticas.java</file>
+            <file>file:/home/simon/Documents/COVID_Stats/src/DAO/DAO.java</file>
+            <file>file:/home/simon/Documents/COVID_Stats/src/Control/Control_Registro.java</file>
             <file>file:/home/simon/Documents/COVID_Stats/src/Control/Actualizacion.java</file>
             <file>file:/home/simon/Documents/COVID_Stats/src/DAO/DBConexion.java</file>
         </group>

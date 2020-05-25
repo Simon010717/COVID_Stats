@@ -115,9 +115,14 @@
           </Constraints>
         </Component>
         <Container class="javax.swing.JPanel" name="jPanel8">
+          <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="null"/>
+            </Property>
+          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="80" y="129" width="840" height="460"/>
+              <AbsoluteConstraints x="20" y="129" width="960" height="450"/>
             </Constraint>
           </Constraints>
 
@@ -155,7 +160,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" value="&lt;html&gt;Departamentos m&#xe1;s &lt;br&gt; buscados&lt;/html&gt;"/>
+                    <Property name="text" type="java.lang.String" value="&lt;html&gt;Departamentos m&#xe1;s&lt;br&gt;seleccionadas&lt;/html&gt;"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
@@ -165,6 +170,9 @@
                 </Component>
                 <Component class="javax.swing.JSeparator" name="jSeparator1">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="3d" green="3d" red="3d" type="rgb"/>
+                    </Property>
                     <Property name="orientation" type="int" value="1"/>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
@@ -230,6 +238,9 @@
                 </Component>
                 <Component class="javax.swing.JSeparator" name="jSeparator2">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="3d" green="3d" red="3d" type="rgb"/>
+                    </Property>
                     <Property name="orientation" type="int" value="1"/>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
@@ -247,7 +258,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="&lt;html&gt;Localidades m&#xe1;s &lt;br&gt;buscadas&lt;/html&gt;"/>
+                    <Property name="text" type="java.lang.String" value="&lt;html&gt;Localidades m&#xe1;s&lt;br&gt;seleccionadas&lt;/html&gt;"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
@@ -257,6 +268,9 @@
                 </Component>
                 <Component class="javax.swing.JSeparator" name="jSeparator3">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="3d" green="3d" red="3d" type="rgb"/>
+                    </Property>
                     <Property name="orientation" type="int" value="1"/>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
@@ -322,6 +336,9 @@
                 </Component>
                 <Component class="javax.swing.JSeparator" name="jSeparator4">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="3d" green="3d" red="3d" type="rgb"/>
+                    </Property>
                     <Property name="orientation" type="int" value="1"/>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
@@ -362,7 +379,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" value="&lt;html&gt;Departamentos con mayor crecimiento&lt;/html&gt;"/>
+                    <Property name="text" type="java.lang.String" value="&lt;html&gt;Departamentos con mayor&lt;br&gt;crecimiento&lt;/html&gt;"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
@@ -372,6 +389,9 @@
                 </Component>
                 <Component class="javax.swing.JSeparator" name="jSeparator5">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="3d" green="3d" red="3d" type="rgb"/>
+                    </Property>
                     <Property name="orientation" type="int" value="1"/>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
@@ -437,6 +457,9 @@
                 </Component>
                 <Component class="javax.swing.JSeparator" name="jSeparator6">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="3d" green="3d" red="3d" type="rgb"/>
+                    </Property>
                     <Property name="orientation" type="int" value="1"/>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
@@ -454,7 +477,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="&lt;html&gt;Localidades con mayor crecimiento&lt;/html&gt;"/>
+                    <Property name="text" type="java.lang.String" value="&lt;html&gt;Localidades con mayor&lt;br&gt;crecimiento&lt;/html&gt;"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
@@ -464,6 +487,9 @@
                 </Component>
                 <Component class="javax.swing.JSeparator" name="jSeparator7">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="3d" green="3d" red="3d" type="rgb"/>
+                    </Property>
                     <Property name="orientation" type="int" value="1"/>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
@@ -529,6 +555,9 @@
                 </Component>
                 <Component class="javax.swing.JSeparator" name="jSeparator8">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="3d" green="3d" red="3d" type="rgb"/>
+                    </Property>
                     <Property name="orientation" type="int" value="1"/>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
@@ -569,7 +598,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" value="&lt;html&gt;Departamentos con menor crecimiento&lt;/html&gt;"/>
+                    <Property name="text" type="java.lang.String" value="&lt;html&gt;Departamentos con menor&lt;br&gt;crecimiento&lt;/html&gt;"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
@@ -579,6 +608,9 @@
                 </Component>
                 <Component class="javax.swing.JSeparator" name="jSeparator9">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="3d" green="3d" red="3d" type="rgb"/>
+                    </Property>
                     <Property name="orientation" type="int" value="1"/>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
@@ -644,6 +676,9 @@
                 </Component>
                 <Component class="javax.swing.JSeparator" name="jSeparator10">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="3d" green="3d" red="3d" type="rgb"/>
+                    </Property>
                     <Property name="orientation" type="int" value="1"/>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
@@ -661,7 +696,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="&lt;html&gt;Localidades con menor crecimiento&lt;/html&gt;"/>
+                    <Property name="text" type="java.lang.String" value="&lt;html&gt;Localidades con menor&lt;br&gt;crecimiento&lt;/html&gt;"/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
@@ -671,6 +706,9 @@
                 </Component>
                 <Component class="javax.swing.JSeparator" name="jSeparator11">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="3d" green="3d" red="3d" type="rgb"/>
+                    </Property>
                     <Property name="orientation" type="int" value="1"/>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
@@ -736,6 +774,9 @@
                 </Component>
                 <Component class="javax.swing.JSeparator" name="jSeparator12">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="3d" green="3d" red="3d" type="rgb"/>
+                    </Property>
                     <Property name="orientation" type="int" value="1"/>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
@@ -775,12 +816,14 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
-                      <Component id="jButton2" min="-2" pref="206" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" pref="131" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel8" min="-2" pref="167" max="-2" attributes="0"/>
+                      <Component id="actualizarDB" min="-2" pref="206" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="actualizarHoy" min="-2" pref="206" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jLabel1" min="-2" pref="179" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="247" max="32767" attributes="0"/>
@@ -799,9 +842,10 @@
                       </Group>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton2" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+                          <Component id="actualizarDB" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                           <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="actualizarHoy" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="495" max="32767" attributes="0"/>
                   </Group>
@@ -809,7 +853,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="jButton2">
+            <Component class="javax.swing.JButton" name="actualizarDB">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="64" green="ca" red="8c" type="rgb"/>
@@ -820,7 +864,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Actualizar informaci&#xf3;n"/>
+                <Property name="text" type="java.lang.String" value="Actualizar INS y BOG"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder>
@@ -831,7 +875,8 @@
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="actualizarDBMouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actualizarDBActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">
@@ -896,6 +941,32 @@
                   <Connection code="Integer.toString(control.contarUsuarios())" type="code"/>
                 </Property>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="actualizarHoy">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="64" green="ca" red="8c" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Actualizar hoy y ayer"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder>
+                      <Color PropertyName="color" blue="ff" green="ff" red="ff" type="rgb"/>
+                    </LineBorder>
+                  </Border>
+                </Property>
+                <Property name="contentAreaFilled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="actualizarHoyMouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actualizarHoyActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

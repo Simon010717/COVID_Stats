@@ -5,23 +5,23 @@
  */
 package Control;
 
-import DAO.UsuarioDAO;
+import DAO.DAO;
 
 /**
  *
  * @author Juan Andres Gonzalez
  */
 public class Control_Login {
-    private UsuarioDAO usuariodao;
+    private DAO dao;
 
     public Control_Login() {
-        this.usuariodao = new UsuarioDAO();
+        this.dao = new DAO();
     }
     
     public int verificarUsuario(String usuario, String contrasenia){
         if(usuario.equals("") || contrasenia.equals("")){
             return -3;
-        }else if(usuariodao.verificarUsuario(usuario, contrasenia)==false){
+        }else if(dao.verificarUsuario(usuario, contrasenia)==false){
             return -1;
         }
         return 0;

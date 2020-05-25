@@ -5,6 +5,7 @@
  */
 package Frontera;
 
+import Control.Actualizacion;
 import Control.Control_Estadisticas;
 import java.awt.Color;
 
@@ -83,11 +84,12 @@ public class Estadisticas extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         jSeparator12 = new javax.swing.JSeparator();
         centro = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        actualizarDB = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         exit = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        actualizarHoy = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -134,6 +136,7 @@ public class Estadisticas extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Logo_25x25.png"))); // NOI18N
         principal.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 550, -1, 43));
 
+        jPanel8.setBorder(null);
         jPanel8.setLayout(new java.awt.GridLayout(1, 0));
 
         mas_visitas.setBackground(new java.awt.Color(40, 101, 114));
@@ -145,13 +148,14 @@ public class Estadisticas extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel16.setText("<html>Departamentos más <br> buscados</html>");
+        jLabel16.setText("<html>Departamentos más<br>seleccionadas</html>");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         mas_visitas.add(jLabel16, gridBagConstraints);
 
+        jSeparator1.setBackground(new java.awt.Color(61, 61, 61));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator1.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -191,6 +195,7 @@ public class Estadisticas extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(13, 13, 0, 0);
         mas_visitas.add(jLabel12, gridBagConstraints);
 
+        jSeparator2.setBackground(new java.awt.Color(61, 61, 61));
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator2.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -202,13 +207,14 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("<html>Localidades más <br>buscadas</html>");
+        jLabel9.setText("<html>Localidades más<br>seleccionadas</html>");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         mas_visitas.add(jLabel9, gridBagConstraints);
 
+        jSeparator3.setBackground(new java.awt.Color(61, 61, 61));
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator3.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -247,6 +253,7 @@ public class Estadisticas extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(13, 13, 0, 0);
         mas_visitas.add(jLabel15, gridBagConstraints);
 
+        jSeparator4.setBackground(new java.awt.Color(61, 61, 61));
         jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator4.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -267,7 +274,7 @@ public class Estadisticas extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel17.setText("<html>Departamentos con mayor crecimiento</html>");
+        jLabel17.setText("<html>Departamentos con mayor<br>crecimiento</html>");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -275,6 +282,7 @@ public class Estadisticas extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         mas_crec.add(jLabel17, gridBagConstraints);
 
+        jSeparator5.setBackground(new java.awt.Color(61, 61, 61));
         jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator5.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -314,6 +322,7 @@ public class Estadisticas extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(13, 13, 0, 0);
         mas_crec.add(jLabel20, gridBagConstraints);
 
+        jSeparator6.setBackground(new java.awt.Color(61, 61, 61));
         jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator6.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -325,7 +334,7 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setText("<html>Localidades con mayor crecimiento</html>");
+        jLabel21.setText("<html>Localidades con mayor<br>crecimiento</html>");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
@@ -333,6 +342,7 @@ public class Estadisticas extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         mas_crec.add(jLabel21, gridBagConstraints);
 
+        jSeparator7.setBackground(new java.awt.Color(61, 61, 61));
         jSeparator7.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator7.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -371,6 +381,7 @@ public class Estadisticas extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(13, 13, 0, 0);
         mas_crec.add(jLabel24, gridBagConstraints);
 
+        jSeparator8.setBackground(new java.awt.Color(61, 61, 61));
         jSeparator8.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator8.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -391,7 +402,7 @@ public class Estadisticas extends javax.swing.JFrame {
         jLabel25.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel25.setText("<html>Departamentos con menor crecimiento</html>");
+        jLabel25.setText("<html>Departamentos con menor<br>crecimiento</html>");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -399,6 +410,7 @@ public class Estadisticas extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         menos_crec.add(jLabel25, gridBagConstraints);
 
+        jSeparator9.setBackground(new java.awt.Color(61, 61, 61));
         jSeparator9.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator9.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -438,6 +450,7 @@ public class Estadisticas extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(13, 13, 0, 0);
         menos_crec.add(jLabel28, gridBagConstraints);
 
+        jSeparator10.setBackground(new java.awt.Color(61, 61, 61));
         jSeparator10.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator10.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -449,13 +462,14 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jLabel29.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel29.setText("<html>Localidades con menor crecimiento</html>");
+        jLabel29.setText("<html>Localidades con menor<br>crecimiento</html>");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         menos_crec.add(jLabel29, gridBagConstraints);
 
+        jSeparator11.setBackground(new java.awt.Color(61, 61, 61));
         jSeparator11.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator11.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -494,6 +508,7 @@ public class Estadisticas extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(13, 13, 0, 0);
         menos_crec.add(jLabel32, gridBagConstraints);
 
+        jSeparator12.setBackground(new java.awt.Color(61, 61, 61));
         jSeparator12.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator12.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -505,22 +520,27 @@ public class Estadisticas extends javax.swing.JFrame {
 
         jPanel8.add(menos_crec);
 
-        principal.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 129, 840, 460));
+        principal.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 129, 960, 450));
 
         centro.setBackground(new java.awt.Color(40, 101, 114));
         centro.setForeground(new java.awt.Color(40, 101, 114));
         centro.setMinimumSize(new java.awt.Dimension(920, 510));
         centro.setPreferredSize(new java.awt.Dimension(1000, 600));
 
-        jButton2.setBackground(new java.awt.Color(140, 202, 100));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Actualizar información");
-        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jButton2.setContentAreaFilled(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        actualizarDB.setBackground(new java.awt.Color(140, 202, 100));
+        actualizarDB.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        actualizarDB.setForeground(new java.awt.Color(255, 255, 255));
+        actualizarDB.setText("Actualizar INS y BOG");
+        actualizarDB.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        actualizarDB.setContentAreaFilled(false);
+        actualizarDB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                actualizarDBMouseClicked(evt);
+            }
+        });
+        actualizarDB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                actualizarDBActionPerformed(evt);
             }
         });
 
@@ -551,18 +571,37 @@ public class Estadisticas extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText(Integer.toString(control.contarUsuarios()));
 
+        actualizarHoy.setBackground(new java.awt.Color(140, 202, 100));
+        actualizarHoy.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        actualizarHoy.setForeground(new java.awt.Color(255, 255, 255));
+        actualizarHoy.setText("Actualizar hoy y ayer");
+        actualizarHoy.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        actualizarHoy.setContentAreaFilled(false);
+        actualizarHoy.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                actualizarHoyMouseClicked(evt);
+            }
+        });
+        actualizarHoy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actualizarHoyActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout centroLayout = new javax.swing.GroupLayout(centro);
         centro.setLayout(centroLayout);
         centroLayout.setHorizontalGroup(
             centroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(centroLayout.createSequentialGroup()
                 .addGap(72, 72, 72)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(127, 127, 127)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(actualizarDB, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(actualizarHoy, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel8)
+                .addGap(42, 42, 42))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, centroLayout.createSequentialGroup()
                 .addContainerGap(247, Short.MAX_VALUE)
                 .addComponent(jLabel7)
@@ -577,9 +616,10 @@ public class Estadisticas extends javax.swing.JFrame {
                     .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(centroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(actualizarDB, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel8))
+                    .addComponent(jLabel8)
+                    .addComponent(actualizarHoy, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(495, Short.MAX_VALUE))
         );
 
@@ -601,9 +641,9 @@ public class Estadisticas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void actualizarDBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarDBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_actualizarDBActionPerformed
 
     private void barra_superiorMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_barra_superiorMouseDragged
         int coordenadasX = evt.getXOnScreen();
@@ -624,6 +664,21 @@ public class Estadisticas extends javax.swing.JFrame {
     private void exitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMouseClicked
         System.exit(0);
     }//GEN-LAST:event_exitMouseClicked
+
+    private void actualizarDBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actualizarDBMouseClicked
+        Actualizacion act = new Actualizacion();
+        act.descargarDatos();
+        act.cargarBogota();
+        act.cargarColombia();
+    }//GEN-LAST:event_actualizarDBMouseClicked
+
+    private void actualizarHoyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actualizarHoyMouseClicked
+        control.ayerHoy();
+    }//GEN-LAST:event_actualizarHoyMouseClicked
+
+    private void actualizarHoyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarHoyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actualizarHoyActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {                                  
         for (double i = 0.0; i <= 1.0; i = i + 0.1) {
@@ -672,10 +727,11 @@ public class Estadisticas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton actualizarDB;
+    private javax.swing.JButton actualizarHoy;
     private javax.swing.JLabel barra_superior;
     private javax.swing.JPanel centro;
     private javax.swing.JLabel exit;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

@@ -5,7 +5,7 @@
  */
 package Control;
 
-import DAO.UsuarioDAO;
+import DAO.DAO;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -14,14 +14,14 @@ import java.util.regex.Pattern;
  * @author Juan Andres Gonzalez
  */
 public class Control_Registro {
-    private UsuarioDAO usuariosdao;
+    private DAO dao;
     
     public Control_Registro() {
-        usuariosdao = new UsuarioDAO();
+        dao = new DAO();
     }
     
     public int checkRegistro(String usuario, String correo, String contrasenia, String confirmar){
-        if(usuariosdao.checkRegistro(usuario)==-1){ 
+        if(dao.checkRegistro(usuario)==-1){ 
             return -1;                                              // retorna -1 si el usuario ingresado existe en la base de datos
         }else if(usuario.length() < 7 || usuario.length() > 15){
             return -2;                                              // retorna -2 si el usuario está fuera de los limites (6,15]
@@ -60,7 +60,7 @@ public class Control_Registro {
         if(checkRegistro(usuario, correo, contrasenia, confirmar)<0){
             return checkRegistro(usuario, correo, contrasenia, confirmar);
         }
-        usuariosdao.registrarUsuario(usuario, correo, contrasenia, confirmar);
+        dao.registrarUsuario(usuario, correo, contrasenia, confirmar);
         return 0;
     }
     

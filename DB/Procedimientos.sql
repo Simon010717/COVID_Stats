@@ -1,26 +1,12 @@
--- SELECT * FROM EstadisticasCOVID.INS;
-
--- select count(departamento) from EstadisticasCOVID.INS where departamento='Valle del Cauca';
-
--- select count(atencionn) from EstadisticasCOVID.INS where atencionn='Recuperado';
-
--- select count(atencionn) from EstadisticasCOVID.INS where atencionn='Fallecido';
-
--- select count(atencionn) from EstadisticasCOVID.INS where atencionn='Hospital';
-
--- select count(atencionn) from EstadisticasCOVID.INS where atencionn='Casa';
-
--- select count(atencionn) from EstadisticasCOVID.INS where atencionn='Hospital UCI';
-
--- select count(sexo) from EstadisticasCOVID.INS where sexo='F';
-
--- select count(sexo) from EstadisticasCOVID.INS where sexo='M';
-
 use EstadisticasCOVID;
 
 drop procedure if exists RegistroHoyCol;
 
 drop procedure if exists RegistroEdadHoyCol;
+
+drop procedure if exists RegistroHoyBog;
+
+drop procedure if exists RegistroEdadHoyBog;
 
 drop procedure if exists RegistroHistoricoCol;
 
@@ -29,6 +15,8 @@ drop procedure if exists RegistroEdadHistoricoCol;
 drop procedure if exists RegistroHistoricoBog;
 
 drop procedure if exists RegistroEdadHistoricoBog;
+
+drop procedure if exists hoyAyer;
 
 delimiter #
 create procedure RegistroHoyCol(
@@ -47,7 +35,7 @@ begin
 		(select count(sexo) from EstadisticasCOVID.INS where sexo='M' and departamento=depart),
 		0
 	);
-	call RegistroEdadHoyCol(depart,num);
+	call RegistroEdadHoyCol(depart);
 end #
 
 delimiter #
@@ -98,6 +86,77 @@ begin
 		(select count(edad) from EstadisticasCOVID.INS where atencionn='Recuperado' and departamento=depart and edad > 90)
 	);
 end #
+
+
+delimiter #
+create procedure RegistroHoyBog(
+	in depart varchar(60)
+)
+begin
+	insert into EstadisticasCOVID.Registro values (
+		curdate(),
+		depart,
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado='Recuperado'),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado='Fallecido'),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado in ('Moderado','Severo','Crítico','No causa Directa)','Estudio') and ubicacion='Casa'),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado in ('Moderado','Severo','Crítico','No causa Directa)','Estudio') and ubicacion='Hospital'),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado in ('Moderado','Severo','Crítico','No causa Directa)','Estudio') and ubicacion='Hospital UCI'),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and sexo='F'),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and sexo='M'),
+		0
+	);
+	call RegistroEdadHoyBog(depart);
+end #
+
+delimiter #
+create procedure RegistroEdadHoyBog( 
+	in depart varchar(60)
+)
+begin
+	insert into EstadisticasCOVID.confirmadosEdad values (
+		curdate(),
+		depart,
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and edad between 0 and 9),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and edad between 10 and 19),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and edad between 20 and 29),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and edad between 30 and 39),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and edad between 40 and 49),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and edad between 50 and 59),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and edad between 60 and 69),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and edad between 70 and 79),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and edad between 80 and 89),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and edad > 90)
+	);
+	insert into EstadisticasCOVID.fallecidosEdad values (
+		curdate(),
+		depart,
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado='Fallecido' and edad between 0 and 9),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado='Fallecido' and edad between 10 and 19),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado='Fallecido' and edad between 20 and 29),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado='Fallecido' and edad between 30 and 39),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado='Fallecido' and edad between 40 and 49),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado='Fallecido' and edad between 50 and 59),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado='Fallecido' and edad between 60 and 69),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado='Fallecido' and edad between 70 and 79),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado='Fallecido' and edad between 80 and 89),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado='Fallecido' and edad > 90)
+	);
+	insert into EstadisticasCOVID.recuperadosEdad values (
+		curdate(),
+		depart,
+		(select count(*) from EstadisticasCOVID.Bogota where  localidad=depart and estado='Recuperado' and edad between 0 and 9),
+		(select count(*) from EstadisticasCOVID.Bogota where  localidad=depart and estado='Recuperado' and edad between 10 and 19),
+		(select count(*) from EstadisticasCOVID.Bogota where  localidad=depart and estado='Recuperado' and edad between 20 and 29),
+		(select count(*) from EstadisticasCOVID.Bogota where  localidad=depart and estado='Recuperado' and edad between 30 and 39),
+		(select count(*) from EstadisticasCOVID.Bogota where  localidad=depart and estado='Recuperado' and edad between 40 and 49),
+		(select count(*) from EstadisticasCOVID.Bogota where  localidad=depart and estado='Recuperado' and edad between 50 and 59),
+		(select count(*) from EstadisticasCOVID.Bogota where  localidad=depart and estado='Recuperado' and edad between 60 and 69),
+		(select count(*) from EstadisticasCOVID.Bogota where  localidad=depart and estado='Recuperado' and edad between 70 and 79),
+		(select count(*) from EstadisticasCOVID.Bogota where  localidad=depart and estado='Recuperado' and edad between 80 and 89),
+		(select count(*) from EstadisticasCOVID.Bogota where  localidad=depart and estado='Recuperado' and edad > 90)
+	);
+end #
+
 
 delimiter #
 create procedure RegistroHistoricoCol(
@@ -241,3 +300,49 @@ begin
 	);*/
 end #
 
+delimiter #
+create procedure hoyAyer()
+begin
+	declare i int;
+    -- BORRADO AYER
+    SET FOREIGN_KEY_CHECKS = 0; 
+	delete from confirmadosEdad where fecha = date_add(curdate(),interval -1 day);
+	delete from fallecidosEdad where fecha = date_add(curdate(),interval -1 day);
+	delete from recuperadosEdad where fecha = date_add(curdate(),interval -1 day);
+	delete from Registro where fecha = date_add(curdate(),interval -1 day);
+    delete from confirmadosEdad where fecha = curdate();
+	delete from fallecidosEdad where fecha = curdate();
+	delete from recuperadosEdad where fecha = curdate();
+	delete from Registro where fecha = curdate();
+	SET FOREIGN_KEY_CHECKS = 1;
+	
+    -- HISTORICO AYER
+	set i = 0;
+	set @n = (select count(*) from EstadisticasCOVID.Subdivision where idMapa='Colombia');
+	while i < @n do
+		call RegistroHistoricoCol((select idSubdivision from Subdivision where idMapa='Colombia' limit i,1),date_add(curdate(),interval -1 day));
+		set i = i +1;
+	end while;
+    
+    set i = 0;
+	set @n = (select count(*) from EstadisticasCOVID.Subdivision where idMapa='Bogotá');
+	while i < @n do
+		call RegistroHistoricoBog((select idSubdivision from Subdivision where idMapa='Bogotá' limit i,1),date_add(curdate(),interval -1 day));
+		set i = i +1;
+	end while;
+    
+    -- HOY
+    set i = 0;
+	set @n = (select count(*) from EstadisticasCOVID.Subdivision where idMapa='Colombia');
+	while i < @n do
+		call RegistroHoyCol((select idSubdivision from Subdivision where idMapa='Colombia' limit i,1));
+		set i = i +1;
+	end while;
+    
+    set i = 0;
+	set @n = (select count(*) from EstadisticasCOVID.Subdivision where idMapa='Bogotá');
+	while i < @n do
+		call RegistroHoyBog((select idSubdivision from Subdivision where idMapa='Bogotá' limit i,1));
+		set i = i +1;
+	end while;
+end #

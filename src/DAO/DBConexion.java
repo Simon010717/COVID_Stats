@@ -5,7 +5,6 @@
  */
 package DAO;
 
-import Entidad.Usuario;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.logging.Level;

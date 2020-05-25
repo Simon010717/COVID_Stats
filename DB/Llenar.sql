@@ -73,22 +73,22 @@ delimiter #
 create procedure llenadoRegistrosCol()
 
 begin
-declare i int;
-set i = 0;
-set @n = (select count(*) from EstadisticasCOVID.Subdivision where idMapa='Colombia');
-set @maxFecha = (select max(fecha_diagnostico) from EstadisticasCOVID.INS);
-set @minFecha = (select min(fecha_diagnostico) from EstadisticasCOVID.INS);
-select @maxFecha, @minFecha;
-while i < @n do
-	set @iFecha = @minFecha;
-    while @iFecha <= @maxFecha do
-		call RegistroHistoricoCol((select idSubdivision from Subdivision where idMapa='Colombia' limit i,1),@iFecha);
-		set @iFecha = date_add(@iFecha, interval 1 day);
-    end while;
-    select i;
-    set i = i +1;
-end while;
-commit;
+	declare i int;
+	set i = 0;
+	set @n = (select count(*) from EstadisticasCOVID.Subdivision where idMapa='Colombia');
+	set @maxFecha = (select max(fecha_diagnostico) from EstadisticasCOVID.INS);
+	set @minFecha = (select min(fecha_diagnostico) from EstadisticasCOVID.INS);
+	select @maxFecha, @minFecha;
+	while i < @n do
+		set @iFecha = @minFecha;
+		while @iFecha <= @maxFecha do
+			call RegistroHistoricoCol((select idSubdivision from Subdivision where idMapa='Colombia' limit i,1),@iFecha);
+			set @iFecha = date_add(@iFecha, interval 1 day);
+		end while;
+		select i;
+		set i = i +1;
+	end while;
+	commit;
 end #
 
 
@@ -96,22 +96,22 @@ delimiter #
 create procedure llenadoRegistrosBog()
 
 begin
-declare i int;
-set i = 0;
-set @n = (select count(*) from EstadisticasCOVID.Subdivision where idMapa='Bogotá');
-set @maxFecha = (select max(fecha_diagnostico) from EstadisticasCOVID.Bogota);
-set @minFecha = (select min(fecha_diagnostico) from EstadisticasCOVID.Bogota);
-select @maxFecha, @minFecha;
-while i < @n do
-	set @iFecha = @minFecha;
-    while @iFecha <= @maxFecha do
-		call RegistroHistoricoBog((select idSubdivision from Subdivision where idMapa='Bogotá' limit i,1),@iFecha);
-		set @iFecha = date_add(@iFecha, interval 1 day);
-    end while;
-    select i;
-    set i = i +1;
-end while;
-commit;
+	declare i int;
+	set i = 0;
+	set @n = (select count(*) from EstadisticasCOVID.Subdivision where idMapa='Bogotá');
+	set @maxFecha = (select max(fecha_diagnostico) from EstadisticasCOVID.Bogota);
+	set @minFecha = (select min(fecha_diagnostico) from EstadisticasCOVID.Bogota);
+	select @maxFecha, @minFecha;
+	while i < @n do
+		set @iFecha = @minFecha;
+		while @iFecha <= @maxFecha do
+			call RegistroHistoricoBog((select idSubdivision from Subdivision where idMapa='Bogotá' limit i,1),@iFecha);
+			set @iFecha = date_add(@iFecha, interval 1 day);
+		end while;
+		select i;
+		set i = i +1;
+	end while;
+	commit;
 end #
 
 -- call llenadoRegistrosCol();

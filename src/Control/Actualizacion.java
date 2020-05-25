@@ -5,8 +5,7 @@
  */
 package Control;
 
-import DAO.BogotaDAO;
-import DAO.ColombiaDAO;
+import DAO.DAO;
 import Entidad.CasoBogota;
 import Entidad.CasoColombia;
 import java.io.File;
@@ -34,15 +33,6 @@ public class Actualizacion {
         this.formato2 = new SimpleDateFormat("yyyy-MM-dd");
     }
     
-    public static void main(String[] args) {
-        Actualizacion act = new Actualizacion();
-        act.descargarDatos();
-        act.cargarBogota();
-        //act.cargarColombia();
-        //System.out.println(act.arreglarFecha("13/03/2020"));
-        
-    }
-    
     /**
      * Método que ejecuta los scripts que descargan los datos actualizados desde las páginas oficiales.
      */
@@ -64,7 +54,7 @@ public class Actualizacion {
      * Método que carga los datos actualizados a partir del archivo csv descargado para la información de bogota.
      */
     public void cargarBogota(){
-        BogotaDAO bogota = new BogotaDAO();
+        DAO dao = new DAO();
         try {
             Scanner scan = new Scanner(new File(this.dir+"/datosBogota.csv"));
             scan.useDelimiter(",|\n");
@@ -81,7 +71,7 @@ public class Actualizacion {
                     localidad, edad, sexo
                     , tipo, (ubicacion.equals("Fallecido (No aplica") ? "Fallecido": ubicacion ),// bug en los datos >:(
                     (estado.equals(" No causa Directa)") ? "Fallecido": estado ));
-                if(fecha!=null) bogota.ingresarCaso(aux);
+                if(fecha!=null) dao.ingresarCaso(aux);
                 if(ubicacion.equals("Fallecido (No aplica")){ scan.next(); scan.next();}
             }
             System.out.println("Datos de Bogota cargados exitosamente!");
@@ -96,7 +86,7 @@ public class Actualizacion {
      * Método que carga los datos actualizados a partir del archivo csv descargado para la información de Colombia.
      */
     public void  cargarColombia(){
-        ColombiaDAO colombia = new ColombiaDAO();
+        DAO dao = new DAO();
         try {
             Scanner scan = new Scanner(new File(this.dir + "/datoscolombia.csv"));
             scan.useDelimiter(",|\n");
@@ -145,7 +135,7 @@ public class Actualizacion {
                     (fecha_reporte_web.length() < 9 ? null : fecha_reporte_web.substring(0, 10))
                 );
                 //Ingresamos el registro por medio de la clase DAO
-                if (fecha_de_notificacion != null) colombia.ingresarCaso(caso);
+                if (fecha_de_notificacion != null) dao.ingresarCaso(caso);
             }
             System.out.println("Datos de Colombia cargados exitosamente!");
         } catch (FileNotFoundException ex) {
