@@ -53,7 +53,7 @@ public class TestRegistro {
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-    /*
+    
     @Test
     public void testDatosVacios() {
         String usuario ="JuanAndres";
@@ -137,7 +137,7 @@ public class TestRegistro {
         String confirmar ="Contra$eña4";
         assertEquals(controlRegistro.registrarUsuario(usuario, correo, contrasenia, confirmar), EQUIVALENCIA_CONTRASENIAS);
     }
-    */
+    /*
     @Test
     public void testTodoCorrecto() {
         String usuario ="JuanAndres";
@@ -145,5 +145,5 @@ public class TestRegistro {
         String contrasenia ="Contra$eña4";
         String confirmar ="Contra$eña4";
         assertEquals(controlRegistro.registrarUsuario(usuario, correo, contrasenia, confirmar), USUARIO_AUTORIZADO);
-    }
+    }*/
 }

@@ -21,10 +21,9 @@ public class Control_Login {
     public int verificarUsuario(String usuario, String contrasenia){
         if(usuario.equals("") || contrasenia.equals("")){
             return -3;
-        }else if(dao.verificarUsuario(usuario, contrasenia)==false){
-            return -1;
+        }else{
+            return dao.verificarUsuario(usuario, contrasenia);
         }
-        return 0;
     } 
     
 }

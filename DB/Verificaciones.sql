@@ -72,7 +72,7 @@ create procedure verificarUsuario(
     in pass varchar(60)
 )
 begin
-select exists (select * from EstadisticasCOVID.Usuario where usuario=nombre and password = pass);
+select administrador from EstadisticasCOVID.Usuario where usuario=nombre and password = pass;
 end #
 
 
@@ -88,9 +88,6 @@ begin
 	where idSubdivision in (select idSubdivision from Subdivision where idMapa = idM) 
 	order by fecha desc limit n) order by visitas desc limit 3;
 end #
-
-call masBuscados('Colombia');
-call masBuscados('Bogotá');
 
 
 

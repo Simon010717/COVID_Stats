@@ -8,6 +8,7 @@ package Frontera;
 import Control.Actualizacion;
 import Control.Control_Estadisticas;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -91,6 +92,7 @@ public class Estadisticas extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         actualizarHoy = new javax.swing.JButton();
         ActualizandoLabel = new javax.swing.JLabel();
+        registrarAdmin = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -155,7 +157,8 @@ public class Estadisticas extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         mas_visitas.add(jLabel16, gridBagConstraints);
 
-        jSeparator1.setBackground(new java.awt.Color(61, 61, 61));
+        jSeparator1.setBackground(new java.awt.Color(40, 101, 114));
+        jSeparator1.setForeground(new java.awt.Color(40, 101, 114));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator1.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -195,7 +198,8 @@ public class Estadisticas extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(13, 13, 0, 0);
         mas_visitas.add(jLabel12, gridBagConstraints);
 
-        jSeparator2.setBackground(new java.awt.Color(61, 61, 61));
+        jSeparator2.setBackground(new java.awt.Color(40, 101, 114));
+        jSeparator2.setForeground(new java.awt.Color(40, 101, 114));
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator2.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -214,7 +218,8 @@ public class Estadisticas extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         mas_visitas.add(jLabel9, gridBagConstraints);
 
-        jSeparator3.setBackground(new java.awt.Color(61, 61, 61));
+        jSeparator3.setBackground(new java.awt.Color(40, 101, 114));
+        jSeparator3.setForeground(new java.awt.Color(40, 101, 114));
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator3.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -253,7 +258,8 @@ public class Estadisticas extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(13, 13, 0, 0);
         mas_visitas.add(jLabel15, gridBagConstraints);
 
-        jSeparator4.setBackground(new java.awt.Color(61, 61, 61));
+        jSeparator4.setBackground(new java.awt.Color(40, 101, 114));
+        jSeparator4.setForeground(new java.awt.Color(40, 101, 114));
         jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator4.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -282,7 +288,8 @@ public class Estadisticas extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         mas_crec.add(jLabel17, gridBagConstraints);
 
-        jSeparator5.setBackground(new java.awt.Color(61, 61, 61));
+        jSeparator5.setBackground(new java.awt.Color(40, 101, 114));
+        jSeparator5.setForeground(new java.awt.Color(40, 101, 114));
         jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator5.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -322,7 +329,8 @@ public class Estadisticas extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(13, 13, 0, 0);
         mas_crec.add(jLabel20, gridBagConstraints);
 
-        jSeparator6.setBackground(new java.awt.Color(61, 61, 61));
+        jSeparator6.setBackground(new java.awt.Color(40, 101, 114));
+        jSeparator6.setForeground(new java.awt.Color(40, 101, 114));
         jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator6.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -342,7 +350,8 @@ public class Estadisticas extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         mas_crec.add(jLabel21, gridBagConstraints);
 
-        jSeparator7.setBackground(new java.awt.Color(61, 61, 61));
+        jSeparator7.setBackground(new java.awt.Color(40, 101, 114));
+        jSeparator7.setForeground(new java.awt.Color(40, 101, 114));
         jSeparator7.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator7.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -381,7 +390,8 @@ public class Estadisticas extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(13, 13, 0, 0);
         mas_crec.add(jLabel24, gridBagConstraints);
 
-        jSeparator8.setBackground(new java.awt.Color(61, 61, 61));
+        jSeparator8.setBackground(new java.awt.Color(40, 101, 114));
+        jSeparator8.setForeground(new java.awt.Color(40, 101, 114));
         jSeparator8.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator8.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -410,7 +420,8 @@ public class Estadisticas extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         menos_crec.add(jLabel25, gridBagConstraints);
 
-        jSeparator9.setBackground(new java.awt.Color(61, 61, 61));
+        jSeparator9.setBackground(new java.awt.Color(40, 101, 114));
+        jSeparator9.setForeground(new java.awt.Color(40, 101, 114));
         jSeparator9.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator9.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -450,7 +461,8 @@ public class Estadisticas extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(13, 13, 0, 0);
         menos_crec.add(jLabel28, gridBagConstraints);
 
-        jSeparator10.setBackground(new java.awt.Color(61, 61, 61));
+        jSeparator10.setBackground(new java.awt.Color(40, 101, 114));
+        jSeparator10.setForeground(new java.awt.Color(40, 101, 114));
         jSeparator10.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator10.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -469,7 +481,8 @@ public class Estadisticas extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         menos_crec.add(jLabel29, gridBagConstraints);
 
-        jSeparator11.setBackground(new java.awt.Color(61, 61, 61));
+        jSeparator11.setBackground(new java.awt.Color(40, 101, 114));
+        jSeparator11.setForeground(new java.awt.Color(40, 101, 114));
         jSeparator11.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator11.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -508,7 +521,8 @@ public class Estadisticas extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(13, 13, 0, 0);
         menos_crec.add(jLabel32, gridBagConstraints);
 
-        jSeparator12.setBackground(new java.awt.Color(61, 61, 61));
+        jSeparator12.setBackground(new java.awt.Color(40, 101, 114));
+        jSeparator12.setForeground(new java.awt.Color(40, 101, 114));
         jSeparator12.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator12.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -598,24 +612,47 @@ public class Estadisticas extends javax.swing.JFrame {
         ActualizandoLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ActualizandoLabel.setForeground(new java.awt.Color(255, 255, 255));
 
+        registrarAdmin.setBackground(new java.awt.Color(140, 202, 100));
+        registrarAdmin.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        registrarAdmin.setForeground(new java.awt.Color(255, 255, 255));
+        registrarAdmin.setText("Registrar administrador");
+        registrarAdmin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        registrarAdmin.setContentAreaFilled(false);
+        registrarAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                registrarAdminMouseClicked(evt);
+            }
+        });
+        registrarAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registrarAdminActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout centroLayout = new javax.swing.GroupLayout(centro);
         centro.setLayout(centroLayout);
         centroLayout.setHorizontalGroup(
             centroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(centroLayout.createSequentialGroup()
                 .addGap(72, 72, 72)
-                .addComponent(actualizarDB, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(actualizarHoy, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(actualizarDB, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ActualizandoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(actualizarHoy, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8)
-                .addGap(42, 42, 42))
+                .addComponent(registrarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(centroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(centroLayout.createSequentialGroup()
+                        .addGap(123, 123, 123)
+                        .addComponent(ActualizandoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(101, Short.MAX_VALUE))
+                    .addGroup(centroLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, centroLayout.createSequentialGroup()
-                .addContainerGap(247, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addGap(236, 236, 236)
                 .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -632,7 +669,8 @@ public class Estadisticas extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel8)
                     .addComponent(actualizarHoy, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ActualizandoLabel))
+                    .addComponent(ActualizandoLabel)
+                    .addComponent(registrarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(495, Short.MAX_VALUE))
         );
 
@@ -702,6 +740,15 @@ public class Estadisticas extends javax.swing.JFrame {
         actualizarDB.setBackground(new java.awt.Color(140,202,100));
     }//GEN-LAST:event_actualizarDBMouseExited
 
+    private void registrarAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarAdminMouseClicked
+        new RegistroAdmin().setVisible(true); 
+        this.dispose();
+    }//GEN-LAST:event_registrarAdminMouseClicked
+
+    private void registrarAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarAdminActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_registrarAdminActionPerformed
+
     private void formWindowOpened(java.awt.event.WindowEvent evt) {                                  
         for (double i = 0.0; i <= 1.0; i = i + 0.1) {
             String val = i + "";
@@ -770,5 +817,6 @@ public class Estadisticas extends javax.swing.JFrame {
     private javax.swing.JPanel menos_crec;
     private javax.swing.JLabel prev;
     private javax.swing.JPanel principal;
+    private javax.swing.JButton registrarAdmin;
     // End of variables declaration//GEN-END:variables
 }

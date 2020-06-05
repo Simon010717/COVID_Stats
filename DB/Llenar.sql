@@ -47,6 +47,7 @@ insert into EstadisticasCOVID.Subdivision values ('Antonio Nariño','Bogotá');
 insert into EstadisticasCOVID.Subdivision values ('Barrios Unidos','Bogotá');
 insert into EstadisticasCOVID.Subdivision values ('Bosa','Bogotá');
 insert into EstadisticasCOVID.Subdivision values ('Ciudad Bolivar','Bogotá');
+insert into EstadisticasCOVID.Subdivision values ('Chapinero','Bogotá');
 insert into EstadisticasCOVID.Subdivision values ('Engativá','Bogotá');
 insert into EstadisticasCOVID.Subdivision values ('Fontibón','Bogotá');
 insert into EstadisticasCOVID.Subdivision values ('Fuera','Bogotá');
@@ -58,6 +59,7 @@ insert into EstadisticasCOVID.Subdivision values ('Rafael Uribe Uribe','Bogotá'
 insert into EstadisticasCOVID.Subdivision values ('San Cristobál','Bogotá');
 insert into EstadisticasCOVID.Subdivision values ('Santa Fe','Bogotá');
 insert into EstadisticasCOVID.Subdivision values ('Suba','Bogotá');
+insert into EstadisticasCOVID.Subdivision values ('Sumapaz','Bogotá');
 insert into EstadisticasCOVID.Subdivision values ('Teusaquillo','Bogotá');
 insert into EstadisticasCOVID.Subdivision values ('Tunjuelito','Bogotá');
 insert into EstadisticasCOVID.Subdivision values ('Usaquén','Bogotá');
@@ -115,4 +117,4 @@ begin
 end #
 
 -- call llenadoRegistrosCol();
-call llenadoRegistrosBog();
+-- call llenadoRegistrosBog();

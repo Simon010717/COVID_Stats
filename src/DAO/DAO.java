@@ -57,7 +57,8 @@ public class DAO {
         }
         return 0;                                                           // retorna 0 si todo está bien
     }
-
+    
+    
     public void registrarUsuario(String user, String correo, String contrasenia, String confirmar){
         try {        
             Statement statement = db.getConexion().createStatement();
@@ -69,7 +70,36 @@ public class DAO {
         }
     }
     
-    public boolean verificarUsuario(String user, String contrasenia){
+    
+    public void registrarAdmin(String user, String correo, String contrasenia, String confirmar){
+        try {        
+            Statement statement = db.getConexion().createStatement();
+            if(contrasenia.equals(confirmar)){
+                statement.executeUpdate("insert into EstadisticasCOVID.Usuario values('"+user+"','"+correo+"','"+contrasenia+"',true)");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
+    public int verificarUsuario(String user, String contrasenia){
+        try {        
+            Statement statement = db.getConexion().createStatement();
+            ResultSet resultado = statement.executeQuery("call verificarUsuario('"+user+"','"+contrasenia+"')");
+            if(resultado.next()){
+                if(resultado.getBoolean(1)==true){
+                    return 1; //administrador encontrado
+                }
+                return 0; //usuario encontrado
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return -1; //usuario ni administrado encontrado
+    }
+    
+    public boolean verificarAdmin(String user, String contrasenia){
         try {        
             Statement statement = db.getConexion().createStatement();
             ResultSet resultado = statement.executeQuery("call verificarUsuario('"+user+"','"+contrasenia+"')");
@@ -84,6 +114,8 @@ public class DAO {
         }
         return true;
     }
+    
+    
     
     public String[] crecimiento(){
         String [] subs = new String[12];

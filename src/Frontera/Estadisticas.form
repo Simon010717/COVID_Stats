@@ -166,7 +166,10 @@
                 <Component class="javax.swing.JSeparator" name="jSeparator1">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="3d" green="3d" red="3d" type="rgb"/>
+                      <Color blue="72" green="65" red="28" type="rgb"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="72" green="65" red="28" type="rgb"/>
                     </Property>
                     <Property name="orientation" type="int" value="1"/>
                     <Property name="enabled" type="boolean" value="false"/>
@@ -234,7 +237,10 @@
                 <Component class="javax.swing.JSeparator" name="jSeparator2">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="3d" green="3d" red="3d" type="rgb"/>
+                      <Color blue="72" green="65" red="28" type="rgb"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="72" green="65" red="28" type="rgb"/>
                     </Property>
                     <Property name="orientation" type="int" value="1"/>
                     <Property name="enabled" type="boolean" value="false"/>
@@ -264,7 +270,10 @@
                 <Component class="javax.swing.JSeparator" name="jSeparator3">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="3d" green="3d" red="3d" type="rgb"/>
+                      <Color blue="72" green="65" red="28" type="rgb"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="72" green="65" red="28" type="rgb"/>
                     </Property>
                     <Property name="orientation" type="int" value="1"/>
                     <Property name="enabled" type="boolean" value="false"/>
@@ -332,7 +341,10 @@
                 <Component class="javax.swing.JSeparator" name="jSeparator4">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="3d" green="3d" red="3d" type="rgb"/>
+                      <Color blue="72" green="65" red="28" type="rgb"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="72" green="65" red="28" type="rgb"/>
                     </Property>
                     <Property name="orientation" type="int" value="1"/>
                     <Property name="enabled" type="boolean" value="false"/>
@@ -385,7 +397,10 @@
                 <Component class="javax.swing.JSeparator" name="jSeparator5">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="3d" green="3d" red="3d" type="rgb"/>
+                      <Color blue="72" green="65" red="28" type="rgb"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="72" green="65" red="28" type="rgb"/>
                     </Property>
                     <Property name="orientation" type="int" value="1"/>
                     <Property name="enabled" type="boolean" value="false"/>
@@ -453,7 +468,10 @@
                 <Component class="javax.swing.JSeparator" name="jSeparator6">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="3d" green="3d" red="3d" type="rgb"/>
+                      <Color blue="72" green="65" red="28" type="rgb"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="72" green="65" red="28" type="rgb"/>
                     </Property>
                     <Property name="orientation" type="int" value="1"/>
                     <Property name="enabled" type="boolean" value="false"/>
@@ -483,7 +501,10 @@
                 <Component class="javax.swing.JSeparator" name="jSeparator7">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="3d" green="3d" red="3d" type="rgb"/>
+                      <Color blue="72" green="65" red="28" type="rgb"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="72" green="65" red="28" type="rgb"/>
                     </Property>
                     <Property name="orientation" type="int" value="1"/>
                     <Property name="enabled" type="boolean" value="false"/>
@@ -551,7 +572,10 @@
                 <Component class="javax.swing.JSeparator" name="jSeparator8">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="3d" green="3d" red="3d" type="rgb"/>
+                      <Color blue="72" green="65" red="28" type="rgb"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="72" green="65" red="28" type="rgb"/>
                     </Property>
                     <Property name="orientation" type="int" value="1"/>
                     <Property name="enabled" type="boolean" value="false"/>
@@ -604,7 +628,10 @@
                 <Component class="javax.swing.JSeparator" name="jSeparator9">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="3d" green="3d" red="3d" type="rgb"/>
+                      <Color blue="72" green="65" red="28" type="rgb"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="72" green="65" red="28" type="rgb"/>
                     </Property>
                     <Property name="orientation" type="int" value="1"/>
                     <Property name="enabled" type="boolean" value="false"/>
@@ -672,7 +699,10 @@
                 <Component class="javax.swing.JSeparator" name="jSeparator10">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="3d" green="3d" red="3d" type="rgb"/>
+                      <Color blue="72" green="65" red="28" type="rgb"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="72" green="65" red="28" type="rgb"/>
                     </Property>
                     <Property name="orientation" type="int" value="1"/>
                     <Property name="enabled" type="boolean" value="false"/>
@@ -702,7 +732,10 @@
                 <Component class="javax.swing.JSeparator" name="jSeparator11">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="3d" green="3d" red="3d" type="rgb"/>
+                      <Color blue="72" green="65" red="28" type="rgb"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="72" green="65" red="28" type="rgb"/>
                     </Property>
                     <Property name="orientation" type="int" value="1"/>
                     <Property name="enabled" type="boolean" value="false"/>
@@ -770,7 +803,10 @@
                 <Component class="javax.swing.JSeparator" name="jSeparator12">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="3d" green="3d" red="3d" type="rgb"/>
+                      <Color blue="72" green="65" red="28" type="rgb"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="72" green="65" red="28" type="rgb"/>
                     </Property>
                     <Property name="orientation" type="int" value="1"/>
                     <Property name="enabled" type="boolean" value="false"/>
@@ -811,19 +847,28 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
-                      <Component id="actualizarDB" min="-2" pref="206" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="actualizarHoy" min="-2" pref="206" max="-2" attributes="0"/>
+                      <Component id="actualizarDB" min="-2" pref="160" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="ActualizandoLabel" min="-2" pref="179" max="-2" attributes="0"/>
-                      <EmptySpace pref="15" max="32767" attributes="0"/>
-                      <Component id="jLabel1" min="-2" pref="179" max="-2" attributes="0"/>
+                      <Component id="actualizarHoy" min="-2" pref="167" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                      <Component id="registrarAdmin" min="-2" pref="186" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
+                              <Component id="ActualizandoLabel" min="-2" pref="179" max="-2" attributes="0"/>
+                              <EmptySpace pref="101" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jLabel1" min="-2" pref="179" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabel8" min="-2" pref="36" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="247" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="236" max="-2" attributes="0"/>
                       <Component id="exit" min="-2" pref="47" max="-2" attributes="0"/>
@@ -844,6 +889,7 @@
                           <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="actualizarHoy" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                           <Component id="ActualizandoLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="registrarAdmin" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="495" max="32767" attributes="0"/>
                   </Group>
@@ -980,6 +1026,32 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="registrarAdmin">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="64" green="ca" red="8c" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Registrar administrador"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                    <LineBorder>
+                      <Color PropertyName="color" blue="ff" green="ff" red="ff" type="rgb"/>
+                    </LineBorder>
+                  </Border>
+                </Property>
+                <Property name="contentAreaFilled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="registrarAdminMouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="registrarAdminActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
