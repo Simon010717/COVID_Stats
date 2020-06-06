@@ -339,8 +339,8 @@ int mousePressY;
                 errorLabel.setText("Usuario y contraseña correctos");
                 errorLabel.setForeground(Color.green);
                 JOptionPane.showMessageDialog(this, "Bienvenido","Ingreso exitoso",1);
-                //new Estadisticas().setVisible(true); 
-                //this.dispose();
+                new MapaColombia().ejecutar(); 
+                this.dispose();
                 break;
             case -1:
                 errorLabel.setText("Usuario o contraseña incorrecta");

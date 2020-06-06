@@ -14,9 +14,9 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 
-public class Prueba {
+public class MapaColombia {
 
-    public static void main(String[] args) {
+    public void ejecutar() {
         // Creating and running Chromium engine
         System.setProperty("jxbrowser.license.key", "1BNDHFSC1FVOAGBDPDQNWEX7VJWL9OHK8SELTY9HXWWA0ZWONI9AOEPWVHXKDCD27N8OJL"); 
         Engine engine = Engine.newInstance(
