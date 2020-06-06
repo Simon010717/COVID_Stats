@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -220,5 +221,40 @@ public class DAO {
         } catch (SQLException ex) {
             Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public int[] casosMapaColombia(){
+        int[] casos = new int[37];
+        int i = 0;
+        try {
+            Statement statementCol = db.getConexion().createStatement();
+            ResultSet resultadoCol = statementCol.executeQuery("call casosHoy ('Colombia')");
+            while(resultadoCol.next()){
+                casos [i] = resultadoCol.getInt(1);
+                i++;
+            }
+            
+           
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return casos;
+    }
+    public int[] casosMapaBogota(){
+        int[] casos = new int[21];
+        int i = 0;
+        try {
+            Statement statement = db.getConexion().createStatement();
+            ResultSet resultado = statement.executeQuery("call casosHoy ('Bogotá')");
+            while(resultado.next()){
+                casos [i] = resultado.getInt(1);
+                i++;
+            }
+            
+           
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return casos;
     }
 }
