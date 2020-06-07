@@ -12,10 +12,7 @@ var colorear = function (v,d){
 	for (var i = 0; i < 33; i++) {
 		var r = 255 - (Math.max(v[i],mid)-mid)/mid*255
 		var gb = 255 - (Math.min(v[i]/mid,1))*255
-		if(i===32){
-			console.log(r);
-			console.log(gb);
-		}
+		
 	    document.getElementById('region-'+d[i]).style.fill = 'rgb('+r+','+gb+','+gb+')'
 	}
 }

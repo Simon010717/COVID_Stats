@@ -2,6 +2,23 @@ var map = document.querySelector('#map')
 
 var paths = map.querySelectorAll('.map__image a')
 
+
+let valores = [0,11,2095,186,5,58,270,0,241,1650,3,649,0,967,216,48,233,0,0,432]
+let localidades = ["ATN","BRU","BOS","CHP","CBL","ENG","FON","KEN","LMA","PAR","RUB","SCB","STF","SUB","SUM","TEU","TUN","USQ","USM","LCD"]
+
+var colorear = function (v,d){
+	var maxx = Math.max.apply(null, v)
+	var mid = maxx/2
+	for (var i = 0; i < 20; i++) {
+		var r = 255 - (Math.max(v[i],mid)-mid)/mid*255
+		var gb = 255 - (Math.min(v[i]/mid,1))*255
+		
+	    document.getElementById('region-'+d[i]).style.fill = 'rgb('+r+','+gb+','+gb+')'
+	}
+}
+
+colorear(valores,localidades);
+
 if(NodeList.prototype.forEach === undefined) {
     NodeList.prototype.forEach = function (callback){
         [].forEach.call(this, callback)
