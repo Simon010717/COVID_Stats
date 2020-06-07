@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         <group/>
 =======
         <group>
@@ -10,6 +11,18 @@
             <file>file:/C:/Users/juand/Documents/COVID_Stats/src/Frontera/Index.xhtml</file>
             <file>file:/C:/Users/juand/Documents/COVID_Stats/src/Frontera/MainFront.java</file>
             <file>file:/C:/Users/juand/Documents/COVID_Stats/src/Frontera/MapaColombia.java</file>
+        </group>
+>>>>>>> Stashed changes
+=======
+        <group>
+            <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/Frontera/Login.java</file>
+            <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/Control/Control_Estadisticas.java</file>
+            <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/Frontera/MapaColombia.java</file>
+            <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/Control/Actualizacion.java</file>
+            <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/DAO/DBConexion.java</file>
+            <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/Control/Control_Mapa_Colombia.java</file>
+            <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/Control/Control_Login.java</file>
+            <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/DAO/DAO.java</file>
         </group>
 >>>>>>> Stashed changes
     </open-files>

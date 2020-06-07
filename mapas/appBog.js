@@ -2,9 +2,9 @@ var map = document.querySelector('#map')
 
 var paths = map.querySelectorAll('.map__image a')
 
-
-let valores = [0,11,2095,186,5,58,270,0,241,1650,3,649,0,967,216,48,233,0,0,432]
-let localidades = ["ATN","BRU","BOS","CHP","CBL","ENG","FON","KEN","LMA","PAR","RUB","SCB","STF","SUB","SUM","TEU","TUN","USQ","USM","LCD"]
+let valores = JSON.parse(data);   
+//let valores = [0,11,2095,186,5,58,270,0,241,1650,3,649,0,967,216,48,233,0,0,432]
+let localidades = ["ATN","BRU","BOS","CHP","CBL","ENG","FON","KEN","LCD","LMA","PAR","RUB","SCB","STF","SUB","SUM","TEU","TUN","USQ","USM"]
 
 var colorear = function (v,d){
 	var maxx = Math.max.apply(null, v)

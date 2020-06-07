@@ -156,5 +156,10 @@ public class Actualizacion {
         }
         return null;
     }
-    
+    public static void main(String[] args) {
+        Actualizacion auctualizacion = new Actualizacion();
+        
+        auctualizacion.cargarColombia();
+        //auctualizacion.cargarBogota();
+    }
 }

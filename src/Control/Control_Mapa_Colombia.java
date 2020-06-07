@@ -69,7 +69,7 @@ public class Control_Mapa_Colombia {
         return completo;
     }
     
-    public void enviarAJS(int[] array){
+    public void enviarAJS(){
         File f;
         f = new File("mapas/colombia.json");
 
@@ -80,10 +80,10 @@ public class Control_Mapa_Colombia {
         BufferedWriter bw = new BufferedWriter(w);
         PrintWriter wr = new PrintWriter(bw);  
         wr.write("data = '[");
-        for (int i = 0; i < array.length-1; i++) {
-            wr.write(String.valueOf(array[i])+",");
+        for (int i = 0; i < casosColombia().length-1; i++) {
+            wr.write(String.valueOf(casosColombia()[i])+",");
         }
-        wr.write(String.valueOf(array[array.length-1])+"]';");
+        wr.write(String.valueOf(casosColombia()[casosColombia().length-1])+"]';");
         wr.close();
         bw.close();
         }catch(IOException e){};
@@ -91,9 +91,4 @@ public class Control_Mapa_Colombia {
 
     }
     
-    public static void main(String[] args) {
-        Control_Mapa_Colombia control = new Control_Mapa_Colombia();
-        
-        control.enviarAJS(control.casosColombia());
-    }
 }

@@ -1,11 +1,15 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Frontera;
 
-import Control.Control_Mapa_Colombia;
-import static com.teamdev.jxbrowser.engine.RenderingMode.HARDWARE_ACCELERATED;
-
+import Control.Control_Mapa_Bogota;
 import com.teamdev.jxbrowser.browser.Browser;
 import com.teamdev.jxbrowser.engine.Engine;
 import com.teamdev.jxbrowser.engine.EngineOptions;
+import static com.teamdev.jxbrowser.engine.RenderingMode.HARDWARE_ACCELERATED;
 import com.teamdev.jxbrowser.view.swing.BrowserView;
 import java.awt.BorderLayout;
 import java.awt.event.WindowAdapter;
@@ -15,8 +19,12 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 
-public class MapaColombia {
-    public Control_Mapa_Colombia control = new Control_Mapa_Colombia();
+/**
+ *
+ * @author Juan Andres Gonzalez
+ */
+public class MapaBogota {
+    public Control_Mapa_Bogota control =  new Control_Mapa_Bogota();
     public void ejecutar() {
         control.enviarAJS();
         // Creating and running Chromium engine
@@ -43,7 +51,7 @@ public class MapaColombia {
                 }
             });
             frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-            JTextField addressBar = new JTextField("file:///C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/mapas/index.html");
+            JTextField addressBar = new JTextField("file:///C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/mapas/indexBog.html");
             addressBar.addActionListener(e ->
                     browser.navigation().loadUrl(addressBar.getText()));
             frame.add(addressBar, BorderLayout.NORTH);
