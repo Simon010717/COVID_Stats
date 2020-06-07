@@ -8,6 +8,7 @@
 //|                   Simon Aparicio Bocanegra saparicio@unal.edu.co |
 //+------------------------------------------------------------------+
 package Frontera;
+
 public class MainFront {
 //+------------------------------------------------------------------+
 //| Main                                                             |
