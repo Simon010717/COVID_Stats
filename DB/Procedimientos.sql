@@ -1,4 +1,4 @@
-use EstadisticasCOVID;
+	use EstadisticasCOVID;
 
 drop procedure if exists RegistroHoyCol;
 

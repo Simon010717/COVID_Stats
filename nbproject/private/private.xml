@@ -2,17 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/home/simon/Documents/COVID_Stats/src/Entidad/CasoColombia.java</file>
-            <file>file:/home/simon/Documents/COVID_Stats/test/Control/TestLogin.java</file>
-            <file>file:/home/simon/Documents/COVID_Stats/src/Frontera/Estadisticas.java</file>
-            <file>file:/home/simon/Documents/COVID_Stats/src/Control/Control_Login.java</file>
-            <file>file:/home/simon/Documents/COVID_Stats/src/Control/Control_Estadisticas.java</file>
-            <file>file:/home/simon/Documents/COVID_Stats/src/DAO/DAO.java</file>
-            <file>file:/home/simon/Documents/COVID_Stats/src/Control/Control_Registro.java</file>
-            <file>file:/home/simon/Documents/COVID_Stats/src/Control/Actualizacion.java</file>
-            <file>file:/home/simon/Documents/COVID_Stats/src/Frontera/Login.java</file>
-            <file>file:/home/simon/Documents/COVID_Stats/src/DAO/DBConexion.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
