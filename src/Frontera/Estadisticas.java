@@ -5,7 +5,6 @@
  */
 package Frontera;
 
-import Control.Actualizacion;
 import Control.Control_Estadisticas;
 import java.awt.Color;
 import javax.swing.JOptionPane;
@@ -144,129 +143,72 @@ public class Estadisticas extends javax.swing.JFrame {
         mas_visitas.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         mas_visitas.setForeground(new java.awt.Color(40, 101, 114));
         mas_visitas.setPreferredSize(new java.awt.Dimension(249, 479));
-        mas_visitas.setLayout(new java.awt.GridBagLayout());
+        mas_visitas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel16.setText("<html>Departamentos más<br>seleccionadas</html>");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        mas_visitas.add(jLabel16, gridBagConstraints);
+        mas_visitas.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 1, -1, -1));
 
         jSeparator1.setBackground(new java.awt.Color(40, 101, 114));
         jSeparator1.setForeground(new java.awt.Color(40, 101, 114));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator1.setEnabled(false);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
-        gridBagConstraints.weighty = 1.0;
-        mas_visitas.add(jSeparator1, gridBagConstraints);
+        mas_visitas.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 45, -1, 45));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText(control.masBuscados()[0]);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(13, 13, 0, 0);
-        mas_visitas.add(jLabel6, gridBagConstraints);
+        mas_visitas.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 103, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText(control.masBuscados()[1]);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(13, 13, 0, 0);
-        mas_visitas.add(jLabel11, gridBagConstraints);
+        mas_visitas.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 133, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText(control.masBuscados()[2]);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(13, 13, 0, 0);
-        mas_visitas.add(jLabel12, gridBagConstraints);
+        mas_visitas.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 163, -1, -1));
 
         jSeparator2.setBackground(new java.awt.Color(40, 101, 114));
         jSeparator2.setForeground(new java.awt.Color(40, 101, 114));
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator2.setEnabled(false);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
-        gridBagConstraints.weighty = 1.0;
-        mas_visitas.add(jSeparator2, gridBagConstraints);
+        mas_visitas.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 180, -1, 45));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("<html>Localidades más<br>seleccionadas</html>");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        mas_visitas.add(jLabel9, gridBagConstraints);
+        mas_visitas.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 225, 157, -1));
 
         jSeparator3.setBackground(new java.awt.Color(40, 101, 114));
         jSeparator3.setForeground(new java.awt.Color(40, 101, 114));
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator3.setEnabled(false);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
-        gridBagConstraints.weighty = 1.0;
-        mas_visitas.add(jSeparator3, gridBagConstraints);
+        mas_visitas.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 269, -1, 45));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText(control.masBuscados()[3]);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(13, 13, 0, 0);
-        mas_visitas.add(jLabel13, gridBagConstraints);
+        mas_visitas.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 327, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText(control.masBuscados()[4]);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(13, 13, 0, 0);
-        mas_visitas.add(jLabel14, gridBagConstraints);
+        mas_visitas.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 357, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText(control.masBuscados()[5]);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(13, 13, 0, 0);
-        mas_visitas.add(jLabel15, gridBagConstraints);
+        mas_visitas.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 387, -1, -1));
 
         jSeparator4.setBackground(new java.awt.Color(40, 101, 114));
         jSeparator4.setForeground(new java.awt.Color(40, 101, 114));
         jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jSeparator4.setEnabled(false);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 11;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
-        gridBagConstraints.weighty = 1.0;
-        mas_visitas.add(jSeparator4, gridBagConstraints);
+        mas_visitas.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 404, -1, 45));
 
         jPanel8.add(mas_visitas);
 
@@ -539,12 +481,20 @@ public class Estadisticas extends javax.swing.JFrame {
         centro.setForeground(new java.awt.Color(40, 101, 114));
         centro.setMinimumSize(new java.awt.Dimension(920, 510));
         centro.setPreferredSize(new java.awt.Dimension(1000, 600));
+        centro.setLayout(new java.awt.GridBagLayout());
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Estadisticas de uso de la aplicación");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(14, 55, 0, 0);
+        centro.add(jLabel7, gridBagConstraints);
 
         exit.setBackground(new java.awt.Color(40, 101, 114));
         exit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -556,16 +506,39 @@ public class Estadisticas extends javax.swing.JFrame {
                 exitMouseClicked(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.ipadx = 36;
+        gridBagConstraints.ipady = 21;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 0);
+        centro.add(exit, gridBagConstraints);
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Usuarios registrados:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipadx = 51;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(44, 41, 0, 0);
+        centro.add(jLabel1, gridBagConstraints);
 
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText(Integer.toString(control.contarUsuarios()));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipadx = -45;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(44, 6, 0, 0);
+        centro.add(jLabel8, gridBagConstraints);
 
         actualizarHoy.setBackground(new java.awt.Color(140, 202, 100));
         actualizarHoy.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -583,10 +556,28 @@ public class Estadisticas extends javax.swing.JFrame {
                 actualizarHoyActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 36;
+        gridBagConstraints.ipady = 24;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(31, 78, 495, 0);
+        centro.add(actualizarHoy, gridBagConstraints);
 
         ActualizandoLabel.setBackground(new java.awt.Color(255, 255, 255));
         ActualizandoLabel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ActualizandoLabel.setForeground(new java.awt.Color(255, 255, 255));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 179;
+        gridBagConstraints.ipady = 41;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(31, 4, 495, 0);
+        centro.add(ActualizandoLabel, gridBagConstraints);
 
         registrarAdmin.setBackground(new java.awt.Color(140, 202, 100));
         registrarAdmin.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -604,44 +595,15 @@ public class Estadisticas extends javax.swing.JFrame {
                 registrarAdminActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout centroLayout = new javax.swing.GroupLayout(centro);
-        centro.setLayout(centroLayout);
-        centroLayout.setHorizontalGroup(
-            centroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(centroLayout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addComponent(actualizarHoy, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(registrarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ActualizandoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, centroLayout.createSequentialGroup()
-                .addContainerGap(247, Short.MAX_VALUE)
-                .addComponent(jLabel7)
-                .addGap(236, 236, 236)
-                .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        centroLayout.setVerticalGroup(
-            centroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(centroLayout.createSequentialGroup()
-                .addGroup(centroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel7)
-                    .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addGroup(centroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel8)
-                    .addComponent(actualizarHoy, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ActualizandoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(registrarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(495, Short.MAX_VALUE))
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 39;
+        gridBagConstraints.ipady = 24;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(31, 6, 495, 0);
+        centro.add(registrarAdmin, gridBagConstraints);
 
         principal.add(centro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 1000, 610));
 

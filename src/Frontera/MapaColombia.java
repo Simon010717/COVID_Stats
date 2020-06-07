@@ -18,7 +18,7 @@ import javax.swing.WindowConstants;
 public class MapaColombia {
     public Control_Mapa_Colombia control = new Control_Mapa_Colombia();
     public void ejecutar() {
-        control.enviarAJS();
+        control.enviaAJS();
         // Creating and running Chromium engine
         System.setProperty("jxbrowser.license.key", "1BNDHFSC1FVOAGBDPDQNWEX7VJWL9OHK8SELTY9HXWWA0ZWONI9AOEPWVHXKDCD27N8OJL"); 
         Engine engine = Engine.newInstance(
@@ -43,7 +43,7 @@ public class MapaColombia {
                 }
             });
             frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-            JTextField addressBar = new JTextField("file:///home/simon/Documents/COVID_Stats/mapas/index.html");
+            JTextField addressBar = new JTextField("file:///C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/mapas/index.html");
             addressBar.addActionListener(e ->
                     browser.navigation().loadUrl(addressBar.getText()));
             frame.add(addressBar, BorderLayout.NORTH);

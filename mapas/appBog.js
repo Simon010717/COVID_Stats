@@ -2,6 +2,11 @@ var map = document.querySelector('#map')
 
 var paths = map.querySelectorAll('.map__image a')
 
+let contagios = JSON.parse(dato);
+for (var i = 0; i < 6; i++) {
+    document.getElementById('contagio-'+String(i+1)).textContent = contagios[i];
+}
+
 let valores = JSON.parse(data);   
 //let valores = [0,11,2095,186,5,58,270,0,241,1650,3,649,0,967,216,48,233,0,0,432]
 let localidades = ["ATN","BRU","BOS","CHP","CBL","ENG","FON","KEN","LCD","LMA","PAR","RUB","SCB","STF","SUB","SUM","TEU","TUN","USQ","USM"]
