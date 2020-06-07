@@ -85,7 +85,6 @@ public class Estadisticas extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         jSeparator12 = new javax.swing.JSeparator();
         centro = new javax.swing.JPanel();
-        actualizarDB = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         exit = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -541,29 +540,6 @@ public class Estadisticas extends javax.swing.JFrame {
         centro.setMinimumSize(new java.awt.Dimension(920, 510));
         centro.setPreferredSize(new java.awt.Dimension(1000, 600));
 
-        actualizarDB.setBackground(new java.awt.Color(140, 202, 100));
-        actualizarDB.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        actualizarDB.setForeground(new java.awt.Color(255, 255, 255));
-        actualizarDB.setText("Actualizar INS y BOG");
-        actualizarDB.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        actualizarDB.setContentAreaFilled(false);
-        actualizarDB.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                actualizarDBMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                actualizarDBMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                actualizarDBMouseExited(evt);
-            }
-        });
-        actualizarDB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actualizarDBActionPerformed(evt);
-            }
-        });
-
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -634,25 +610,19 @@ public class Estadisticas extends javax.swing.JFrame {
         centroLayout.setHorizontalGroup(
             centroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(centroLayout.createSequentialGroup()
-                .addGap(72, 72, 72)
-                .addComponent(actualizarDB, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(78, 78, 78)
                 .addComponent(actualizarHoy, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(registrarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(centroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(centroLayout.createSequentialGroup()
-                        .addGap(123, 123, 123)
-                        .addComponent(ActualizandoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(101, Short.MAX_VALUE))
-                    .addGroup(centroLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ActualizandoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, centroLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(247, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addGap(236, 236, 236)
                 .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -665,11 +635,10 @@ public class Estadisticas extends javax.swing.JFrame {
                     .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(centroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(actualizarDB, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel8)
                     .addComponent(actualizarHoy, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ActualizandoLabel)
+                    .addComponent(ActualizandoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(registrarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(495, Short.MAX_VALUE))
         );
@@ -692,10 +661,6 @@ public class Estadisticas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void actualizarDBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarDBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_actualizarDBActionPerformed
-
     private void barra_superiorMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_barra_superiorMouseDragged
         int coordenadasX = evt.getXOnScreen();
         int coordenadasY = evt.getYOnScreen();
@@ -716,12 +681,6 @@ public class Estadisticas extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMouseClicked
 
-    private void actualizarDBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actualizarDBMouseClicked
-        control.actualizarBD();
-        ActualizandoLabel.setForeground(Color.green);
-        ActualizandoLabel.setText("Actualizado con exito");
-    }//GEN-LAST:event_actualizarDBMouseClicked
-
     private void actualizarHoyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actualizarHoyMouseClicked
         control.ayerHoy();
         ActualizandoLabel.setForeground(Color.green);
@@ -731,14 +690,6 @@ public class Estadisticas extends javax.swing.JFrame {
     private void actualizarHoyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarHoyActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_actualizarHoyActionPerformed
-
-    private void actualizarDBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actualizarDBMouseEntered
-        actualizarDB.setBackground(new java.awt.Color(15,50,70));
-    }//GEN-LAST:event_actualizarDBMouseEntered
-
-    private void actualizarDBMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actualizarDBMouseExited
-        actualizarDB.setBackground(new java.awt.Color(140,202,100));
-    }//GEN-LAST:event_actualizarDBMouseExited
 
     private void registrarAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registrarAdminMouseClicked
         new RegistroAdmin().setVisible(true); 
@@ -765,7 +716,6 @@ public class Estadisticas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ActualizandoLabel;
-    private javax.swing.JButton actualizarDB;
     private javax.swing.JButton actualizarHoy;
     private javax.swing.JLabel barra_superior;
     private javax.swing.JPanel centro;

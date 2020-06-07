@@ -20,11 +20,12 @@ drop procedure if exists hoyAyer;
 
 delimiter #
 create procedure RegistroHoyCol(
-	in depart varchar(60)
+	in depart varchar(60),
+    in fecha date
 )
 begin
 	insert into EstadisticasCOVID.Registro values (
-		curdate(),
+		fecha,
 		depart,
 		(select count(atencionn) from EstadisticasCOVID.INS where atencionn='Recuperado' and departamento=depart),
 		(select count(atencionn) from EstadisticasCOVID.INS where atencionn='Fallecido' and departamento=depart),
@@ -35,16 +36,17 @@ begin
 		(select count(sexo) from EstadisticasCOVID.INS where sexo='M' and departamento=depart),
 		0
 	);
-	call RegistroEdadHoyCol(depart);
+	call RegistroEdadHoyCol(depart,fecha);
 end #
 
 delimiter #
 create procedure RegistroEdadHoyCol( 
-	in depart varchar(60)
+	in depart varchar(60),
+    in fecha date
 )
 begin
 	insert into EstadisticasCOVID.confirmadosEdad values (
-		curdate(),
+		fecha,
 		depart,
 		(select count(edad) from EstadisticasCOVID.INS where departamento=depart and edad between 0 and 9),
 		(select count(edad) from EstadisticasCOVID.INS where departamento=depart and edad between 10 and 19),
@@ -58,7 +60,7 @@ begin
 		(select count(edad) from EstadisticasCOVID.INS where departamento=depart and edad > 90)
 	);
 	insert into EstadisticasCOVID.fallecidosEdad values (
-		curdate(),
+		fecha,
 		depart,
 		(select count(edad) from EstadisticasCOVID.INS where atencionn='Fallecido' and departamento=depart and edad between 0 and 9),
 		(select count(edad) from EstadisticasCOVID.INS where atencionn='Fallecido' and departamento=depart and edad between 10 and 19),
@@ -72,7 +74,7 @@ begin
 		(select count(edad) from EstadisticasCOVID.INS where atencionn='Fallecido' and departamento=depart and edad > 90)
 	);
 	insert into EstadisticasCOVID.recuperadosEdad values (
-		curdate(),
+		fecha,
 		depart,
 		(select count(edad) from EstadisticasCOVID.INS where atencionn='Recuperado' and departamento=depart and edad between 0 and 9),
 		(select count(edad) from EstadisticasCOVID.INS where atencionn='Recuperado' and departamento=depart and edad between 10 and 19),
@@ -90,11 +92,12 @@ end #
 
 delimiter #
 create procedure RegistroHoyBog(
-	in depart varchar(60)
+	in depart varchar(60),
+    in fecha date
 )
 begin
 	insert into EstadisticasCOVID.Registro values (
-		curdate(),
+		fecha,
 		depart,
 		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado='Recuperado'),
 		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado='Fallecido'),
@@ -105,16 +108,17 @@ begin
 		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and sexo='M'),
 		0
 	);
-	call RegistroEdadHoyBog(depart);
+	call RegistroEdadHoyBog(depart,fecha);
 end #
 
 delimiter #
 create procedure RegistroEdadHoyBog( 
-	in depart varchar(60)
+	in depart varchar(60),
+    in fecha date
 )
 begin
 	insert into EstadisticasCOVID.confirmadosEdad values (
-		curdate(),
+		fecha,
 		depart,
 		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and edad between 0 and 9),
 		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and edad between 10 and 19),
@@ -128,7 +132,7 @@ begin
 		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and edad > 90)
 	);
 	insert into EstadisticasCOVID.fallecidosEdad values (
-		curdate(),
+		fecha,
 		depart,
 		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado='Fallecido' and edad between 0 and 9),
 		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado='Fallecido' and edad between 10 and 19),
@@ -142,7 +146,7 @@ begin
 		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado='Fallecido' and edad > 90)
 	);
 	insert into EstadisticasCOVID.recuperadosEdad values (
-		curdate(),
+		fecha,
 		depart,
 		(select count(*) from EstadisticasCOVID.Bogota where  localidad=depart and estado='Recuperado' and edad between 0 and 9),
 		(select count(*) from EstadisticasCOVID.Bogota where  localidad=depart and estado='Recuperado' and edad between 10 and 19),
@@ -198,7 +202,7 @@ begin
 		(select count(*) from EstadisticasCOVID.INS where departamento=depart and fecha_diagnostico <= fecha and edad between 70 and 79),
 		(select count(*) from EstadisticasCOVID.INS where departamento=depart and fecha_diagnostico <= fecha and edad between 80 and 89),
 		(select count(*) from EstadisticasCOVID.INS where departamento=depart and fecha_diagnostico <= fecha and edad > 90)
-	);
+	);/*
 	insert into EstadisticasCOVID.fallecidosEdad values (
 		fecha,
 		depart,
@@ -226,7 +230,7 @@ begin
 		(select count(*) from EstadisticasCOVID.INS where atencionn='Recuperado' and departamento=depart and fecha_recuperado <= fecha and edad between 70 and 79),
 		(select count(*) from EstadisticasCOVID.INS where atencionn='Recuperado' and departamento=depart and fecha_recuperado <= fecha and edad between 80 and 89),
 		(select count(*) from EstadisticasCOVID.INS where atencionn='Recuperado' and departamento=depart and fecha_recuperado <= fecha and edad > 90)
-	);
+	);*/
 end #
 
 delimiter #
@@ -304,30 +308,32 @@ delimiter #
 create procedure hoyAyer()
 begin
 	declare i int;
+    set @fecha = (select max(fecha) from Registro);
+    select @fecha;
     -- BORRADO AYER
     SET FOREIGN_KEY_CHECKS = 0; 
-	delete from confirmadosEdad where fecha = date_add(curdate(),interval -1 day);
-	delete from fallecidosEdad where fecha = date_add(curdate(),interval -1 day);
-	delete from recuperadosEdad where fecha = date_add(curdate(),interval -1 day);
-	delete from Registro where fecha = date_add(curdate(),interval -1 day);
-    delete from confirmadosEdad where fecha = curdate();
-	delete from fallecidosEdad where fecha = curdate();
-	delete from recuperadosEdad where fecha = curdate();
-	delete from Registro where fecha = curdate();
+	delete from confirmadosEdad where fecha = date_add(@fecha,interval -1 day);
+	delete from fallecidosEdad where fecha = date_add(@fecha,interval -1 day);
+	delete from recuperadosEdad where fecha = date_add(@fecha,interval -1 day);
+	delete from Registro where fecha = date_add(@fecha,interval -1 day);
+    delete from confirmadosEdad where fecha = @fecha;
+	delete from fallecidosEdad where fecha = @fecha;
+	delete from recuperadosEdad where fecha = @fecha;
+	delete from Registro where fecha = @fecha;
 	SET FOREIGN_KEY_CHECKS = 1;
 	
     -- HISTORICO AYER
 	set i = 0;
 	set @n = (select count(*) from EstadisticasCOVID.Subdivision where idMapa='Colombia');
 	while i < @n do
-		call RegistroHistoricoCol((select idSubdivision from Subdivision where idMapa='Colombia' limit i,1),date_add(curdate(),interval -1 day));
+		call RegistroHistoricoCol((select idSubdivision from Subdivision where idMapa='Colombia' limit i,1),date_add(@fecha,interval -1 day));
 		set i = i +1;
 	end while;
     
     set i = 0;
 	set @n = (select count(*) from EstadisticasCOVID.Subdivision where idMapa='Bogotá');
 	while i < @n do
-		call RegistroHistoricoBog((select idSubdivision from Subdivision where idMapa='Bogotá' limit i,1),date_add(curdate(),interval -1 day));
+		call RegistroHistoricoBog((select idSubdivision from Subdivision where idMapa='Bogotá' limit i,1),date_add(@fecha,interval -1 day));
 		set i = i +1;
 	end while;
     
@@ -335,14 +341,16 @@ begin
     set i = 0;
 	set @n = (select count(*) from EstadisticasCOVID.Subdivision where idMapa='Colombia');
 	while i < @n do
-		call RegistroHoyCol((select idSubdivision from Subdivision where idMapa='Colombia' limit i,1));
+		call RegistroHoyCol((select idSubdivision from Subdivision where idMapa='Colombia' limit i,1),@fecha);
 		set i = i +1;
 	end while;
     
     set i = 0;
 	set @n = (select count(*) from EstadisticasCOVID.Subdivision where idMapa='Bogotá');
 	while i < @n do
-		call RegistroHoyBog((select idSubdivision from Subdivision where idMapa='Bogotá' limit i,1));
+		call RegistroHoyBog((select idSubdivision from Subdivision where idMapa='Bogotá' limit i,1),@fecha);
 		set i = i +1;
 	end while;
 end #
+
+-- call hoyAyer();

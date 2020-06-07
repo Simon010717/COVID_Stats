@@ -32,7 +32,7 @@ public class MapaColombia {
             BrowserView view = BrowserView.newInstance(browser);
 
             // Creating and displaying Swing app frame.
-            JFrame frame = new JFrame("Hello World");
+            JFrame frame = new JFrame("Mapa de contagio de Colombia");
             // Close Engine and onClose app window
             frame.addWindowListener(new WindowAdapter() {
                 @Override
@@ -41,7 +41,7 @@ public class MapaColombia {
                 }
             });
             frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-            JTextField addressBar = new JTextField("C:\\Users\\Juan Andres Gonzalez\\Documents\\La Nacho\\Ingesoft\\COVID_Stats\\mapas\\index.html");
+            JTextField addressBar = new JTextField("file:///home/simon/Documents/COVID_Stats/mapas/index.html");
             addressBar.addActionListener(e ->
                     browser.navigation().loadUrl(addressBar.getText()));
             frame.add(addressBar, BorderLayout.NORTH);

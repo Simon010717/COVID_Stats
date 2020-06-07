@@ -14,7 +14,7 @@ create table if not exists Bogota(
     estado varchar(50) not null
 );
 
-LOAD DATA LOCAL INFILE '/home/sebasdeloco/NetBeansProjects/COVID_Stats_pull/DB/datosBogota.csv' 
+LOAD DATA LOCAL INFILE 'datosBogota.csv' 
 INTO TABLE Bogota 
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
@@ -43,10 +43,12 @@ CREATE TABLE IF NOT EXISTS INS(
 	tipo_recuperacion varchar(50)
 );
 
-LOAD DATA LOCAL INFILE '/home/sebasdeloco/NetBeansProjects/COVID_Stats_pull/DB/datosColombia.csv' 
+LOAD DATA LOCAL INFILE 'datosColombia.csv' 
 INTO TABLE INS 
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-#llamar aca los procedimientos
+update EstadisticasCOVID.INS set fecha_diagnostico = fecha_de_notificacion where DATE_FORMAT(fecha_diagnostico, '%Y-%m-%d') = '0000-00-00';
+
+call hoyAyer();
