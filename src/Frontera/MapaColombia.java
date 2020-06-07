@@ -43,7 +43,7 @@ public class MapaColombia {
                 }
             });
             frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-            JTextField addressBar = new JTextField("file:///C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/mapas/index.html");
+            JTextField addressBar = new JTextField("file:///home/simon/Documents/COVID_Stats/mapas/index.html");
             addressBar.addActionListener(e ->
                     browser.navigation().loadUrl(addressBar.getText()));
             frame.add(addressBar, BorderLayout.NORTH);
