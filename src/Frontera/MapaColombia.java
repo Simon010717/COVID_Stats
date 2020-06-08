@@ -39,6 +39,7 @@ public class MapaColombia {
             frame.addWindowListener(new WindowAdapter() {
                 @Override
                 public void windowClosing(WindowEvent e) {
+                    new Login().setVisible(true);
                     engine.close();
                 }
             });
