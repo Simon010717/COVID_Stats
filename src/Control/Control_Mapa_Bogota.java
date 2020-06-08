@@ -23,7 +23,7 @@ public class Control_Mapa_Bogota {
         dao = new DAO();
     }
     
-    public int[] CasosBogota(){
+    public int[] casosBogota(){
         int[] casos = dao.casosMapaBogota();
         int[] completos = new int[20];
         
@@ -46,7 +46,7 @@ public class Control_Mapa_Bogota {
     
     public void enviarAJS(){
         String[] crecimiento = dao.crecimiento();
-        int[] casosBog = CasosBogota();
+        int[] casosBog = casosBogota();
         File f;
         f = new File("mapas/bogota.json");
 
