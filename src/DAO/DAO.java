@@ -5,8 +5,6 @@
  */
 package DAO;
 
-import Entidad.CasoBogota;
-import Entidad.CasoColombia;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -170,54 +168,11 @@ public class DAO {
         return subs;
     }
     
-    
     public void ayerHoy(){
         int i = 0;
          try {        
             Statement statement = db.getConexion().createStatement();
             statement.executeUpdate("call hoyAyer()");
-        } catch (SQLException ex) {
-            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
-    public void ingresarCaso(CasoColombia caso){
-        try {
-            PreparedStatement statement = db.getConexion().prepareStatement("insert into INS values("
-                    +"'"+caso.id_de_caso
-                    +"',"+ (caso.fecha_de_notificacion != null ? "'"+caso.fecha_de_notificacion+"'" : "NULL")
-                    +",'"+caso.codigo_divipola
-                    +"','"+caso.ciudad_de_ubicacion
-                    +"','"+caso.departamento
-                    +"','"+caso.atencionn
-                    +"','"+caso.edad
-                    +"','"+caso.sexo
-                    +"','"+caso.tipo
-                    +"','"+caso.estado
-                    +"','"+caso.pais_de_procedencia
-                    +"',"+(caso.fis != null ? "'"+caso.fis+"'" : "NULL")
-                    +","+(caso.fecha_de_muerte != null ? "'"+caso.fecha_de_muerte+"'" : "NULL")
-                    +",'"+caso.fecha_diagnostico
-                    +"',"+(caso.fecha_recuperado != null ? "'"+caso.fecha_recuperado+"'" : "NULL")
-                    +",'"+caso.fecha_reporte_web+"')");
-            statement.execute();
-        } catch (SQLException ex) {
-            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
-    public void ingresarCaso(CasoBogota caso){
-        try {
-            PreparedStatement statement = db.getConexion().prepareStatement("insert into Bogota values(NULL,"
-                    +"'"+caso.fecha_diagnostico
-                    +"','"+caso.ciudad
-                    +"','"+caso.localidad
-                    +"','"+caso.edad
-                    +"','"+caso.sexo
-                    +"','"+caso.tipo
-                    +"','"+caso.ubicacion
-                    +"','"+caso.estado+"')");
-            statement.execute();
         } catch (SQLException ex) {
             Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -240,6 +195,7 @@ public class DAO {
         }
         return casos;
     }
+    
     public int[] casosMapaBogota(){
         int[] casos = new int[21];
         int i = 0;

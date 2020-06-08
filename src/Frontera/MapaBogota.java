@@ -42,14 +42,16 @@ public class MapaBogota {
             BrowserView view = BrowserView.newInstance(browser);
 
             // Creating and displaying Swing app frame.
-            JFrame frame = new JFrame("Mapa de contagio de Colombia");
+            JFrame frame = new JFrame("Mapa de contagio de Bogotá");
             // Close Engine and onClose app window
             frame.addWindowListener(new WindowAdapter() {
                 @Override
                 public void windowClosing(WindowEvent e) {
+                    new Login().setVisible(true);
                     engine.close();
                 }
             });
+            
             frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
             JTextField addressBar = new JTextField("file:///C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/mapas/indexBog.html");
             addressBar.addActionListener(e ->
