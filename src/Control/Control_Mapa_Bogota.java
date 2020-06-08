@@ -45,6 +45,8 @@ public class Control_Mapa_Bogota {
     }
     
     public void enviarAJS(){
+        String[] crecimiento = dao.crecimiento();
+        int[] casosBog = CasosBogota();
         File f;
         f = new File("mapas/bogota.json");
 
@@ -55,15 +57,15 @@ public class Control_Mapa_Bogota {
         BufferedWriter bw = new BufferedWriter(w);
         PrintWriter wr = new PrintWriter(bw);  
         wr.write("data = '[");
-        for (int i = 0; i < CasosBogota().length-1; i++) {
-            wr.write(String.valueOf(CasosBogota()[i])+",");
+        for (int i = 0; i < casosBog.length-1; i++) {
+            wr.write(String.valueOf(casosBog[i])+",");
         }
-        wr.write(String.valueOf(CasosBogota()[CasosBogota().length-1])+"]';\n");
+        wr.write(String.valueOf(casosBog[casosBog.length-1])+"]';\n");
         wr.write("dato = '[");
         for (int i = 6; i < 11; i++) {
-            wr.write('\"'+String.valueOf(dao.crecimiento()[i])+'\"'+",");
+            wr.write('\"'+String.valueOf(crecimiento[i])+'\"'+",");
         }
-        wr.write('\"'+String.valueOf(dao.crecimiento()[11])+'\"'+"]';");
+        wr.write('\"'+String.valueOf(crecimiento[11])+'\"'+"]';");
         wr.close();
         bw.close();
         }catch(IOException e){};
