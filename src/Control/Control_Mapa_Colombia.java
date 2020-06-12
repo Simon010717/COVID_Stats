@@ -23,21 +23,23 @@ public class Control_Mapa_Colombia {
         this.dao = new DAO();
     }
     
-    public int[] casosColombia(){
-        int[] casos = dao.casosMapaColombia();
-        int[] completo = new int[33];
+    public int[][] casosColombia(){
+        int[][] casos = dao.casosMapaColombia();
+        int[][] completo = new int[33][4];
         
-        int aux = 0;
+        int[] aux = new int[4];
         for (int i=0; i<casos.length/2; i++) {
             aux = casos[i];
             casos[i] = casos[casos.length-1-i];
-            casos[casos.length-1-i] = aux;
+            casos[casos.length-1-i]= aux;
         }
         completo[0] = casos[0];
         completo[1] = casos[1];
         completo[2] = casos[2];
         completo[3] = casos[3];
-        completo[4] = casos[6] + casos [11];
+        for(int j=0; j<4; j++){
+            completo[4][j] = casos[6][j] + casos [11][j];
+        }
         completo[5] = casos[7];
         completo[6] = casos[13];
         completo[7] = casos[14];
@@ -52,7 +54,9 @@ public class Control_Mapa_Colombia {
         completo[16] = casos[19];
         completo[17] = casos[20];
         completo[18] = casos[12];
-        completo[19] = casos[22]+ casos[30];
+        for(int j=0; j<4; j++){
+            completo[19][j] = casos[22][j] + casos [30][j];
+        }
         completo[20] = casos[23];
         completo[21] = casos[25];
         completo[22] = casos[24];
@@ -63,7 +67,9 @@ public class Control_Mapa_Colombia {
         completo[27] = casos[32];
         completo[28] = casos[29];
         completo[29] = casos[33];
-        completo[30] = casos[34] + casos[8];
+        for(int j=0; j<4; j++){
+            completo[30][j] = casos[34][j] + casos [8][j];
+        }
         completo[31] = casos[35];
         completo[32] = casos[36];
         return completo;
@@ -71,7 +77,7 @@ public class Control_Mapa_Colombia {
     
     public void enviaAJS(){
         String [] crecimiento = dao.crecimiento();
-        int[] casosCol = casosColombia();
+        int[][] casosCol = casosColombia();
         File f;
         f = new File("mapas/colombia.json");
 
@@ -81,12 +87,32 @@ public class Control_Mapa_Colombia {
         FileWriter w = new FileWriter(f);
         BufferedWriter bw = new BufferedWriter(w);
         PrintWriter wr = new PrintWriter(bw);  
-        wr.write("data = '[");
+        
+        wr.write("conf = '["); //confirmados
         for (int i = 0; i < casosCol.length-1; i++) {
-            wr.write(String.valueOf(casosCol[i])+",");
+            wr.write(String.valueOf(casosCol[i][0])+",");
         }
-        wr.write(String.valueOf(casosCol[casosCol.length-1])+"]';\n");
-        wr.write("dato = '[");
+        wr.write(String.valueOf(casosCol[casosCol.length-1][0])+"]';\n");
+        
+        wr.write("act = '["); //activos
+        for (int i = 0; i < casosCol.length-1; i++) {
+            wr.write(String.valueOf(casosCol[i][1])+",");
+        }
+        wr.write(String.valueOf(casosCol[casosCol.length-1][1])+"]';\n");
+        
+        wr.write("rec = '[");//recuperados
+        for (int i = 0; i < casosCol.length-1; i++) {
+            wr.write(String.valueOf(casosCol[i][2])+",");
+        }
+        wr.write(String.valueOf(casosCol[casosCol.length-1][2])+"]';\n");
+        
+        wr.write("fall = '["); //fallecidos
+        for (int i = 0; i < casosCol.length-1; i++) {
+            wr.write(String.valueOf(casosCol[i][3])+",");
+        }
+        wr.write(String.valueOf(casosCol[casosCol.length-1][3])+"]';\n");
+        
+        wr.write("crec = '["); //crecimiento
         for (int i = 0; i < 5; i++) {
             wr.write('\"'+String.valueOf(crecimiento[i])+'\"'+",");
         }

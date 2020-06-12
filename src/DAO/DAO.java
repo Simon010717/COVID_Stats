@@ -178,18 +178,19 @@ public class DAO {
         }
     }
     
-    public int[] casosMapaColombia(){
-        int[] casos = new int[37];
+    public int[][] casosMapaColombia(){
+        int[][] casos = new int[37][4];
         int i = 0;
         try {
             Statement statementCol = db.getConexion().createStatement();
             ResultSet resultadoCol = statementCol.executeQuery("call casosHoy ('Colombia')");
             while(resultadoCol.next()){
-                casos [i] = resultadoCol.getInt(1);
+                casos [i][0] = resultadoCol.getInt(2);
+                casos [i][1] = resultadoCol.getInt(3);
+                casos [i][2] = resultadoCol.getInt(4);
+                casos [i][3] = resultadoCol.getInt(5);
                 i++;
-            }
-            
-           
+            }           
         } catch (SQLException ex) {
             Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
         }

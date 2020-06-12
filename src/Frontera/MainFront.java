@@ -10,13 +10,13 @@
 package Frontera;
 
 public class MainFront {
-//+------------------------------------------------------------------+
-//| Main                                                             |
-//+------------------------------------------------------------------+
-/**
- * @param args the command line arguments
- */
-public static void main(String args[]) {
-    new Login().setVisible(true);
-}      
+    //+------------------------------------------------------------------+
+    //| Main                                                             |
+    //+------------------------------------------------------------------+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        new Login().setVisible(true);
+    }      
 }

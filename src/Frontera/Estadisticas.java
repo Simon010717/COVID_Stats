@@ -563,7 +563,7 @@ public class Estadisticas extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 36;
         gridBagConstraints.ipady = 24;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(31, 78, 495, 0);
+        gridBagConstraints.insets = new java.awt.Insets(31, 28, 495, 0);
         centro.add(actualizarHoy, gridBagConstraints);
 
         ActualizandoLabel.setBackground(new java.awt.Color(255, 255, 255));
