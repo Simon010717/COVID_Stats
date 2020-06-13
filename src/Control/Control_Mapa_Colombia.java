@@ -79,7 +79,7 @@ public class Control_Mapa_Colombia {
         String [] crecimiento = dao.crecimiento();
         int[][] casosCol = casosColombia();
         File f;
-        f = new File("mapas/colombia.json");
+        f = new File("mapas/GeoColombia.json");
 
 
         //Escritura
@@ -116,9 +116,13 @@ public class Control_Mapa_Colombia {
         for (int i = 0; i < 5; i++) {
             wr.write('\"'+String.valueOf(crecimiento[i])+'\"'+",");
         }
-        wr.write('\"'+String.valueOf(crecimiento[5])+'\"'+"]';");
+        wr.write('\"'+String.valueOf(crecimiento[5])+'\"'+"]';\n");
         wr.close();
         bw.close();
         }catch(IOException e){};
+    }
+    public static void main(String[] args) {
+        Control_Mapa_Colombia control = new Control_Mapa_Colombia();
+        control.enviaAJS();
     }
 }

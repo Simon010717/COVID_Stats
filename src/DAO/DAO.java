@@ -197,6 +197,61 @@ public class DAO {
         return casos;
     }
     
+    public String[] subdivisionesCol(){
+        String[] casos = new String[37];
+        int i = 0;
+        try {
+            Statement statement = db.getConexion().createStatement();
+            ResultSet resultado = statement.executeQuery("select idSubdivision FROM EstadisticasCOVID.Subdivision where idMapa = 'Colombia'");
+            while(resultado.next()){
+                casos [i] = resultado.getString(1);
+                i++;
+            }
+            
+           
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return casos;
+    }
+    
+     public String[] subdivisionesBog(){
+        String[] casos = new String[21];
+        int i = 0;
+        try {
+            Statement statement = db.getConexion().createStatement();
+            ResultSet resultado = statement.executeQuery("select idSubdivision FROM EstadisticasCOVID.Subdivision where idMapa = 'Bogotá'");
+            while(resultado.next()){
+                casos [i] = resultado.getString(1);
+                i++;
+            }
+            
+           
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return casos;
+    }
+    
+    public int[][] graficasTemporales(String sub){
+        int[][] casos = new int[81][4];
+        int i = 0;
+        try {
+            Statement statementCol = db.getConexion().createStatement();
+            ResultSet resultadoCol = statementCol.executeQuery("call graficasTemporales('" + sub + "')");
+            while(resultadoCol.next()){
+                casos [i][0] = resultadoCol.getInt(1);
+                casos [i][1] = resultadoCol.getInt(2);
+                casos [i][2] = resultadoCol.getInt(3);
+                casos [i][3] = resultadoCol.getInt(4);
+                i++;
+            }           
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return casos;
+    }
+    
     public int[] casosMapaBogota(){
         int[] casos = new int[21];
         int i = 0;
@@ -214,4 +269,5 @@ public class DAO {
         }
         return casos;
     }
+    
 }
