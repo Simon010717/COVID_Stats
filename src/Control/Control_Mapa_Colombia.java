@@ -79,7 +79,7 @@ public class Control_Mapa_Colombia {
         String [] crecimiento = dao.crecimiento();
         int[][] casosCol = casosColombia();
         File f;
-        f = new File("mapas/GeoColombia.json");
+        f = new File("mapas/geocol.json");
 
 
         //Escritura

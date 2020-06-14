@@ -46,7 +46,7 @@ public class Control_Grafica_Colombia {
     public void enviarAJS(){
         int[][][] graficas = graficasTemporalesCol();
         File f;
-        f = new File("mapas/TempColombia.json");
+        f = new File("mapas/temcol.json");
 
 
         //Escritura
@@ -97,7 +97,7 @@ public class Control_Grafica_Colombia {
         }
         wr.write(String.valueOf(graficas[graficas.length-1][80][2]) + "]]\"\n");
         
-        wr.write("Falle = \"["); 
+        wr.write("falle = \"["); 
         for (int i = 0; i < graficas.length-1; i++) {
             wr.write("["); 
             for (int j = 0; j < graficas[i].length-1; j++) {

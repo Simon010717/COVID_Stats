@@ -48,7 +48,7 @@ public class Control_Mapa_Bogota {
         String[] crecimiento = dao.crecimiento();
         int[][] casosBog = casosBogota();
         File f;
-        f = new File("mapas/GeoBogota.json");
+        f = new File("mapas/geobog.json");
 
 
         //Escritura

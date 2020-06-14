@@ -46,7 +46,7 @@ public class Control_Grafica_Bogota {
     public void enviarAJS(){
         int[][][] graficas = graficasTemporalesBog();
         File f;
-        f = new File("mapas/TempBogota.json");
+        f = new File("mapas/tembog.json");
 
 
         //Escritura

@@ -2,19 +2,18 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-                
+                                
 &gt;&gt;&gt;&gt;&gt;&gt;&gt; Stashed changes
     
+        
+    
+        
         <group>
-            <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/Control/Control_Estadisticas.java</file>
-            <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/Control/Control_RegistroAdmin.java</file>
-            <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/DAO/DBConexion.java</file>
-            <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/Control/Control_Registro.java</file>
+            <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/Control/Control_Grafica_Bogota.java</file>
             <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/Control/Control_Mapa_Colombia.java</file>
-            <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/Control/Control_Login.java</file>
-            <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/Frontera/Estadisticas.java</file>
             <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/DAO/DAO.java</file>
             <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/Control/Control_Mapa_Bogota.java</file>
+            <file>file:/C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/src/Control/Control_Grafica_Colombia.java</file>
         </group>
     </open-files>
 </project-private>
