@@ -1,13 +1,14 @@
 var casos = [4];
-casos[0] = [33][80];
-casos[1] = [33][80];
-casos[2] = [33][80];
-casos[3] = [33][80];
+casos[0] = [20][80];
+casos[1] = [20][80];
+casos[2] = [20][80];
+casos[3] = [20][80];
 
 casos[0] = JSON.parse(total);
 casos[1] = JSON.parse(activ);
 casos[2] = JSON.parse(recup);
 casos[3] = JSON.parse(falle);
+
 
 Date.prototype.subDays = function(days) {
   var dat = new Date(this.valueOf())
@@ -26,6 +27,8 @@ function getDates(startDate, stopDate) {
   return dateArray;
 }
 
+
+
 var dateArray = getDates((new Date()).subDays(79),new Date());
 for (i = 0; i < dateArray.length; i ++ ) {
     console.log(dateArray[i]);
@@ -33,20 +36,22 @@ for (i = 0; i < dateArray.length; i ++ ) {
 
 function myFunction() {
   G.setData(updateGrafica());
-  var e = document.getElementById("deps");
+  var e = document.getElementById("locs");
   var titulo = e.options[e.selectedIndex].text;
   document.getElementById("ubic").innerHTML = titulo;
 }
+
 
 function updateGrafica(){
   var z=0;
   var morrisData = [];
   
   for (tot=dateArray.length; z < tot; z++) {
-    morrisData.push({'day': dateArray[z], 'total': casos[0][document.getElementById("deps").selectedIndex][z], 'activ': casos[1][document.getElementById("deps").selectedIndex][z], 'recup': casos[2][document.getElementById("deps").selectedIndex][z], 'falle': casos[3][document.getElementById("deps").selectedIndex][z]});
+    morrisData.push({'day': dateArray[z], 'total': casos[0][document.getElementById("locs").selectedIndex][z], 'activ': casos[1][document.getElementById("locs").selectedIndex][z], 'recup': casos[2][document.getElementById("locs").selectedIndex][z], 'falle': casos[3][document.getElementById("locs").selectedIndex][z]});
   }
   return morrisData;
 }
+
 
 var G = Morris.Line({
     // ID of the element in which to draw the chart.
@@ -54,8 +59,8 @@ var G = Morris.Line({
     // Chart data records -- each entry in this array corresponds to a point on
     // the chart.
 
-    data: updateGrafica(),
-  
+    data: updateGrafica(),   
+    
     // The name of the data record attribute that contains x-values.
     xkey: 'day',
     // A list of names of data record attributes that contain y-values.

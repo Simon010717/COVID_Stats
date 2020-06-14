@@ -26,6 +26,7 @@ public class Control_Grafica_Bogota {
     public int[][][] graficasTemporalesBog(){
         int[][] graficaSub;
         int [][][] grafica = new int [21][81][4]; 
+        int [][][] graficadef = new int [20][81][4]; 
         String[] subs = dao.subdivisionesBog();
         
         for (int i = 0; i < grafica.length; i++) {
@@ -33,14 +34,10 @@ public class Control_Grafica_Bogota {
             grafica[i] = graficaSub;
             
         }
-        /*for (int i = 0; i < 37; i++) {
-            for (int j = 0; j < 81; j++) {
-                //for (int k = 0; k < 4; k++) {
-                    System.out.print(grafica[i][j][1] + " ");
-                //}
-            }System.out.println("");
-        }System.out.println("");*/
-        return grafica;
+        for (int i = 0; i < 7; i++) {graficadef[i] = grafica[i];}
+        for (int i = 7; i < 20; i++) {graficadef[i] = grafica[i+1];}
+        
+        return graficadef;
     }
     
     public void enviarAJS(){
@@ -64,10 +61,10 @@ public class Control_Grafica_Bogota {
             //wr.write(""); 
         }
         wr.write("["); 
-        for (int j = 0; j < 80; j++) {
+        for (int j = 0; j < 79; j++) {
                 wr.write(String.valueOf(graficas[graficas.length-1][j][0]) + ",");
         }
-        wr.write(String.valueOf(graficas[graficas.length-1][80][0]) + "]]\"\n");
+        wr.write(String.valueOf(graficas[graficas.length-1][79][0]) + "]]\"\n");
         
         wr.write("activ = \"["); 
         for (int i = 0; i < graficas.length-1; i++) {
@@ -78,10 +75,10 @@ public class Control_Grafica_Bogota {
             //wr.write(""); 
         }
         wr.write("["); 
-        for (int j = 0; j < 80; j++) {
+        for (int j = 0; j < 79; j++) {
                 wr.write(String.valueOf(graficas[graficas.length-1][j][1]) + ",");
         }
-        wr.write(String.valueOf(graficas[graficas.length-1][80][1]) + "]]\"\n");
+        wr.write(String.valueOf(graficas[graficas.length-1][79][1]) + "]]\"\n");
         
         wr.write("recup = \"["); 
         for (int i = 0; i < graficas.length-1; i++) {
@@ -92,10 +89,10 @@ public class Control_Grafica_Bogota {
             //wr.write(""); 
         }
         wr.write("["); 
-        for (int j = 0; j < 80; j++) {
+        for (int j = 0; j < 79; j++) {
                 wr.write(String.valueOf(graficas[graficas.length-1][j][2]) + ",");
         }
-        wr.write(String.valueOf(graficas[graficas.length-1][80][2]) + "]]\"\n");
+        wr.write(String.valueOf(graficas[graficas.length-1][79][2]) + "]]\"\n");
         
         wr.write("falle = \"["); 
         for (int i = 0; i < graficas.length-1; i++) {
@@ -106,10 +103,10 @@ public class Control_Grafica_Bogota {
             //wr.write(""); 
         }
         wr.write("["); 
-        for (int j = 0; j < 80; j++) {
+        for (int j = 0; j < 79; j++) {
                 wr.write(String.valueOf(graficas[graficas.length-1][j][3]) + ",");
         }
-        wr.write(String.valueOf(graficas[graficas.length-1][80][3]) + "]]\"");
+        wr.write(String.valueOf(graficas[graficas.length-1][79][3]) + "]]\"");
         wr.close();
         bw.close();
         }catch(IOException e){};

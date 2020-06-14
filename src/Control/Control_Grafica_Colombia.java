@@ -25,7 +25,8 @@ public class Control_Grafica_Colombia {
     
     public int[][][] graficasTemporalesCol(){
         int[][] graficaSub;
-        int [][][] grafica = new int [37][81][4]; 
+        int [][][] grafica = new int [37][80][4];
+        int [][][] graficadef = new int [33][80][4];
         String[] subs = dao.subdivisionesCol();
         
         for (int i = 0; i < grafica.length; i++) {
@@ -33,14 +34,25 @@ public class Control_Grafica_Colombia {
             grafica[i] = graficaSub;
             
         }
-        /*for (int i = 0; i < 37; i++) {
-            for (int j = 0; j < 81; j++) {
-                //for (int k = 0; k < 4; k++) {
-                    System.out.print(grafica[i][j][1] + " ");
-                //}
-            }System.out.println("");
-        }System.out.println("");*/
-        return grafica;
+        
+        graficadef[4] = grafica[5];
+        graficadef[6] = grafica[7];
+        graficadef[7] = grafica[9];
+        graficadef[8] = grafica[10];
+        
+        for (int i = 0; i < 3; i++) {graficadef[i] = grafica[i];}
+        for (int i = 9; i < 27; i++) {graficadef[i] = grafica[i+3];}
+        for (int i = 27; i < 33; i++) {graficadef[i] = grafica[i+4];}
+        
+        for (int i = 0; i < 80; i++) {
+            for (int j = 0; j < 4; j++) {
+                graficadef[3][i][j] = grafica[3][i][j] + grafica[4][i][j];
+                graficadef[5][i][j] = grafica[6][i][j] + grafica[11][i][j];
+                graficadef[30][i][j] = grafica[34][i][j] + grafica[8][i][j];
+                graficadef[19][i][j] = grafica[22][i][j] + grafica[30][i][j];
+            }
+        }
+        return graficadef;
     }
     
     public void enviarAJS(){
@@ -64,10 +76,10 @@ public class Control_Grafica_Colombia {
             //wr.write(""); 
         }
         wr.write("["); 
-        for (int j = 0; j < 80; j++) {
+        for (int j = 0; j < 79; j++) {
                 wr.write(String.valueOf(graficas[graficas.length-1][j][0]) + ",");
         }
-        wr.write(String.valueOf(graficas[graficas.length-1][80][0]) + "]]\"\n");
+        wr.write(String.valueOf(graficas[graficas.length-1][79][0]) + "]]\"\n");
         
         wr.write("activ = \"["); 
         for (int i = 0; i < graficas.length-1; i++) {
@@ -78,10 +90,10 @@ public class Control_Grafica_Colombia {
             //wr.write(""); 
         }
         wr.write("["); 
-        for (int j = 0; j < 80; j++) {
+        for (int j = 0; j < 79; j++) {
                 wr.write(String.valueOf(graficas[graficas.length-1][j][1]) + ",");
         }
-        wr.write(String.valueOf(graficas[graficas.length-1][80][1]) + "]]\"\n");
+        wr.write(String.valueOf(graficas[graficas.length-1][79][1]) + "]]\"\n");
         
         wr.write("recup = \"["); 
         for (int i = 0; i < graficas.length-1; i++) {
@@ -92,10 +104,10 @@ public class Control_Grafica_Colombia {
             //wr.write(""); 
         }
         wr.write("["); 
-        for (int j = 0; j < 80; j++) {
+        for (int j = 0; j < 79; j++) {
                 wr.write(String.valueOf(graficas[graficas.length-1][j][2]) + ",");
         }
-        wr.write(String.valueOf(graficas[graficas.length-1][80][2]) + "]]\"\n");
+        wr.write(String.valueOf(graficas[graficas.length-1][79][2]) + "]]\"\n");
         
         wr.write("falle = \"["); 
         for (int i = 0; i < graficas.length-1; i++) {
@@ -106,10 +118,10 @@ public class Control_Grafica_Colombia {
             //wr.write(""); 
         }
         wr.write("["); 
-        for (int j = 0; j < 80; j++) {
+        for (int j = 0; j < 79; j++) {
                 wr.write(String.valueOf(graficas[graficas.length-1][j][3]) + ",");
         }
-        wr.write(String.valueOf(graficas[graficas.length-1][80][3]) + "]]\"");
+        wr.write(String.valueOf(graficas[graficas.length-1][79][3]) + "]]\"");
         wr.close();
         bw.close();
         }catch(IOException e){};
@@ -118,12 +130,6 @@ public class Control_Grafica_Colombia {
     public static void main(String[] args) {
         Control_Grafica_Colombia control = new Control_Grafica_Colombia();
         control.enviarAJS();
-        /*for (int i = 0; i < 37; i++) {
-            for (int j = 0; j < 81; j++) {
-                //for (int k = 0; k < 4; k++) {
-                    System.out.print(control.graficasTemporalesCol()[i][j][0] + " ");
-                //}
-            }System.out.println("");
-        }System.out.println("");*/
+        
     }
 }

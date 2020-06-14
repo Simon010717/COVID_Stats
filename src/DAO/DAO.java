@@ -255,7 +255,7 @@ public class DAO {
     }
     
     public int[][] graficasTemporales(String sub){
-        int[][] casos = new int[81][4];
+        int[][] casos = new int[80][4];
         int i = 0;
         try {
             Statement statementCol = db.getConexion().createStatement();

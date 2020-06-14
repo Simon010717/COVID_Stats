@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui"/>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+
+        <link rel="stylesheet" href="morris.css">   
+        <script src="morris.min.js" charset="utf-8"></script>   
+        <script src="moment.min.js" charset="utf-8"></script> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script type="text/javascript" src="tempbog.json"></script>
+        <title>Gráficas temporales</title>
+    </head>
+    <body>      
+        <div class="mapa" id="mapa">
+            <div class="tablas">
+                
+                <label for="locs">Localidades:</label>
+
+                <select name="locs" id="locs" onchange="myFunction();">
+                    <option value="Antonio Nariño">Antonio Nariño</option>
+                    <option value="Barrios Unidos">Barrios Unidos</option>
+                    <option value="Bosa">Bosa</option>
+                    <option value="Chapinero">Chapinero</option>
+                    <option value="Ciudad Bolívar">Ciudad Bolívar</option>
+                    <option value="Engativa">Engativa</option>
+                    <option value="Fontibón">Fontibón</option>
+                    <option value="Kennedy">Kennedy</option>
+                    <option value="La candelaria">La candelaria</option>
+                    <option value="Los mártires">Los mártires</option>
+                    <option value="Puente Aranda">Puente Aranda</option>
+                    <option value="Rafael Uribe">Rafael Uribe</option>
+                    <option value="San Cristóbal">San Cristóbal</option>
+                    <option value="Santafé">Santafé</option>
+                    <option value="Suba">Suba</option>
+                    <option value="Sumapaz">Sumapaz</option>
+                    <option value="Teusaquillo">Teusaquillo</option>
+                    <option value="Tunjuelito">Tunjuelito</option>
+                    <option value="Usaquén">Usaquén</option>
+                    <option value="Usme">Usme</option>                
+                </select>
+            </div>             
+        </div>
+        <div class="mapa_completo">
+            <h1 id="ubic">Antonio Nariño</h1>
+            <div id="myfirstchart"></div>
+            </div>
+            <script src="tempbog.js" charset="utf-8"></script>
+        </div>
+    </body>
+</html>
