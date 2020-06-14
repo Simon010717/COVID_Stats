@@ -5,16 +5,29 @@
         <meta charset="utf-8">
 
         <meta name="Mapa geográfico" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui"/>
-        <link rel="stylesheet" href="app.css">
+        <title>Mapa geográfico Bogotá</title>
+        <link rel="stylesheet" href="app.css">   
+        <link rel="stylesheet" href="estilos.css">   
+        <link rel="stylesheet" href="fontawesome.css">
         <script type="text/javascript" src="geobog.json"></script>   
-           
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        
     </head>
     <body>
+        <div class="wrap">
+            <ul class="tabs">
+                <li><a href="geocol.html"><span class="fab fa-buffer"></span><span class="tab-text">Mapa Colombia</span></a></li>
+                <li><a href="geobog.html" class="active"><span class="fab fa-buffer"></span><span class="tab-text">Mapa Bogotá</span></a></li>
+                <li><a href="#"><span class="fab fa-buffer"></span><span class="tab-text">Gráficas temporales Colombia</span></a></li>
+                <li><a href="#"><span class="fab fa-buffer"></span><span class="tab-text">Gráficas temporales Bogotá</span></a></li>
+            </ul>
+        </div>
+
         <div class="mapa" id="mapa">
             <div class="tablas">
                 <table>
                     <tr>
-                        <td>Localidades con mayor crecimiento</td>
+                        <td><b>Localidades con mayor crecimiento</b></td>
                     </tr>
                     <tr>
                         <td id="contagio-1"></td>
@@ -28,7 +41,7 @@
                 </table>
                 <table >
                     <tr>
-                        <td>Localidades con menor crecimiento</td>
+                        <td><b>Localidades con menor crecimiento</b></td>
                     </tr>
                     <tr>
                         <td id="contagio-4"></td>
@@ -39,12 +52,7 @@
                     <tr>
                         <td id="contagio-6"></td>
                     </tr>
-                </table>  
-                <div id="col_button">
-                    <button onclick="location.href='geocol.html'">
-                        Mapa Colombia
-                    </button> 
-                </div>             
+                </table>               
             </div>
             <div class="mapa_completo">
             <div class="map__image">
@@ -153,11 +161,6 @@
                 </div>
             </div>
             </div>
-        </div>
-        <div class="graficos">
-            <button>
-                hola hola
-            </button>
         </div>
     </body>
 </html>
