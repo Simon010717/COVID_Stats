@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui"/>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+
+        <link rel="stylesheet" href="morris.css">   
+        <script src="morris.min.js" charset="utf-8"></script>   
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <title>Gráficas temporales</title>
+    </head>
+    <body>
+        <div class="mapa" id="mapa">
+            <div class="tablas">
+                <label for="cars">Departamentos:</label>
+
+                <select name="cars" id="cars">
+
+                    <option value="AMA">Amazonas</option>
+                    <option value="ANT">Antioquia</option>
+                    <option value="ARA">Arauca</option>
+                    <option value="ATL">Atlántico</option>
+                    <option value="BOL">Bolívar</option>
+                    <option value="BOY">Boyacá</option>
+                    <option value="CAU">Cauca</option>
+                    <option value="CES">Cesar</option>
+                    <option value="CHO">Chocó</option>
+                    <option value="CAL">Cali</option>
+                    <option value="COR">Mercedes</option>
+                    <option value="CAQ">Caquetá</option>
+                    <option value="CAS">Casanare</option>
+                    <option value="CUN">Cundinamarca</option>
+                    <option value="DC">Bogotá D.C</option>
+                    <option value="GUA">Guainia</option>
+                    <option value="GUV">Guaviare</option>
+                    <option value="HUI">Huila</option>
+                    <option value="LAG">Mercedes</option>
+                    <option value="MAG">Magdalena</option>
+                    <option value="NAR">Nariño</option>
+                    <option value="NSA">Norte de santander</option>
+                    <option value="PUT">Putumayo</option>
+                    <option value="QUI">Quindío</option>
+                    <option value="RIS">Risaralda</option>
+                    <option value="SAN">Santander</option>
+                    <option value="SUC">Sucre</option>
+                    <option value="SAP">San Andrés y Providencia</option>
+                    <option value="TOL">Tolima</option>
+                    <option value="VAC">Valle del Cauca</option>
+                    <option value="VAU">Vaupés</option>
+                    <option value="VID">Vichcada</option>
+                </select>
+                <label for="cars">Localidades:</label>
+
+                <select name="cars" id="cars">
+                    <option value="Antonio Nariño">Antonio Nariño</option>
+                    <option value="Barrios Unidos">Barrios Unidos</option>
+                    <option value="Bosa">Bosa</option>
+                    <option value="Chapinero">Chapinero</option>
+                    <option value="Ciudad Bolívar">Ciudad Bolívar</option>
+                    <option value="Engativa">Engativa</option>
+                    <option value="Fontibón">Fontibón</option>
+                    <option value="Kennedy">Kennedy</option>
+                    <option value="La candelaria">La candelaria</option>
+                    <option value="Los mártires">Los mártires</option>
+                    <option value="Puente Aranda">Puente Aranda</option>
+                    <option value="Rafael Uribe">Rafael Uribe</option>
+                    <option value="San Cristóbal">San Cristóbal</option>
+                    <option value="Santafé">Santafé</option>
+                    <option value="Suba">Suba</option>
+                    <option value="Sumapaz">Sumapaz</option>
+                    <option value="Teusaquillo">Teusaquillo</option>
+                    <option value="Tunjuelito">Tunjuelito</option>
+                    <option value="Usaquén">Usaquén</option>
+                    <option value="Usme">Usme</option>                
+                </select>
+            </div>             
+        </div>
+        <div class="mapa_completo">
+            <h1 id="titulo">Ubicación</h1>
+            <div id="myfirstchart"></div>
+            </div>
+            <script src="tempcol.js" charset="utf-8"></script>
+        </div>
+    </body>
+</html>
