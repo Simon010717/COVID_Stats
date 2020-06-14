@@ -23,11 +23,11 @@ public class Control_Mapa_Bogota {
         dao = new DAO();
     }
     
-    public int[] casosBogota(){
-        int[] casos = dao.casosMapaBogota();
-        int[] completos = new int[20];
+    public int[][] casosBogota(){
+        int[][] casos = dao.casosMapaBogota();
+        int[][] completos = new int[20][4];
         
-        int aux = 0;
+        int[] aux = new int[4];
         for (int i=0; i<casos.length/2; i++) {
             aux = casos[i];
             casos[i] = casos[casos.length-1-i];
@@ -46,9 +46,9 @@ public class Control_Mapa_Bogota {
     
     public void enviarAJS(){
         String[] crecimiento = dao.crecimiento();
-        int[] casosBog = casosBogota();
+        int[][] casosBog = casosBogota();
         File f;
-        f = new File("mapas/bogota.json");
+        f = new File("mapas/GeoBogota.json");
 
 
         //Escritura
@@ -56,18 +56,47 @@ public class Control_Mapa_Bogota {
         FileWriter w = new FileWriter(f);
         BufferedWriter bw = new BufferedWriter(w);
         PrintWriter wr = new PrintWriter(bw);  
-        wr.write("data = '[");
+        wr.write("conf = '[");
         for (int i = 0; i < casosBog.length-1; i++) {
-            wr.write(String.valueOf(casosBog[i])+",");
+            wr.write(String.valueOf(casosBog[i][0])+",");
         }
-        wr.write(String.valueOf(casosBog[casosBog.length-1])+"]';\n");
-        wr.write("dato = '[");
+        wr.write(String.valueOf(casosBog[casosBog.length-1][0])+"]';\n");
+        
+        wr.write("act = '[");
+        for (int i = 0; i < casosBog.length-1; i++) {
+            wr.write(String.valueOf(casosBog[i][1])+",");
+        }
+        wr.write(String.valueOf(casosBog[casosBog.length-1][1])+"]';\n");
+        
+        wr.write("rec = '[");
+        for (int i = 0; i < casosBog.length-1; i++) {
+            wr.write(String.valueOf(casosBog[i][2])+",");
+        }
+        wr.write(String.valueOf(casosBog[casosBog.length-1][2])+"]';\n");
+        
+        wr.write("fall = '[");
+        for (int i = 0; i < casosBog.length-1; i++) {
+            wr.write(String.valueOf(casosBog[i][3])+",");
+        }
+        wr.write(String.valueOf(casosBog[casosBog.length-1][3])+"]';\n");
+        
+        wr.write("crec = '["); //crecimiento
         for (int i = 6; i < 11; i++) {
             wr.write('\"'+String.valueOf(crecimiento[i])+'\"'+",");
         }
-        wr.write('\"'+String.valueOf(crecimiento[11])+'\"'+"]';");
+        wr.write('\"'+String.valueOf(crecimiento[11])+'\"'+"]';\n");
         wr.close();
         bw.close();
         }catch(IOException e){};
+    }
+    
+    public static void main(String[] args) {
+        Control_Mapa_Bogota control = new Control_Mapa_Bogota();
+        control.enviarAJS();
+        /*for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print(control.casosBogota()[i][j] + " ");
+            }System.out.println("");
+        }System.out.println("");*/
     }
 }

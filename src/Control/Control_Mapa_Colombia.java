@@ -32,7 +32,7 @@ public class Control_Mapa_Colombia {
             aux = casos[i];
             casos[i] = casos[casos.length-1-i];
             casos[casos.length-1-i]= aux;
-        }
+        }   
         completo[0] = casos[0];
         completo[1] = casos[1];
         completo[2] = casos[2];

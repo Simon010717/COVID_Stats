@@ -178,6 +178,27 @@ public class DAO {
         }
     }
     
+    public int[][] casosMapaBogota(){
+        int[][] casos = new int[21][4];
+        int i = 0;
+        try {
+            Statement statement = db.getConexion().createStatement();
+            ResultSet resultado = statement.executeQuery("call casosHoy ('Bogotá')");
+            while(resultado.next()){
+                casos [i][0] = resultado.getInt(2);
+                casos [i][1] = resultado.getInt(3);
+                casos [i][2] = resultado.getInt(4);
+                casos [i][3] = resultado.getInt(5);
+                i++;
+            }
+            
+           
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return casos;
+    }
+    
     public int[][] casosMapaColombia(){
         int[][] casos = new int[37][4];
         int i = 0;
@@ -252,22 +273,14 @@ public class DAO {
         return casos;
     }
     
-    public int[] casosMapaBogota(){
-        int[] casos = new int[21];
-        int i = 0;
-        try {
-            Statement statement = db.getConexion().createStatement();
-            ResultSet resultado = statement.executeQuery("call casosHoy ('Bogotá')");
-            while(resultado.next()){
-                casos [i] = resultado.getInt(1);
-                i++;
-            }
-            
-           
-        } catch (SQLException ex) {
-            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return casos;
+    public static void main(String[] args) {
+        DAO dao = new DAO();
+        
+        for (int i = 0; i < 21; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print(dao.casosMapaBogota()[i][j] + " ");
+            }System.out.println("");
+        }System.out.println("");
     }
     
 }
