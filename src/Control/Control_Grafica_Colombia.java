@@ -46,7 +46,7 @@ public class Control_Grafica_Colombia {
     public void enviarAJS(){
         int[][][] graficas = graficasTemporalesCol();
         File f;
-        f = new File("mapas/temcol.json");
+        f = new File("mapas/tempcol.json");
 
 
         //Escritura
