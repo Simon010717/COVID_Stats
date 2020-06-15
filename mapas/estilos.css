@@ -1,13 +1,5 @@
-*{
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
 body{
-    background:#286572;
+    background: #282828;;
     font-family: 'Segoe UI';
 }
 
@@ -19,7 +11,7 @@ body{
  
 ul.tabs{
     width: 100%;
-    background: #000000;;
+    background: #286572;;
     list-style: none;
     display: flex;
 }
@@ -38,16 +30,17 @@ ul.tabs li a{
     padding: 20px 0px;
 }
 .active{
-    background: #0984CC;
+    background: #22C9A4;
 }
 
 ul.tabs li a .tab-text{
     margin-left: 8px;
+    margin-top: 0px;
 }
 
 .mapa{
     width: 100%;
-    background: #286572;
+    background: #282828;
 }
 
 @media screen and (max-width: 700px){

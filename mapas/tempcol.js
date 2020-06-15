@@ -65,6 +65,7 @@ var G = Morris.Line({
     labels: ['confirmados','activos','recuperados', 'fallecidos'],
     resize: true,
     lineColors: ['red','yellow','blue','grey'],
+    pointStrokeColors: ['red','yellow','blue','grey'],
   });
 
 

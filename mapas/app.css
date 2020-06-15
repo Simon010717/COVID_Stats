@@ -34,7 +34,7 @@ button{
 .mapa_completo{
     display: flex;
     flex-direction: column;
-    width: 43.45%;
+    width: 39%;
     float: left;
 }
 .tablas{
