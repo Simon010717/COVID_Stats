@@ -112,15 +112,4 @@ public class Control_Grafica_Bogota {
         }catch(IOException e){};
     }
     
-    public static void main(String[] args) {
-        Control_Grafica_Bogota control = new Control_Grafica_Bogota();
-        control.enviarAJS();
-        /*for (int i = 0; i < 37; i++) {
-            for (int j = 0; j < 81; j++) {
-                //for (int k = 0; k < 4; k++) {
-                    System.out.print(control.graficasTemporalesCol()[i][j][0] + " ");
-                //}
-            }System.out.println("");
-        }System.out.println("");*/
-    }
 }

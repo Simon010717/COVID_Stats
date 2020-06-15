@@ -126,10 +126,4 @@ public class Control_Grafica_Colombia {
         bw.close();
         }catch(IOException e){};
     }
-    
-    public static void main(String[] args) {
-        Control_Grafica_Colombia control = new Control_Grafica_Colombia();
-        control.enviarAJS();
-        
-    }
 }

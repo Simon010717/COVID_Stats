@@ -1,5 +1,8 @@
 package Frontera;
 
+import Control.Control_Grafica_Bogota;
+import Control.Control_Grafica_Colombia;
+import Control.Control_Mapa_Bogota;
 import Control.Control_Mapa_Colombia;
 import static com.teamdev.jxbrowser.engine.RenderingMode.HARDWARE_ACCELERATED;
 
@@ -16,9 +19,15 @@ import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 
 public class MapaColombia {
-    public Control_Mapa_Colombia control = new Control_Mapa_Colombia();
+    public Control_Mapa_Colombia controlGeoCol = new Control_Mapa_Colombia();
+    public Control_Grafica_Colombia controlTempCol = new Control_Grafica_Colombia();
+    public Control_Mapa_Bogota controlGeoBog =  new Control_Mapa_Bogota();
+    public Control_Grafica_Bogota controlTempBog = new Control_Grafica_Bogota();
     public void ejecutar() {
-        control.enviaAJS();
+        controlGeoCol.enviaAJS();
+        controlTempCol.enviarAJS();
+        controlGeoBog.enviarAJS();
+        controlTempBog.enviarAJS();
         // Creating and running Chromium engine
         System.setProperty("jxbrowser.license.key", "1BNDHFSC1FVOAGBDPDQNWEX7VJWL9OHK8SELTY9HXWWA0ZWONI9AOEPWVHXKDCD27N8OJL"); 
         Engine engine = Engine.newInstance(
@@ -44,7 +53,7 @@ public class MapaColombia {
                 }
             });
             frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-            JTextField addressBar = new JTextField("file:///C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/mapas/index.html");
+            JTextField addressBar = new JTextField("file:///C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/mapas/geocol.html");
             addressBar.addActionListener(e ->
                     browser.navigation().loadUrl(addressBar.getText()));
             frame.add(addressBar, BorderLayout.NORTH);

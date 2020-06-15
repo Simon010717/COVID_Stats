@@ -218,7 +218,7 @@ public class DAO {
         return casos;
     }
     
-    public String[] subdivisionesCol(){
+        public String[] subdivisionesCol(){
         String[] casos = new String[37];
         int i = 0;
         try {

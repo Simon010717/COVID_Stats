@@ -121,8 +121,4 @@ public class Control_Mapa_Colombia {
         bw.close();
         }catch(IOException e){};
     }
-    public static void main(String[] args) {
-        Control_Mapa_Colombia control = new Control_Mapa_Colombia();
-        control.enviaAJS();
-    }
 }

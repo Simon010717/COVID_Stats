@@ -5,6 +5,7 @@
  */
 package Frontera;
 
+import Control.Control_Grafica_Bogota;
 import Control.Control_Mapa_Bogota;
 import com.teamdev.jxbrowser.browser.Browser;
 import com.teamdev.jxbrowser.engine.Engine;
@@ -24,9 +25,11 @@ import javax.swing.WindowConstants;
  * @author Juan Andres Gonzalez
  */
 public class MapaBogota {
-    public Control_Mapa_Bogota control =  new Control_Mapa_Bogota();
+    public Control_Mapa_Bogota controlGeo =  new Control_Mapa_Bogota();
+    public Control_Grafica_Bogota controlTemp = new Control_Grafica_Bogota();
     public void ejecutar() {
-        control.enviarAJS();
+        controlGeo.enviarAJS();
+        controlTemp.enviarAJS();
         // Creating and running Chromium engine
         System.setProperty("jxbrowser.license.key", "1BNDHFSC1FVOAGBDPDQNWEX7VJWL9OHK8SELTY9HXWWA0ZWONI9AOEPWVHXKDCD27N8OJL"); 
         Engine engine = Engine.newInstance(
@@ -53,7 +56,7 @@ public class MapaBogota {
             });
             
             frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-            JTextField addressBar = new JTextField("file:///C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/mapas/indexBog.html");
+            JTextField addressBar = new JTextField("file:///C:/Users/Juan%20Andres%20Gonzalez/Documents/La%20Nacho/Ingesoft/COVID_Stats/mapas/geobog.html");
             addressBar.addActionListener(e ->
                     browser.navigation().loadUrl(addressBar.getText()));
             frame.add(addressBar, BorderLayout.NORTH);

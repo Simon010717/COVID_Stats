@@ -89,14 +89,4 @@ public class Control_Mapa_Bogota {
         bw.close();
         }catch(IOException e){};
     }
-    
-    public static void main(String[] args) {
-        Control_Mapa_Bogota control = new Control_Mapa_Bogota();
-        control.enviarAJS();
-        /*for (int i = 0; i < 20; i++) {
-            for (int j = 0; j < 4; j++) {
-                System.out.print(control.casosBogota()[i][j] + " ");
-            }System.out.println("");
-        }System.out.println("");*/
-    }
 }
