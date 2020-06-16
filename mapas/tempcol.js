@@ -14,8 +14,13 @@ var graficas = [3];
   graficas[1] = [];
   graficas[2] = [];
 
+var fechaActual = JSON.stringify(fecha);
+fechaActual.toString();
+new Date(fechaActual);
+console.log(fechaActual);
+
 Date.prototype.subDays = function(days) {
-  var dat = new Date(this.valueOf())
+  var dat = new Date(fechaActual);
   dat.setDate(dat.getDate() - days);
   return dat;
 }
@@ -31,7 +36,7 @@ function getDates(startDate, stopDate) {
   return dateArray;
 }
 
-var dateArray = getDates((new Date()).subDays(79),new Date());
+var dateArray = getDates(new Date(fechaActual).subDays(79),new Date(fechaActual));
 
 function tipo_grafica(c){
   var z=0;

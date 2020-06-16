@@ -1,17 +1,15 @@
-var casos = [4];
-casos[0] = [20][80];
-casos[1] = [20][80];
-casos[2] = [20][80];
-casos[3] = [20][80];
+var casos = [];
+casos = [20][80];
 
-casos[0] = JSON.parse(total);
-casos[1] = JSON.parse(activ);
-casos[2] = JSON.parse(recup);
-casos[3] = JSON.parse(falle);
+casos = JSON.parse(total);
 
+var fechaActual = JSON.stringify(fecha);
+fechaActual.toString();
+new Date(fechaActual);
+console.log(fechaActual);
 
 Date.prototype.subDays = function(days) {
-  var dat = new Date(this.valueOf())
+  var dat = new Date(fechaActual);
   dat.setDate(dat.getDate() - days);
   return dat;
 }
@@ -27,12 +25,8 @@ function getDates(startDate, stopDate) {
   return dateArray;
 }
 
+var dateArray = getDates(new Date(fechaActual).subDays(79),new Date(fechaActual));
 
-
-var dateArray = getDates((new Date()).subDays(79),new Date());
-for (i = 0; i < dateArray.length; i ++ ) {
-    console.log(dateArray[i]);
-}
 
 function myFunction() {
   G.setData(updateGrafica());
@@ -47,7 +41,7 @@ function updateGrafica(){
   var morrisData = [];
   
   for (tot=dateArray.length; z < tot; z++) {
-    morrisData.push({'day': dateArray[z], 'total': casos[0][document.getElementById("locs").selectedIndex][z], 'activ': casos[1][document.getElementById("locs").selectedIndex][z], 'recup': casos[2][document.getElementById("locs").selectedIndex][z], 'falle': casos[3][document.getElementById("locs").selectedIndex][z]});
+    morrisData.push({'day': dateArray[z], 'total': casos[document.getElementById("locs").selectedIndex][z]});
   }
   return morrisData;
 }
@@ -64,12 +58,13 @@ var G = Morris.Line({
     // The name of the data record attribute that contains x-values.
     xkey: 'day',
     // A list of names of data record attributes that contain y-values.
-    ykeys: ['total', 'activ','recup','falle'],
+    ykeys: ['total'],
     // Labels for the ykeys -- will be displayed when you hover over the
     // chart.
-    labels: ['confirmados','activos','recuperados', 'fallecidos'],
+    labels: ['confirmados'],
     resize: true,
-    lineColors: ['red','yellow','blue','grey'],
+    lineColors: ['red'],
+    pointStrokeColors: ['red'],
   });
 
 

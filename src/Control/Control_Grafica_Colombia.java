@@ -30,7 +30,7 @@ public class Control_Grafica_Colombia {
         String[] subs = dao.subdivisionesCol();
         
         for (int i = 0; i < grafica.length; i++) {
-            graficaSub = dao.graficasTemporales(subs[i]);
+            graficaSub = dao.graficasTemporalesCol(subs[i]);
             grafica[i] = graficaSub;
             
         }
@@ -57,6 +57,7 @@ public class Control_Grafica_Colombia {
     
     public void enviarAJS(){
         int[][][] graficas = graficasTemporalesCol();
+        String maxFecha = dao.maxFecha("Vichada");
         File f;
         f = new File("mapas/tempcol.json");
 
@@ -121,9 +122,16 @@ public class Control_Grafica_Colombia {
         for (int j = 0; j < 79; j++) {
                 wr.write(String.valueOf(graficas[graficas.length-1][j][3]) + ",");
         }
-        wr.write(String.valueOf(graficas[graficas.length-1][79][3]) + "]]\"");
+        wr.write(String.valueOf(graficas[graficas.length-1][79][3]) + "]]\"\n");
+        
+        wr.write("fecha = \"["+ maxFecha + "]\"\n"); 
         wr.close();
         bw.close();
         }catch(IOException e){};
+    }
+    
+    public static void main(String[] args) {
+        Control_Grafica_Colombia control = new Control_Grafica_Colombia();
+        control.enviarAJS();
     }
 }

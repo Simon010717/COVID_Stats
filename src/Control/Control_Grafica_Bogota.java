@@ -23,14 +23,14 @@ public class Control_Grafica_Bogota {
         dao = new DAO();
     }
     
-    public int[][][] graficasTemporalesBog(){
-        int[][] graficaSub;
-        int [][][] grafica = new int [21][81][4]; 
-        int [][][] graficadef = new int [20][81][4]; 
+    public int[][] graficasTemporalesBog(){
+        int[] graficaSub;
+        int [][] grafica = new int [21][80]; 
+        int [][] graficadef = new int [20][80]; 
         String[] subs = dao.subdivisionesBog();
         
         for (int i = 0; i < grafica.length; i++) {
-            graficaSub = dao.graficasTemporales(subs[i]);
+            graficaSub = dao.graficasTemporalesBog(subs[i]);
             grafica[i] = graficaSub;
             
         }
@@ -41,7 +41,8 @@ public class Control_Grafica_Bogota {
     }
     
     public void enviarAJS(){
-        int[][][] graficas = graficasTemporalesBog();
+        int[][] graficas = graficasTemporalesBog();
+        String maxFecha = dao.maxFecha("Usme");
         File f;
         f = new File("mapas/tempbog.json");
 
@@ -56,60 +57,25 @@ public class Control_Grafica_Bogota {
         for (int i = 0; i < graficas.length-1; i++) {
             wr.write("["); 
             for (int j = 0; j < graficas[i].length-1; j++) {
-                wr.write(String.valueOf(graficas[i][j][0]) + ",");
-            }wr.write(String.valueOf(graficas[i][graficas[i].length-1][0])+"],");
+                wr.write(String.valueOf(graficas[i][j]) + ",");
+            }wr.write(String.valueOf(graficas[i][graficas[i].length-1])+"],");
             //wr.write(""); 
         }
         wr.write("["); 
         for (int j = 0; j < 79; j++) {
-                wr.write(String.valueOf(graficas[graficas.length-1][j][0]) + ",");
+                wr.write(String.valueOf(graficas[graficas.length-1][j]) + ",");
         }
-        wr.write(String.valueOf(graficas[graficas.length-1][79][0]) + "]]\"\n");
+        wr.write(String.valueOf(graficas[graficas.length-1][79]) + "]]\"\n");
         
-        wr.write("activ = \"["); 
-        for (int i = 0; i < graficas.length-1; i++) {
-            wr.write("["); 
-            for (int j = 0; j < graficas[i].length-1; j++) {
-                wr.write(String.valueOf(graficas[i][j][1]) + ",");
-            }wr.write(String.valueOf(graficas[i][graficas[i].length-1][1])+"],");
-            //wr.write(""); 
-        }
-        wr.write("["); 
-        for (int j = 0; j < 79; j++) {
-                wr.write(String.valueOf(graficas[graficas.length-1][j][1]) + ",");
-        }
-        wr.write(String.valueOf(graficas[graficas.length-1][79][1]) + "]]\"\n");
+        wr.write("fecha = \"["+ maxFecha + "]\"\n"); 
         
-        wr.write("recup = \"["); 
-        for (int i = 0; i < graficas.length-1; i++) {
-            wr.write("["); 
-            for (int j = 0; j < graficas[i].length-1; j++) {
-                wr.write(String.valueOf(graficas[i][j][2]) + ",");
-            }wr.write(String.valueOf(graficas[i][graficas[i].length-1][2])+"],");
-            //wr.write(""); 
-        }
-        wr.write("["); 
-        for (int j = 0; j < 79; j++) {
-                wr.write(String.valueOf(graficas[graficas.length-1][j][2]) + ",");
-        }
-        wr.write(String.valueOf(graficas[graficas.length-1][79][2]) + "]]\"\n");
-        
-        wr.write("falle = \"["); 
-        for (int i = 0; i < graficas.length-1; i++) {
-            wr.write("["); 
-            for (int j = 0; j < graficas[i].length-1; j++) {
-                wr.write(String.valueOf(graficas[i][j][3]) + ",");
-            }wr.write(String.valueOf(graficas[i][graficas[i].length-1][3])+"],");
-            //wr.write(""); 
-        }
-        wr.write("["); 
-        for (int j = 0; j < 79; j++) {
-                wr.write(String.valueOf(graficas[graficas.length-1][j][3]) + ",");
-        }
-        wr.write(String.valueOf(graficas[graficas.length-1][79][3]) + "]]\"");
         wr.close();
         bw.close();
         }catch(IOException e){};
+    }
+    public static void main(String[] args) {
+        Control_Grafica_Bogota control = new Control_Grafica_Bogota();
+        control.enviarAJS();
     }
     
 }

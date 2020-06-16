@@ -254,12 +254,12 @@ public class DAO {
         return casos;
     }
     
-    public int[][] graficasTemporales(String sub){
+    public int[][] graficasTemporalesCol(String sub){
         int[][] casos = new int[80][4];
         int i = 0;
         try {
             Statement statementCol = db.getConexion().createStatement();
-            ResultSet resultadoCol = statementCol.executeQuery("call graficasTemporales('" + sub + "')");
+            ResultSet resultadoCol = statementCol.executeQuery("call temporalesCol('" + sub + "')");
             while(resultadoCol.next()){
                 casos [i][0] = resultadoCol.getInt(1);
                 casos [i][1] = resultadoCol.getInt(2);
@@ -273,14 +273,41 @@ public class DAO {
         return casos;
     }
     
-    public static void main(String[] args) {
-        DAO dao = new DAO();
-        
-        for (int i = 0; i < 21; i++) {
-            for (int j = 0; j < 4; j++) {
-                System.out.print(dao.casosMapaBogota()[i][j] + " ");
-            }System.out.println("");
-        }System.out.println("");
+    public int[] graficasTemporalesBog(String sub){
+        int[] casos = new int[80];
+        int i = 0;
+        try {
+            Statement statementCol = db.getConexion().createStatement();
+            ResultSet resultadoCol = statementCol.executeQuery("call temporalesBog('" + sub + "')");
+            while(resultadoCol.next()){
+                casos [i] = resultadoCol.getInt(1);
+                
+                i++;
+            }           
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return casos;
     }
     
+    public String maxFecha(String sub){
+        String fechamax = "";
+        int i = 0;
+        try {
+            Statement statementCol = db.getConexion().createStatement();
+            ResultSet resultadoCol = statementCol.executeQuery("call fechaMax('" + sub + "')");
+            while(resultadoCol.next()){
+                fechamax = resultadoCol.getString(1);
+                
+                i++;
+            }           
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return fechamax;
+    }
+    public static void main(String[] args) {
+        DAO dao = new DAO();
+        System.out.println(dao.maxFecha("Usme"));
+    }
 }
