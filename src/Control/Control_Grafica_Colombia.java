@@ -124,14 +124,11 @@ public class Control_Grafica_Colombia {
         }
         wr.write(String.valueOf(graficas[graficas.length-1][79][3]) + "]]\"\n");
         
-        wr.write("fecha = \"["+ maxFecha + "]\"\n"); 
+        wr.write("fecha = \""+ maxFecha + "\"\n"); 
         wr.close();
         bw.close();
         }catch(IOException e){};
     }
     
-    public static void main(String[] args) {
-        Control_Grafica_Colombia control = new Control_Grafica_Colombia();
-        control.enviarAJS();
-    }
+    
 }

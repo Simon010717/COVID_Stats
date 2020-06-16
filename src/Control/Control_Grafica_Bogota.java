@@ -67,7 +67,7 @@ public class Control_Grafica_Bogota {
         }
         wr.write(String.valueOf(graficas[graficas.length-1][79]) + "]]\"\n");
         
-        wr.write("fecha = \"["+ maxFecha + "]\"\n"); 
+        wr.write("fecha = \""+ maxFecha + "\"\n"); 
         
         wr.close();
         bw.close();
