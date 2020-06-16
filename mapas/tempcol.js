@@ -9,6 +9,11 @@ casos[1] = JSON.parse(activ);
 casos[2] = JSON.parse(recup);
 casos[3] = JSON.parse(falle);
 
+var graficas = [3];
+  graficas[0] = [];
+  graficas[1] = [];
+  graficas[2] = [];
+
 Date.prototype.subDays = function(days) {
   var dat = new Date(this.valueOf())
   dat.setDate(dat.getDate() - days);
@@ -27,8 +32,58 @@ function getDates(startDate, stopDate) {
 }
 
 var dateArray = getDates((new Date()).subDays(79),new Date());
-for (i = 0; i < dateArray.length; i ++ ) {
-    console.log(dateArray[i]);
+
+function tipo_grafica(c){
+  var z=0;
+  switch (c) {
+    case "0":
+      console.log("case 0");
+      graficas[0] = [];
+      for (tot=dateArray.length; z < tot; z++) {
+        graficas[0].push({'day': dateArray[z], 'confirmados': casos[0][document.getElementById("deps").selectedIndex][z], 'activos': casos[1][document.getElementById("deps").selectedIndex][z], 'recuperados': casos[2][document.getElementById("deps").selectedIndex][z], 'fallecidos': casos[3][document.getElementById("deps").selectedIndex][z]});
+      }
+      graficas[1] = ['confirmados','activos','recuperados', 'fallecidos'];
+      graficas[2] = ['red','yellow','blue','grey'];
+      break;
+
+    case "1":
+      console.log("case 1");
+      graficas[0] = [];
+      for (tot=dateArray.length; z < tot; z++) {
+        graficas[0].push({'day': dateArray[z], 'activos': casos[1][document.getElementById("deps").selectedIndex][z]});
+      }
+      graficas[1] = ['activos'];
+      graficas[2] = ['yellow'];
+
+      
+      break;
+
+    case "2":
+      console.log("case 2");
+      graficas[0] = [];
+      for (tot=dateArray.length; z < tot; z++) {
+        graficas[0].push({'day': dateArray[z], 'recuperados': casos[2][document.getElementById("deps").selectedIndex][z]});
+      }
+      graficas[1] = ['recuperados'];
+      graficas[2] = ['blue'];
+
+      
+      break;
+
+    case "3":
+      console.log("case 3"); 
+      graficas[0] = [];
+      for (tot=dateArray.length; z < tot; z++) {
+        graficas[0].push({'day': dateArray[z], 'fallecidos': casos[3][document.getElementById("deps").selectedIndex][z]});
+      }
+      graficas[1] = ['fallecidos'];
+      graficas[2] = ['grey'];
+      break;
+
+    default: 
+      break;
+  }
+  G.setData(graficas[0]);
 }
 
 function myFunction() {
@@ -43,10 +98,12 @@ function updateGrafica(){
   var morrisData = [];
   
   for (tot=dateArray.length; z < tot; z++) {
-    morrisData.push({'day': dateArray[z], 'total': casos[0][document.getElementById("deps").selectedIndex][z], 'activ': casos[1][document.getElementById("deps").selectedIndex][z], 'recup': casos[2][document.getElementById("deps").selectedIndex][z], 'falle': casos[3][document.getElementById("deps").selectedIndex][z]});
+    morrisData.push({'day': dateArray[z], 'confirmados': casos[0][document.getElementById("deps").selectedIndex][z], 'activos': casos[1][document.getElementById("deps").selectedIndex][z], 'recuperados': casos[2][document.getElementById("deps").selectedIndex][z], 'fallecidos': casos[3][document.getElementById("deps").selectedIndex][z]});
   }
   return morrisData;
 }
+
+
 
 var G = Morris.Line({
     // ID of the element in which to draw the chart.
@@ -59,7 +116,7 @@ var G = Morris.Line({
     // The name of the data record attribute that contains x-values.
     xkey: 'day',
     // A list of names of data record attributes that contain y-values.
-    ykeys: ['total', 'activ','recup','falle'],
+    ykeys: ['confirmados','activos','recuperados', 'fallecidos'],
     // Labels for the ykeys -- will be displayed when you hover over the
     // chart.
     labels: ['confirmados','activos','recuperados', 'fallecidos'],
@@ -67,5 +124,4 @@ var G = Morris.Line({
     lineColors: ['red','yellow','blue','grey'],
     pointStrokeColors: ['red','yellow','blue','grey'],
   });
-
 
