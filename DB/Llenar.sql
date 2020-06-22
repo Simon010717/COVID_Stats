@@ -71,9 +71,11 @@ insert into EstadisticasCOVID.Subdivision values ('Usme','Bogotá');
 drop procedure if exists llenadoRegistrosCol1;
 drop procedure if exists llenadoRegistrosCol2;
 drop procedure if exists llenadoRegistrosBog;
+drop procedure if exists actualizacionBog;
+drop procedure if exists actualizacionCol;
 
 delimiter #
-create procedure llenadoRegistrosCol2()
+create procedure llenadoRegistrosCol1()
 
 begin
 	declare i int;
@@ -84,10 +86,12 @@ begin
 	select @maxFecha, @minFecha;
 	while i < @n do
 		set @iFecha = @minFecha;
-		while @iFecha <= @maxFecha do
+		while @iFecha < @maxFecha do
 			call RegistroHistoricoCol((select idSubdivision from Subdivision where idMapa='Colombia' limit i,1),@iFecha);
 			set @iFecha = date_add(@iFecha, interval 1 day);
 		end while;
+        call RegistroHoyCol((select idSubdivision from Subdivision where idMapa='Colombia' limit i,1),@iFecha);
+		set @iFecha = date_add(@iFecha, interval 1 day);
 		select i;
 		set i = i +1;
 	end while;
@@ -95,7 +99,7 @@ begin
 end #
 
 delimiter #
-create procedure llenadoRegistrosCol1()
+create procedure llenadoRegistrosCol2()
 
 begin
 	declare i int;
@@ -106,10 +110,12 @@ begin
 	select @maxFecha, @minFecha;
 	while i < @n do
 		set @iFecha = @minFecha;
-		while @iFecha <= @maxFecha do
+		while @iFecha < @maxFecha do
 			call RegistroHistoricoCol((select idSubdivision from Subdivision where idMapa='Colombia' limit i,1),@iFecha);
 			set @iFecha = date_add(@iFecha, interval 1 day);
 		end while;
+        call RegistroHoyCol((select idSubdivision from Subdivision where idMapa='Colombia' limit i,1),@iFecha);
+		set @iFecha = date_add(@iFecha, interval 1 day);
 		select i;
 		set i = i +1;
 	end while;
@@ -129,17 +135,74 @@ begin
 	select @maxFecha, @minFecha;
 	while i < @n do
 		set @iFecha = @minFecha;
-		while @iFecha <= @maxFecha do
+		while @iFecha < @maxFecha do
 			call RegistroHistoricoBog((select idSubdivision from Subdivision where idMapa='Bogotá' limit i,1),@iFecha);
 			set @iFecha = date_add(@iFecha, interval 1 day);
 		end while;
+        call RegistroHoyBog((select idSubdivision from Subdivision where idMapa='Bogotá' limit i,1),@iFecha);
+		set @iFecha = date_add(@iFecha, interval 1 day);
 		select i;
 		set i = i +1;
 	end while;
-	commit;
 end #
 
+delimiter #
+create procedure actualizacionBog()
 
+begin
+	declare i int;
+	set i = 0;
+	set @n = (select count(*) from EstadisticasCOVID.Subdivision where idMapa='Bogotá');
+    set @fechaBog = (select max(fecha_diagnostico) from EstadisticasCOVID.Bogota);
+    set @fechaReg = (select max(fecha) from EstadisticasCOVID.Registro where idSubdivision='Usme');
+    SET FOREIGN_KEY_CHECKS = 0; 
+    delete from EstadisticasCOVID.confirmadosEdad where fecha >= @fechaReg and idSubdivision in (select idSubdivision from EstadisticasCOVID.Subdivision where idMapa='Bogotá');
+    delete from EstadisticasCOVID.fallecidosEdad where fecha >= @fechaReg and idSubdivision in (select idSubdivision from EstadisticasCOVID.Subdivision where idMapa='Bogotá');
+    delete from EstadisticasCOVID.recuperadosEdad where fecha >= @fechaReg and idSubdivision in (select idSubdivision from EstadisticasCOVID.Subdivision where idMapa='Bogotá');
+    delete from EstadisticasCOVID.Registro where fecha >= @fechaReg and idSubdivision in (select idSubdivision from EstadisticasCOVID.Subdivision where idMapa='Bogotá');
+    SET FOREIGN_KEY_CHECKS = 1;
+	select @fechaBog, @fechaReg;
+	while i < @n do
+		set @iFecha = @fechaReg;
+		while @iFecha < @fechaBog do
+			call RegistroHistoricoBog((select idSubdivision from Subdivision where idMapa='Bogotá' limit i,1),@iFecha);
+			set @iFecha = date_add(@iFecha, interval 1 day);
+		end while;
+        call RegistroHoyBog((select idSubdivision from Subdivision where idMapa='Bogotá' limit i,1),@iFecha);
+		set @iFecha = date_add(@iFecha, interval 1 day);
+		select i;
+		set i = i +1;
+	end while;
+end # 
+
+delimiter #
+create procedure actualizacionCol()
+
+begin
+	declare i int;
+	set i = 0;
+	set @n = (select count(*) from EstadisticasCOVID.Subdivision where idMapa='Colombia');
+    set @fechaCol = (select max(fecha_diagnostico) from EstadisticasCOVID.INS);
+    set @fechaReg = (select max(fecha) from EstadisticasCOVID.Registro where idSubdivision='Vichada');
+    SET FOREIGN_KEY_CHECKS = 0; 
+    delete from EstadisticasCOVID.confirmadosEdad where fecha >= @fechaReg and idSubdivision in (select idSubdivision from EstadisticasCOVID.Subdivision where idMapa='Colombia');
+    delete from EstadisticasCOVID.fallecidosEdad where fecha >= @fechaReg and idSubdivision in (select idSubdivision from EstadisticasCOVID.Subdivision where idMapa='Colombia');
+    delete from EstadisticasCOVID.recuperadosEdad where fecha >= @fechaReg and idSubdivision in (select idSubdivision from EstadisticasCOVID.Subdivision where idMapa='Colombia');
+    delete from EstadisticasCOVID.Registro where fecha >= @fechaReg and idSubdivision in (select idSubdivision from EstadisticasCOVID.Subdivision where idMapa='Colombia');
+    SET FOREIGN_KEY_CHECKS = 1;
+	select @fechaCol, @fechaReg;
+	while i < @n do
+		set @iFecha = @fechaReg;
+		while @iFecha < @fechaCol do
+			call RegistroHistoricoCol((select idSubdivision from Subdivision where idMapa='Colombia' limit i,1),@iFecha);
+			set @iFecha = date_add(@iFecha, interval 1 day);
+		end while;
+        call RegistroHoyCol((select idSubdivision from Subdivision where idMapa='Colombia' limit i,1),@iFecha);
+		set @iFecha = date_add(@iFecha, interval 1 day);
+		select i;
+		set i = i +1;
+	end while;
+end # 
 
 -- call llenadoRegistrosCol();
 -- call llenadoRegistrosBog();

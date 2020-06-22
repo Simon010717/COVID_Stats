@@ -101,9 +101,9 @@ begin
 		depart,
 		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado='Recuperado'),
 		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado='Fallecido'),
-		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado in ('Moderado','Severo','Crítico','No causa Directa)','Estudio') and ubicacion='Casa'),
-		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado in ('Moderado','Severo','Crítico','No causa Directa)','Estudio') and ubicacion='Hospital'),
-		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado in ('Moderado','Severo','Crítico','No causa Directa)','Estudio') and ubicacion='Hospital UCI'),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado not in ('Recuperado','Fallecido') and ubicacion='Casa'),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado not in ('Recuperado','Fallecido') and ubicacion='Hospital'),
+		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and estado not in ('Recuperado','Fallecido') and ubicacion='Hospital UCI'),
 		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and sexo='F'),
 		(select count(*) from EstadisticasCOVID.Bogota where localidad=depart and sexo='M'),
 		0
@@ -352,5 +352,3 @@ begin
 		set i = i +1;
 	end while;
 end #
-
--- call hoyAyer();

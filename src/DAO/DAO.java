@@ -22,7 +22,7 @@ public class DAO {
     
     public DAO(){
         try {
-            db = new DBConexion();
+            db = new DBConexion().getInstance();
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -306,8 +306,50 @@ public class DAO {
         }
         return fechamax;
     }
-    public static void main(String[] args) {
-        DAO dao = new DAO();
-        System.out.println(dao.maxFecha("Usme"));
+    
+    public int[][] distCasosHoyCol(){
+        int[][] casos = new int[37][37];
+        int i = 0;
+        try {
+            Statement statementCol = db.getConexion().createStatement();
+            ResultSet resultadoCol = statementCol.executeQuery("call hoyCol()");
+            while(resultadoCol.next()){
+                System.out.print(i+" ");
+                for(int j=1; j<18; j++){
+                    casos [i][j-1] = resultadoCol.getInt(j+1);
+                    System.out.print(casos[i][j-1]+" ");
+                }
+                for(int j=19; j<39; j++){
+                    casos [i][j-2] = resultadoCol.getInt(j+1);
+                    System.out.print(casos[i][j-2]+" ");
+                }
+                System.out.println("");
+                i++;
+            }           
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return casos;
+    }
+    
+    public int[][] distCasosHoyBog(){
+        int[][] casos = new int[21][37];
+        int i = 0;
+        try {
+            Statement statementCol = db.getConexion().createStatement();
+            ResultSet resultadoCol = statementCol.executeQuery("call hoyBog()");
+            while(resultadoCol.next()){
+                for(int j=1; j<18; j++){
+                    casos [i][j-1] = resultadoCol.getInt(j+1);
+                }
+                for(int j=19; j<39; j++){
+                    casos [i][j-2] = resultadoCol.getInt(j+1);
+                }
+                i++;
+            }           
+        } catch (SQLException ex) {
+            Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return casos;
     }
 }

@@ -338,8 +338,7 @@ int mousePressY;
             case 0:
                 errorLabel.setText("Usuario y contraseña correctos");
                 errorLabel.setForeground(Color.green);
-                new MapaColombia().ejecutar(); 
-                //new MapaBogota().ejecutar(); 
+                new Mapas().ejecutar(); 
                 this.dispose();
                 break;
             case -1:

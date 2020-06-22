@@ -104,6 +104,15 @@ button{
     padding: 8px 8px;
 }
 
+div.graficas_hoy{
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 8px;
+}
+
 .botones_tipo{ 
     display: flex;
     flex-direction: row;

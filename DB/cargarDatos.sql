@@ -43,6 +43,16 @@ CREATE TABLE IF NOT EXISTS INS(
 	tipo_recuperacion varchar(50)
 );
 
+update EstadisticasCOVID.Bogota set estado = 'Recuperado' where estado like 'Recuperado%';
+update EstadisticasCOVID.Bogota set estado = 'Fallecido' where estado like 'Fallecido%';
+update EstadisticasCOVID.Bogota set estado = 'Crítico' where estado like 'Crítico%';
+update EstadisticasCOVID.Bogota set estado = 'Moderado' where estado like 'Moderado%';
+update EstadisticasCOVID.Bogota set estado = 'Severo' where estado like 'Severo%'; 
+update EstadisticasCOVID.Bogota set ubicacion = 'Casa' where ubicacion like 'Casa%';
+update EstadisticasCOVID.Bogota set ubicacion = 'Fallecido' where ubicacion like 'Fallecido%';
+update EstadisticasCOVID.Bogota set ubicacion = 'Hospital UCI' where ubicacion like 'Hospital UCI%';
+update EstadisticasCOVID.Bogota set ubicacion = 'Hospital' where ubicacion != 'Hospital UCI' and ubicacion like 'Hospital%';
+
 LOAD DATA LOCAL INFILE 'datosColombia.csv' 
 INTO TABLE INS 
 FIELDS TERMINATED BY ','
@@ -51,4 +61,5 @@ IGNORE 1 ROWS;
 
 update EstadisticasCOVID.INS set fecha_diagnostico = fecha_de_notificacion where DATE_FORMAT(fecha_diagnostico, '%Y-%m-%d') = '0000-00-00';
 
-call hoyAyer();
+call actualizacionBog();
+call actualizacionCol();
