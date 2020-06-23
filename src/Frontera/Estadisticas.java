@@ -44,19 +44,6 @@ public class Estadisticas extends javax.swing.JFrame {
         barra_superior = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
-        mas_visitas = new javax.swing.JPanel();
-        jLabel16 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
-        jLabel9 = new javax.swing.JLabel();
-        jSeparator3 = new javax.swing.JSeparator();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jSeparator4 = new javax.swing.JSeparator();
         mas_crec = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
@@ -138,79 +125,6 @@ public class Estadisticas extends javax.swing.JFrame {
         principal.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 550, -1, 43));
 
         jPanel8.setLayout(new java.awt.GridLayout(1, 0));
-
-        mas_visitas.setBackground(new java.awt.Color(40, 101, 114));
-        mas_visitas.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        mas_visitas.setForeground(new java.awt.Color(40, 101, 114));
-        mas_visitas.setPreferredSize(new java.awt.Dimension(249, 479));
-        mas_visitas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel16.setText("<html>Departamentos más<br>seleccionadas</html>");
-        mas_visitas.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 1, -1, -1));
-
-        jSeparator1.setBackground(new java.awt.Color(40, 101, 114));
-        jSeparator1.setForeground(new java.awt.Color(40, 101, 114));
-        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jSeparator1.setEnabled(false);
-        mas_visitas.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 45, -1, 45));
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText(control.masBuscados()[0]);
-        mas_visitas.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 103, -1, -1));
-
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText(control.masBuscados()[1]);
-        mas_visitas.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 133, -1, -1));
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText(control.masBuscados()[2]);
-        mas_visitas.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 163, -1, -1));
-
-        jSeparator2.setBackground(new java.awt.Color(40, 101, 114));
-        jSeparator2.setForeground(new java.awt.Color(40, 101, 114));
-        jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jSeparator2.setEnabled(false);
-        mas_visitas.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 180, -1, 45));
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("<html>Localidades más<br>seleccionadas</html>");
-        mas_visitas.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 225, 157, -1));
-
-        jSeparator3.setBackground(new java.awt.Color(40, 101, 114));
-        jSeparator3.setForeground(new java.awt.Color(40, 101, 114));
-        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jSeparator3.setEnabled(false);
-        mas_visitas.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 269, -1, 45));
-
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText(control.masBuscados()[3]);
-        mas_visitas.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 327, -1, -1));
-
-        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText(control.masBuscados()[4]);
-        mas_visitas.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 357, -1, -1));
-
-        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText(control.masBuscados()[5]);
-        mas_visitas.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 387, -1, -1));
-
-        jSeparator4.setBackground(new java.awt.Color(40, 101, 114));
-        jSeparator4.setForeground(new java.awt.Color(40, 101, 114));
-        jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jSeparator4.setEnabled(false);
-        mas_visitas.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 404, -1, 45));
-
-        jPanel8.add(mas_visitas);
 
         mas_crec.setBackground(new java.awt.Color(40, 101, 114));
         mas_crec.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -683,12 +597,6 @@ public class Estadisticas extends javax.swing.JFrame {
     private javax.swing.JPanel centro;
     private javax.swing.JLabel exit;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -706,26 +614,19 @@ public class Estadisticas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator12;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JPanel mas_crec;
-    private javax.swing.JPanel mas_visitas;
     private javax.swing.JPanel menos_crec;
     private javax.swing.JLabel prev;
     private javax.swing.JPanel principal;

@@ -5,23 +5,9 @@
     align-items: center;
 }
  
-table{
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.5vw;
-    border-collapse:collapse;
-    border:1px solid #ffffff;
-    width: max-content;
-    margin-bottom: 15%;
-}
-
-table td{
-    border:1px solid #ffffff;
-}
-
 button{
     text-align: right;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Tahoma;
     font-size: 1.5vw;
     width:auto;
     background: #f3f3f3;
@@ -39,12 +25,33 @@ button{
     flex-direction: column;
     width: 60%;
 }
+
+.mapa_completo h1{  
+    color: #ffffff;
+    font-family: Tahoma; 
+    font-size: 20px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 700;
+    width: fit-content;
+}
+
 .sec_tablas{
     display: flex;
     flex-direction: column;
     width: 40%;
     align-items: center;
 }
+
+.sec_tablas h1{
+    color: #ffffff;
+    font-family: Tahoma; 
+    font-size: x-large; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 700;
+}
+
 tr td{
     color: #ffffff;
     text-decoration: none;
@@ -79,8 +86,52 @@ tr td{
     align-items: center;
     justify-content: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
 }
 #histograma{
     width: 80%;
+}
+
+    table{
+        border-collapse:collapse;
+        border:1px solid #ffffff;
+        width: max-content;
+        margin-bottom: 15%;
+    }
+    
+    table td{
+        border:1px solid #ffffff;
+        border:1px solid #ffffff;
+        text-align: center;
+        font-family: Tahoma; 
+        font-size: 20px; 
+        font-style: normal; 
+        font-variant: normal; 
+    }
+
+@media (max-width: 900px){
+    table{
+        border-collapse:collapse;
+        border:1px solid #ffffff;
+        width: 200%;
+        margin-bottom: 15%;
+    }
+    
+    table td{
+        border:1px solid #ffffff;
+        text-align: center;
+        font-family: Tahoma; 
+        font-size: smaller; 
+        font-style: normal; 
+        font-variant: normal; 
+    }
+
+    .sec_tablas h1{
+        color: #ffffff;
+        font-family: Tahoma; 
+        font-size: larger; 
+        font-style: normal; 
+        font-variant: normal; 
+        font-weight: 700;
+    }
 }
