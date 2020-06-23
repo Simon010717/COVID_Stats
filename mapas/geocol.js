@@ -8,11 +8,13 @@ casos[1] = JSON.parse(act);
 casos[2] = JSON.parse(rec);
 casos[3] = JSON.parse(fall);
 
+titulos=["Amazonas","Antioquia","Arauca","Atlántico","Bolívar","Boyacá","Cauca","Cesar","Chocó","Caldas","Córdoba","Caquetá","Casanare","Cundinamarca","Bogotá D.C","Guainia","Guaviare","Huila","La Guajira","Magdalena","Meta","Nariño","Norte de santander","Putumayo","Quindío","Risaralda","Santander","Sucre","San Andrés y Providencia","Tolima","Valle del Cauca","Vichada","Vaupés","Colombia"]
+
 let contagios = JSON.parse(crec);
 for (var i = 0; i < 6; i++) {
     document.getElementById('contagio-'+String(i+1)).textContent = contagios[i];
 }  
-var deps = ["AMA","ANT","ARA","ATL","BOL","BOY","CAU","CES","CHO","CAL","COR","CAQ","CAS","CUN","DC","GUA","GUV","HUI","LAG","MAG","MET","NAR","NSA","PUT","QUI","RIS","SAN","SUC","SAP","TOL","VAC","VAU","VID"]
+var deps = ["AMA","ANT","ARA","ATL","BOL","BOY","CAU","CES","CHO","CAL","COR","CAQ","CAS","CUN","DC","GUA","GUV","HUI","LAG","MAG","MET","NAR","NSA","PUT","QUI","RIS","SAN","SUC","SAP","TOL","VAC","VID","VAU"]
 
 var colorear = function (c){
     v = casos[c]
@@ -213,33 +215,34 @@ function actualizar_tipo_histogramaColombia(tipo){
 }
 
 function actualizar_graficas_hoyColombia(departamento){
-	depart = departamento;
-  morris_genero.setData([
-	    {label: "Hombres", value: hombre[departamento]},
-	    {label: "Mujeres", value: mujer[departamento]}
-   ]);
-  
-  morris_casos.setData([
-    {label: "Casa", value: casos_hoy[0][departamento]},
-    {label: "Hospital", value: casos_hoy[1][departamento]},
-    {label: "UCI", value: casos_hoy[2][departamento]},
-    {label: "Recuperados", value: casos_hoy[3][departamento]},
-    {label: "Fallecidos", value: casos_hoy[4][departamento]}
-  ]);
-  
-  morris_histograma.setData([
-      { y: '0', a: edad[tipo_histograma][0][departamento]},
-      { y: '10', a: edad[tipo_histograma][1][departamento]},
-      { y: '20', a: edad[tipo_histograma][2][departamento]},
-      { y: '30', a: edad[tipo_histograma][3][departamento]},
-      { y: '40', a: edad[tipo_histograma][4][departamento]},
-      { y: '50', a: edad[tipo_histograma][5][departamento]},
-      { y: '60', a: edad[tipo_histograma][6][departamento]},
-      { y: '70', a: edad[tipo_histograma][7][departamento]},
-      { y: '80', a: edad[tipo_histograma][8][departamento]},
-      { y: '90+', a: edad[tipo_histograma][9][departamento]}
+    document.getElementById("ubic").innerHTML = titulos[departamento];
+    depart = departamento;
+    morris_genero.setData([
+            {label: "Hombres", value: hombre[departamento]},
+            {label: "Mujeres", value: mujer[departamento]}
+    ]);
+    
+    morris_casos.setData([
+        {label: "Casa", value: casos_hoy[0][departamento]},
+        {label: "Hospital", value: casos_hoy[1][departamento]},
+        {label: "UCI", value: casos_hoy[2][departamento]},
+        {label: "Recuperados", value: casos_hoy[3][departamento]},
+        {label: "Fallecidos", value: casos_hoy[4][departamento]}
+    ]);
+    
+    morris_histograma.setData([
+        { y: '0', a: edad[tipo_histograma][0][departamento]},
+        { y: '10', a: edad[tipo_histograma][1][departamento]},
+        { y: '20', a: edad[tipo_histograma][2][departamento]},
+        { y: '30', a: edad[tipo_histograma][3][departamento]},
+        { y: '40', a: edad[tipo_histograma][4][departamento]},
+        { y: '50', a: edad[tipo_histograma][5][departamento]},
+        { y: '60', a: edad[tipo_histograma][6][departamento]},
+        { y: '70', a: edad[tipo_histograma][7][departamento]},
+        { y: '80', a: edad[tipo_histograma][8][departamento]},
+        { y: '90+', a: edad[tipo_histograma][9][departamento]}
     ]);
 }
 
-actualizar_graficas_hoyColombia(0);
+actualizar_graficas_hoyColombia(33);
 colorear(0);

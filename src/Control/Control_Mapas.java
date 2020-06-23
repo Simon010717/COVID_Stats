@@ -33,7 +33,7 @@ public class Control_Mapas {
         for(String X : m){
             try {
                 BufferedWriter bw = new BufferedWriter(new FileWriter(new File("mapas/hoy"+X+".json")));
-                int[][] datos = new int[(X.equals("Colombia") ? 33 : 20)][37];
+                int[][] datos = new int[(X.equals("Colombia") ? 34 : 21)][37];
                 int[][] dat = (X.equals("Colombia") ? dao.distCasosHoyCol() : dao.distCasosHoyBog());
                 if(X.equals("Colombia")){
                     datos[0] = dat[0];
@@ -75,6 +75,11 @@ public class Control_Mapas {
                     }
                     datos[31] = dat[35];
                     datos[32] = dat[36];
+                    for (int i = 0; i < 33; i++) {
+                        for (int j = 0; j < 37; j++) {
+                            datos[33][j] += datos[i][j];
+                        }
+                    }
                 } else {
                     for (int i = 0; i < 7; i++) {
                         datos[i] = dat[i];
@@ -82,11 +87,16 @@ public class Control_Mapas {
                     for (int i = 7; i < 20; i++) {
                         datos[i] = dat[i+1];
                     }
+                    for (int i = 0; i < 21; i++) {
+                        for (int j = 0; j < 37; j++) {
+                            datos[20][j] += datos[i][j];
+                        }
+                    }
                 }
                 for(int i=0;i<37; i++){
                     bw.write(vars[(i >= 17 ? i-(int)((i-7)/10)*10 : i)]+(i >= 7 ? e[(i-7)/10] : "")+" = '[");
-                    for(int j=0; j<(X.equals("Colombia") ? 33 : 20); j++){
-                        bw.write(datos[j][i]+(j == (X.equals("Colombia") ? 32 : 19) ? ""  : ","));
+                    for(int j=0; j<(X.equals("Colombia") ? 34 : 21); j++){
+                        bw.write(datos[j][i]+(j == (X.equals("Colombia") ? 33 : 20) ? ""  : ","));
                     }
                     bw.write("]';\n");
                 }/*
@@ -270,18 +280,22 @@ public class Control_Mapas {
     }
     
     public int[][] graficasTemporalesBog(){
-        int[] graficaSub;
         int [][] grafica = new int [21][80]; 
-        int [][] graficadef = new int [20][80]; 
+        int [][] graficadef = new int [21][80]; 
         String[] subs = dao.subdivisionesBog();
         
         for (int i = 0; i < grafica.length; i++) {
-            graficaSub = dao.graficasTemporalesBog(subs[i]);
-            grafica[i] = graficaSub;
+            grafica[i] = dao.graficasTemporalesBog(subs[i]);
             
         }
         for (int i = 0; i < 7; i++) {graficadef[i] = grafica[i];}
         for (int i = 7; i < 20; i++) {graficadef[i] = grafica[i+1];}
+        
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 80; j++) {
+                graficadef[20][j] += graficadef[i][j];
+            }
+        }
         
         return graficadef;
     }
@@ -323,7 +337,7 @@ public class Control_Mapas {
     public int[][][] graficasTemporalesCol(){
         int[][] graficaSub;
         int [][][] grafica = new int [37][80][4];
-        int [][][] graficadef = new int [33][80][4];
+        int [][][] graficadef = new int [34][80][4];
         String[] subs = dao.subdivisionesCol();
         
         for (int i = 0; i < grafica.length; i++) {
@@ -349,6 +363,14 @@ public class Control_Mapas {
                 graficadef[19][i][j] = grafica[22][i][j] + grafica[30][i][j];
             }
         }
+        for (int i = 0; i < 33; i++) {
+            for (int j = 0; j < 80; j++) {
+                for (int k = 0; k < 4; k++) {
+                    graficadef[33][j][k] += graficadef[i][j][k];
+                }
+            }
+        }
+        
         return graficadef;
     }
     

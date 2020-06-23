@@ -13,7 +13,7 @@ for (var i = 0; i < 6; i++) {
     document.getElementById('contagio-'+String(i+1)).textContent = contagios[i];
 }  
 var deps = ["ATN","BRU","BOS","CHP","CBL","ENG","FON","KEN","LCD","LMA","PAR","RUB","SCB","STF","SUB","SUM","TEU","TUN","USQ","USM"]
-
+var titulos = ["Antonio Nariño","Barrios Unidos","Bosa","Chapinero","Ciudad Bolívar","Engativa","Fontibón","Kennedy","La Candelaria","Los Mártires","Puente Aranda","Rafael Uribe","San Cristóbal","Santafé","Suba","Sumapaz","Teusaquillo","Tunjuelito","Usaquén","Usme","Bogotá D.C."]
 var colorear = function (c){
     v = casos[c]
     var maxx = Math.max.apply(null, v)
@@ -214,33 +214,34 @@ function actualizar_tipo_histogramaBogota(tipo){
 }
 
 function actualizar_graficas_hoyBogota(localidad){
-  depart = localidad;
-  morris_genero.setData([
-      {label: "Hombres", value: hombre[localidad]},
-      {label: "Mujeres", value: mujer[localidad]}
-   ]);
-  
-  morris_casos.setData([
-    {label: "Casa", value: casos_hoy[0][localidad]},
-    {label: "Hospital", value: casos_hoy[1][localidad]},
-    {label: "UCI", value: casos_hoy[2][localidad]},
-    {label: "Recuperados", value: casos_hoy[3][localidad]},
-    {label: "Fallecidos", value: casos_hoy[4][localidad]}
-  ]);
-  
-  morris_histograma.setData([
-      { y: '0', a: edad[tipo_histograma][0][localidad]},
-      { y: '10', a: edad[tipo_histograma][1][localidad]},
-      { y: '20', a: edad[tipo_histograma][2][localidad]},
-      { y: '30', a: edad[tipo_histograma][3][localidad]},
-      { y: '40', a: edad[tipo_histograma][4][localidad]},
-      { y: '50', a: edad[tipo_histograma][5][localidad]},
-      { y: '60', a: edad[tipo_histograma][6][localidad]},
-      { y: '70', a: edad[tipo_histograma][7][localidad]},
-      { y: '80', a: edad[tipo_histograma][8][localidad]},
-      { y: '90+', a: edad[tipo_histograma][9][localidad]}
+    document.getElementById("ubic").innerHTML = titulos[localidad];
+    depart = localidad;
+    morris_genero.setData([
+        {label: "Hombres", value: hombre[localidad]},
+        {label: "Mujeres", value: mujer[localidad]}
+    ]);
+    
+    morris_casos.setData([
+        {label: "Casa", value: casos_hoy[0][localidad]},
+        {label: "Hospital", value: casos_hoy[1][localidad]},
+        {label: "UCI", value: casos_hoy[2][localidad]},
+        {label: "Recuperados", value: casos_hoy[3][localidad]},
+        {label: "Fallecidos", value: casos_hoy[4][localidad]}
+    ]);
+    
+    morris_histograma.setData([
+        { y: '0', a: edad[tipo_histograma][0][localidad]},
+        { y: '10', a: edad[tipo_histograma][1][localidad]},
+        { y: '20', a: edad[tipo_histograma][2][localidad]},
+        { y: '30', a: edad[tipo_histograma][3][localidad]},
+        { y: '40', a: edad[tipo_histograma][4][localidad]},
+        { y: '50', a: edad[tipo_histograma][5][localidad]},
+        { y: '60', a: edad[tipo_histograma][6][localidad]},
+        { y: '70', a: edad[tipo_histograma][7][localidad]},
+        { y: '80', a: edad[tipo_histograma][8][localidad]},
+        { y: '90+', a: edad[tipo_histograma][9][localidad]}
     ]);
 }
 
-actualizar_graficas_hoyBogota(0);
+actualizar_graficas_hoyBogota(20);
 colorear(0);
